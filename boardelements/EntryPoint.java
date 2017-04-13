@@ -24,7 +24,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	private final int WAGONWEIGHT = 10000;
 	private final int LOCOMOTIVEWEIGHT = 20000;
-	private final int LOCOMOTIVEPOWER = 1000000;
+	private final int LOCOMOTIVEPOWER = 10000000;
 	private final int PASSENGERCOUNT = 50;
 	private final int MAXWAGONNUMBER = 6;
 	private final double SPECIALWAGONCHANCE = 0.3;
@@ -86,6 +86,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	private List<Wagon> createWagonList() throws EndGameException{
 		
 		int wagonNumber =(int)((Math.random()*10)%MAXWAGONNUMBER);
+		System.out.println(wagonNumber);
 		List<Wagon> wagonsList = new ArrayList<Wagon>();
 		for (int i= 0; i<wagonNumber; i++){
 			wagonsList.add(createWagonRandom());
@@ -145,6 +146,14 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	public void setRandomGeneration(boolean randomGeneration) {
 		this.randomGeneration = randomGeneration;
+	}
+	
+	@Override
+	public BoardElement getNext() throws EndGameException{
+		
+		if (next.isOccupied() == true)
+			throw new EndGameException();
+		return next;
 	}
 
 	@Override

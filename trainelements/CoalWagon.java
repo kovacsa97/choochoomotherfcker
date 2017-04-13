@@ -6,6 +6,7 @@ public class CoalWagon extends Wagon{
 
 	public CoalWagon(int weight) {
 		super(weight, Color.GRAY, 0);
+		System.out.println("New CoalWagon created");
 		this.happinessOfPassengers = 0;
 	}
 	

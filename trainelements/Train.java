@@ -25,7 +25,6 @@ public class Train implements Updateable {
 	}
 	
 	public int getPassengers(Color c){
-		//System.out.println("getPassengers was called inside class Train with parameters of type Color");
 		int i = 0;
 		while (i!=myWagons.size()){
 			if (myWagons.get(i).getColor() == c)
@@ -36,12 +35,10 @@ public class Train implements Updateable {
 			else 
 				i++;
 		}
-		//System.out.println("getPassengers returned int");
 		return 0;
 	}
 	
 	public void passengerGetOn(Color c, int n){
-		//System.out.println("getPassengers was called inside class Train with parameters of type Color");
 		int i = 0;
 		while (i!=myWagons.size()){
 			if (myWagons.get(i).getColor() == c){
@@ -55,14 +52,12 @@ public class Train implements Updateable {
 
 	@Override
 	public void update() throws EndGameException {
-		//System.out.println("update was called inside class Train");
 		int dist = myLocomotive.getExcursion();
 		startPos.move(myLocomotive.getExcursion());
 		endPos.move(dist);
 		for (int i=0; i<myWagons.size(); i++){
 			myWagons.get(i).handlePassengers();
 		}
-		//System.out.println("update returned");
 	}
 	
 	public String getId() {
