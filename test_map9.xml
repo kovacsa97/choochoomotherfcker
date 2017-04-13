@@ -1,0 +1,18 @@
+<data>
+<map>
+	<entrypoint id="e01" nextid="s01" defWaitTime="100" timerId="0" /> 	
+	<rail id="r01" prevId="e01" nextId="r02" /> 
+	<rail id="r02" prevId="r01" nextId="st01" /> 
+	<rail id="r03" prevId="st01" nextId="r04" /> 
+	<rail id="r04" prevId="r03" nextId="r05" /> 
+	<rail id="r05" prevId="r04" nextId="st02" /> 
+	<rail id="r06" prevId="st02" nextId="r07" /> 
+	<rail id="r07" prevId="r06" nextId=null /> 
+	<station id="st01" prevId="r02" nextId="r03" color="1" newPassengerCount="50" newPassengerProbability="1"/>
+	<station id="st02" prevId="r05" nextId="r06" color="1" newPassengerCount="0" newPassengerProbability="0"/>
+</map> 
+	<train id="train1">
+		<locomotive defDrivingForce="1" />
+		<wagon passengerCount="100" color="1" /> 
+	</train>  
+</data> 

@@ -1,0 +1,15 @@
+<data>
+<map> 
+	<entrypoint id="e01" nextid="r01" defWaitTime="100" timerId="0" />
+	<rail id="r01" prevId="e01" nextId="cr01" /> 
+	<rail id="r02" prevId="cr01" nextId="s01" /> 
+	<rail id="r03" prevId="cr02" nextId="s01" />  
+	<crossingrail id="cr01" prevId="r01" nextId="r02" otherRailId="cr02" /> 
+	<crossingrail id="cr02" prevId="st01" nextId="r03" otherRailId="cr01" /> 
+	<switch id="s01" inId="to02" currentOutId="r02" otherOutId="r03" /> 
+	<tunnelopp id="to02" inId="s01" outId="t01" /> 
+	<tunnelopp id="to01" inId="st01" outId="t01" /> 
+	<station id="st01" prevId="cr02" nextId="to02" color="1" newPassengerCount="50" newPassengerProbability="1"/>
+	<tunnel id="t01" defInId="to01" defOutId="to02"/> 
+</map>
+</data>

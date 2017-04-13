@@ -1,0 +1,19 @@
+<data>
+<map>
+	<entrypoint id="e01" nextid="s01" defWaitTime="100" timerId="0" /> 
+	<switch id="s01" inId="e01" currentOutId="r01" otherOutId="r04" />	
+	<rail id="r01" prevId="s01" nextId="r02" /> 
+	<rail id="r02" prevId="r01" nextId="r03" /> 
+	<rail id="r03" prevId="r02" nextId="r06" /> 
+	<rail id="r04" prevId="s01" nextId="r05" /> 
+	<rail id="r05" prevId="r04" nextId="r06" /> 
+	<rail id="r06" prevId="r05" nextId="r03" />  
+		 
+</map> 
+	<train id="train1">
+		<locomotive defDrivingForce="1" /> 
+	</train> 
+	<train id="train2">
+		<locomotive defDrivingForce="1" /> 
+	</train> 
+</data> 

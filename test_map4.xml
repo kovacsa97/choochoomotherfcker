@@ -1,0 +1,13 @@
+<data>
+<map>
+	<entrypoint id="e01" nextid="s01" defWaitTime="100" timerId="0" /> 
+	<rail id="r01" prevId="s01" nextId="to01" /> 
+	<rail id="r02" prevId="s01" nextId="to02" /> 
+	<switch id="s01" inId="e01" currentOutId="r01" otherOutId="r02" /> 
+	<tunnelopp id="to01" inId="r01" outId=null /> 
+	<tunnelopp id="to02" inId="r02" outId=null /> 	 
+</map> 
+	<train id="train1">
+		<locomotive defDrivingForce="1" /> 
+	</train> 
+</data>
