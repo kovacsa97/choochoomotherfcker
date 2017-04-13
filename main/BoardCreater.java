@@ -100,9 +100,9 @@ public class BoardCreater {
 
 		Tunnel tun = new Tunnel(50);
 		
-		Station st1 = new Station(Color.RED, 40);
-		Station st2 = new Station(Color.RED, 40);
-		Station st3 = new Station(Color.RED, 40);
+		Station st1 = new Station(1, 40);
+		Station st2 = new Station(1, 40);
+		Station st3 = new Station(1, 40);
 
 		ep.setEnds(null, r1);
 		r1.setEnds(ep, r2);
