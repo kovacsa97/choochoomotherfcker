@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import color.Color;
+import trainelements.CoalWagon;
 import trainelements.Locomotive;
 import trainelements.LoveWagon;
 import trainelements.Train;
@@ -16,56 +17,101 @@ public class EntryPoint extends BoardElement implements Updateable{
 	private int time;
 	private int defWaitTime;
 	private Timer timer;
-	private boolean randomGeneration = true;
+	private boolean randomGeneration = false;
+	
+	private final int WAGONWEIGHT = 10000;
+	private final int LOCOMOTIVEWEIGHT = 20000;
+	private final int LOCOMOTIVEPOWER = 1000000;
+	private final int PASSENGERCOUNT = 50;
+	private final int MAXWAGONNUMBER = 6;
+	private final double SPECIALWAGONCHANCE = 0.3;
+	private final double LOVEWAGONCHANCE = 0.5;
 	
 	public EntryPoint(int defWaitTime, int length, Timer t){
 		super(length);
-		//System.out.println("New EntryPoint created with parameters of type int, int");
 		this.defWaitTime = defWaitTime;
 		time = 0;
 		this.timer = t;
 		t.registerElement(this);
 	}
 	
-	private Wagon createWagon(Color c, int passengerCount, int weight){
-		Random rand = new Random();
-		Wagon w;
-		int chance = rand.nextInt(10)+1;
-		if (chance<=0.3)
-			w = new LoveWagon(weight, Color.RED, passengerCount );
-		else
-			w = new Wagon(weight, Color.PINK, passengerCount );
+	public Wagon createWagon(int c, int passengerCount, String wagonType){
+		Wagon w = null;
+		
+		if (wagonType.equals("LOVE")){
+			w = new LoveWagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
+		}
+		else if (wagonType.equals("COAL")){
+			w = new CoalWagon(WAGONWEIGHT);
+		}
+		else if (wagonType.equals("BASIC")){
+			w = new LoveWagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
+		}
 		return w;
 	}
 	
-	private List<Wagon> createWagonList(int n){
-		Random rand = new Random();
-		int wagonNumber = rand.nextInt(n) + 1;
+	public Locomotive createLocomotive(int enginePower){
+		Locomotive loc = new Locomotive(enginePower, LOCOMOTIVEWEIGHT);
+		return loc;
+	}
+
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	private Wagon createWagonRandom(){
+		Wagon w;
+		double specialWagonChance = Math.random();
+		double loveWagonChance = Math.random();
+		int color =(int)((Math.random()*10)%(Color.values().length-1));
+		
+		if (specialWagonChance <= SPECIALWAGONCHANCE){
+			if(loveWagonChance < LOVEWAGONCHANCE){
+				w = new LoveWagon(WAGONWEIGHT, Color.values()[color], PASSENGERCOUNT);
+			}
+			else{
+				w = new CoalWagon(WAGONWEIGHT);
+			}
+		}
+		
+		else{
+			w = new Wagon(WAGONWEIGHT, Color.values()[color], PASSENGERCOUNT);
+		}
+		return w;
+	}
+	
+	private List<Wagon> createWagonList(){
+		
+		int wagonNumber =(int)((Math.random()*10)%MAXWAGONNUMBER);
 		List<Wagon> wagonsList = new ArrayList<Wagon>();
 		for (int i= 0; i<wagonNumber; i++){
-			wagonsList.add(createWagon());
+			wagonsList.add(createWagonRandom());
 		}
 		return wagonsList;
 	}
 	
-	public void createTrain() throws Exception{
-		//System.out.println("createTrain was called inside class EntryPoint");
-		Locomotive loc = new Locomotive(1000000, 10, 0.02);
-		Train train = new Train(createWagonList(10), loc, this);
+	public void createTrainRandom() throws Exception{
+
+		List<Wagon> wagonList = createWagonList();
+		Locomotive loc = new Locomotive(LOCOMOTIVEPOWER, 10);
+		loc.setWeight(wagonList.size()*WAGONWEIGHT);
+		Train train = new Train(createWagonList(), loc, this);
 		timer.registerElement(train);
-		//System.out.println("CreateTrain returned");
+
 	}
 	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 	public void resetTimer(){
-		//System.out.println("resetTimer was called inside class EntryPoint");
+
 		time = defWaitTime;
-		//System.out.println("resetTimer returned");
+
 	}
 	
 	public void update() throws Exception{
-		//System.out.println("update was called inside class EntryPoint");
 		if (time == 0){
-			createTrain();
+			createTrainRandom();
 			resetTimer();
 		}
 		else
@@ -75,7 +121,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	@Override
 	public void enter(Train t) throws Exception{
-		//System.out.println("getNext was called inside class EntryPoint");
+
 		if (next.isOccupied() == true) throw new Exception("Game Over"); 
 		
 	}
