@@ -126,6 +126,8 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	public void update() throws EndGameException{
 		
+		if (this.randomGeneration == false) return;
+		
 		if (time == 0){
 			createTrainRandom();
 			resetTimer();
