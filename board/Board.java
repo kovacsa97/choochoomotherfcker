@@ -14,6 +14,8 @@ public class Board {
 	private HashMap<String,Switch> switchList;
 	private HashMap<String,Rail> railList;
 	private HashMap<String,EntryPoint> entryPointList;
+	private HashMap<String,HashMap<String,? extends BoardElement>> toStringList;
+	
 	private Tunnel tunnel;
 	
 	public Board(HashMap<String,Station> sl, 
@@ -52,6 +54,6 @@ public class Board {
 	}
 	
 	public void list(PrintStream ps, String type) {
-		
+		toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
 	}	
 }
