@@ -56,7 +56,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	public void createTrain(TrainModel tm) throws Exception{
 		List<Wagon> wagonList = new ArrayList<Wagon>();
 		for (int i=0; i<tm.countOfWagons; i++){
-			Wagon w = createWagon(tm.color[i], tm.passCount[i], tm.type[i]);
+			Wagon w = createWagon(tm.color.get(i), tm.passCount.get(i), tm.type.get(i));
 			wagonList.add(w);
 		}
 		Locomotive loc = new Locomotive(tm.defDrivingForce, LOCOMOTIVEWEIGHT);

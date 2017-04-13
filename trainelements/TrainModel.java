@@ -1,9 +1,11 @@
 package trainelements;
 
+import java.util.ArrayList;
+
 public class TrainModel {
 	public int defDrivingForce;
 	public int countOfWagons;
-	public String[] type;
-	public int[] color;
-	public int[] passCount;
+	public ArrayList<String> type;
+	public ArrayList<Integer> color;
+	public ArrayList<Integer> passCount;
 }
