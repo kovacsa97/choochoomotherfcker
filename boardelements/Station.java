@@ -27,6 +27,7 @@ public class Station extends BoardElement{
 		//System.out.println("POINTS: "+ point);
 		locked = true;
 		point += t.getPassengers(color);
+		t.passengerGetOn(this.color, this.newPassengerCount);
 		
 		//System.out.println("POINTS: "+ point);
 		//System.out.println("enter returned");
