@@ -1,22 +1,28 @@
 package board;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import boardelements.*;
 
 public class Board {
 	
-	private List<Station> stationList;
-	private List<TunnelOpportunity> tunnelopportunityList ;
-	private List<Switch> switchList;
+	private HashMap<String,Station> stationList;
+	private HashMap<String,TunnelOpportunity> tunnelOpportunityList ;
+	private HashMap<String,Switch> switchList;
 	private Tunnel tunnel;
 	
-	public Board(List<Station> sl, List<Switch> sw, List<TunnelOpportunity> to, Tunnel t){
+	public Board(HashMap<String,Station> sl, 
+			HashMap<String,Switch> sw, 
+			HashMap<String,TunnelOpportunity> to, 
+			HashMap<String,Rail> rl,
+			HashMap<String,EntryPoint> rp){
 		stationList = sl;
-		tunnelopportunityList = to;
+		tunnelOpportunityList = to;
 		switchList = sw;
-		tunnel = t;
+		/*tunnel*/
 	}
 	
 	public int calculatePoints(){
@@ -26,5 +32,22 @@ public class Board {
 		}
 		return point;
 	}
+	
+	public void buildTunnel(TunnelOpportunity t1, TunnelOpportunity t2) {
+		// TODO
+	}
+	
+	public void buildTunnel(String t1id, String t2id) {
+		buildTunnel(tunnelOpportunityList.get(t1id),tunnelOpportunityList.get(t2id));
+	}
+	
+	public void destroyTunnel() {
+		// TODO
+	}
+	
+	public void list(PrintStream ps, String type) {
+		
+	}
+	
 	
 }
