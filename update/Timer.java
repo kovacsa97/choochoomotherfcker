@@ -8,15 +8,27 @@ import javax.swing.JFrame;
 import main.EndGameException;
 
 
+/**
+ * TIMER OSZTALY
+ * 
+ *
+ */
 public class Timer {
 	
 	private boolean game = false;
 	protected List<Updateable> toUpdate = new ArrayList<Updateable>();
 	
+	/**
+	 * @param element
+	 * Regisztralja az elemeket a Timer reszere
+	 */
 	public void registerElement(Updateable element){
 		toUpdate.add(element);
 	}
 	
+	/**
+	 * Elinditja a Timer-t
+	 */
 	public void start(){
 		game = true;
 		try{
@@ -37,6 +49,9 @@ public class Timer {
 		}
 	}
 	
+	/**
+	 * Megallitja a Timer-t
+	 */
 	public void stop(){
 		game = false;
 	}
