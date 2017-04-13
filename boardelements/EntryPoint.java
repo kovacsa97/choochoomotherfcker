@@ -28,6 +28,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	private final int PASSENGERCOUNT = 50;
 	private final int MAXWAGONNUMBER = 6;
 	private final double SPECIALWAGONCHANCE = 0.3;
+	
 	private final double LOVEWAGONCHANCE = 0.5;
 	
 	public EntryPoint(int defWaitTime, int length, Timer t){
