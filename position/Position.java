@@ -1,6 +1,7 @@
 package position;
 
 import boardelements.BoardElement;
+import main.EndGameException;
 
 public abstract class Position {
 	protected int pos;
@@ -11,7 +12,7 @@ public abstract class Position {
 		CurrentBE = cbe;
 	}
 	
-	public abstract void move(int dist) throws Exception;
+	public abstract void move(int dist) throws EndGameException;
 	
 	@Override
 	public String toString(){

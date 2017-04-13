@@ -1,5 +1,7 @@
 package boardelements;
 
+import main.EndGameException;
+
 public class Switch extends BoardElement{
 	
 	private BoardElement nextSecond;
@@ -24,10 +26,10 @@ public class Switch extends BoardElement{
 	}
 	
 	@Override
-	public BoardElement getNext() throws Exception{
+	public BoardElement getNext() throws EndGameException{
 	 if (prev.isOccupied() == false) return prev;
-	 else if (prev.isOccupied() == true && nextActive && next.isOccupied() == true) throw new Exception("Game Over");
-	 else if (prev.isOccupied() == true && !nextActive && nextSecond.isOccupied() == true) throw new Exception("Game Over");
+	 else if (prev.isOccupied() == true && nextActive && next.isOccupied() == true) throw new EndGameException();
+	 else if (prev.isOccupied() == true && !nextActive && nextSecond.isOccupied() == true) throw new EndGameException();
 	 else if (prev.isOccupied() == true && nextActive && next.isOccupied() == false) return next;
 	 else return nextSecond;
 	}

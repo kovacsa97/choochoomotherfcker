@@ -4,6 +4,7 @@ import java.util.List;
 
 import boardelements.EntryPoint;
 import color.Color;
+import main.EndGameException;
 import position.*;
 import update.Timer;
 import update.Updateable;
@@ -15,7 +16,7 @@ public class Train implements Updateable {
 	private EndPos endPos;
 	private String id;
 	
-	public Train(List<Wagon> wagons, Locomotive loc, EntryPoint ep) throws Exception{
+	public Train(List<Wagon> wagons, Locomotive loc, EntryPoint ep) throws EndGameException{
 		System.out.println("New Train created with parameters of type List<Wagon>, " + loc.toString() + " " + ep.toString());
 		myLocomotive = loc;
 		myWagons = wagons;
@@ -40,7 +41,7 @@ public class Train implements Updateable {
 	}
 
 	@Override
-	public void update() throws Exception {
+	public void update() throws EndGameException {
 		//System.out.println("update was called inside class Train");
 		int dist = myLocomotive.getExcursion();
 		startPos.move(myLocomotive.getExcursion());

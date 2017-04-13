@@ -68,7 +68,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	private Wagon createWagonRandom(){
+	private Wagon createWagonRandom() throws EndGameException{
 		Wagon w;
 		double specialWagonChance = Math.random();
 		double loveWagonChance = Math.random();
@@ -89,7 +89,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		return w;
 	}
 	
-	private List<Wagon> createWagonList(){
+	private List<Wagon> createWagonList() throws EndGameException{
 		
 		int wagonNumber =(int)((Math.random()*10)%MAXWAGONNUMBER);
 		List<Wagon> wagonsList = new ArrayList<Wagon>();
@@ -99,7 +99,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		return wagonsList;
 	}
 	
-	public void createTrainRandom() throws Exception{
+	public void createTrainRandom() throws EndGameException{
 
 		List<Wagon> wagonList = createWagonList();
 		Locomotive loc = new Locomotive(LOCOMOTIVEPOWER, 10);
@@ -118,7 +118,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 
 	}
 	
-	public void update() throws Exception{
+	public void update() throws EndGameException{
 		if (time == 0){
 			createTrainRandom();
 			resetTimer();
