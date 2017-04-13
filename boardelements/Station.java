@@ -10,10 +10,10 @@ public class Station extends BoardElement{
 	private int newPassengerCount;
 	private double newPassengerProbability;
 	
-	public Station(Color c, int length){
+	public Station(int c, int length){
 		super(length);
 		//System.out.println("New Station created with parameters of type Color, int");
-		this.color = c;
+		this.color = Color.values()[c-1];
 		this.locked = false;
 	}
 	
