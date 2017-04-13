@@ -12,19 +12,23 @@ public class Board {
 	private HashMap<String,Station> stationList;
 	private HashMap<String,TunnelOpportunity> tunnelOpportunityList ;
 	private HashMap<String,Switch> switchList;
-	HashMap<String,Rail> railList;
-	HashMap<String,EntryPoint> entryPointList;
+	private HashMap<String,Rail> railList;
+	private HashMap<String,EntryPoint> entryPointList;
 	private Tunnel tunnel;
 	
 	public Board(HashMap<String,Station> sl, 
 			HashMap<String,Switch> sw, 
 			HashMap<String,TunnelOpportunity> to, 
 			HashMap<String,Rail> rl,
-			HashMap<String,EntryPoint> rp){
+			HashMap<String,EntryPoint> rp,
+			Tunnel t){
+		railList = rl;
+		entryPointList = rp;
 		stationList = sl;
 		tunnelOpportunityList = to;
 		switchList = sw;
-		/*tunnel*/
+		stationList = sl;
+		tunnel = t;
 	}
 	
 	public int calculatePoints(){
