@@ -13,11 +13,15 @@ public class Tunnel extends BoardElement {
 		return "Tunnel";
 	}
 	
+	public void destroy(){
+		if (next!=null) next.lock();
+		if (prev!=null) prev.lock();
+	}
+	
 	@Override
 	public void setEnds(BoardElement p, BoardElement n){
 		System.out.println("setEnds was called inside class Tunnel with parameters of type " + p.toString() + ", "+ n.toString());
-		if (next!=null) next.lock();
-		if (prev!=null) prev.lock();
+		destroy();
 		next = n;
 		n.unlock();
 		prev = p;

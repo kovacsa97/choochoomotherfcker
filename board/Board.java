@@ -12,6 +12,8 @@ public class Board {
 	private HashMap<String,Station> stationList;
 	private HashMap<String,TunnelOpportunity> tunnelOpportunityList ;
 	private HashMap<String,Switch> switchList;
+	HashMap<String,Rail> railList;
+	HashMap<String,EntryPoint> entryPointList;
 	private Tunnel tunnel;
 	
 	public Board(HashMap<String,Station> sl, 
@@ -34,7 +36,7 @@ public class Board {
 	}
 	
 	public void buildTunnel(TunnelOpportunity t1, TunnelOpportunity t2) {
-		// TODO
+		tunnel.setEnds(t1, t2);
 	}
 	
 	public void buildTunnel(String t1id, String t2id) {
@@ -42,7 +44,7 @@ public class Board {
 	}
 	
 	public void destroyTunnel() {
-		// TODO
+		tunnel.destroy();
 	}
 	
 	public void list(PrintStream ps, String type) {
