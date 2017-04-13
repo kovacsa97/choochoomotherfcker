@@ -5,11 +5,13 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
+import main.EndGameException;
+
 
 public class Timer {
 	
 	private boolean game = false;
-	private List<Updateable> toUpdate = new ArrayList<Updateable>();
+	protected List<Updateable> toUpdate = new ArrayList<Updateable>();
 	
 	public void registerElement(Updateable element){
 		toUpdate.add(element);
@@ -25,11 +27,13 @@ public class Timer {
 				}
 				Thread.sleep(300);
 			}
-		} catch (Exception e){
+		} catch (EndGameException e){
 			if (e.getMessage() == "Game Over"){
 				System.out.println(e.getStackTrace() + " GAME OVER");
 				stop();
 			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 	
