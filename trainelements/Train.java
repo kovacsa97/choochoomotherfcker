@@ -39,6 +39,19 @@ public class Train implements Updateable {
 		//System.out.println("getPassengers returned int");
 		return 0;
 	}
+	
+	public void passengerGetOn(Color c, int n){
+		//System.out.println("getPassengers was called inside class Train with parameters of type Color");
+		int i = 0;
+		while (i!=myWagons.size()){
+			if (myWagons.get(i).getColor() == c){
+				myWagons.get(i).passengersGetOn(n);
+			}
+			else{
+				i++;
+			}
+		}
+	}
 
 	@Override
 	public void update() throws EndGameException {

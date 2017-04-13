@@ -56,4 +56,12 @@ public class Board {
 	public void list(PrintStream ps, String type) {
 		toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
 	}	
+	
+	public void getNextTrain(){
+		for (EntryPoint ep: entryPointList.values()){
+			ep.getNextTrain();
+		}
+	}
+	
+	
 }
