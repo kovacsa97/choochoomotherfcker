@@ -9,6 +9,7 @@ import trainelements.CoalWagon;
 import trainelements.Locomotive;
 import trainelements.LoveWagon;
 import trainelements.Train;
+import trainelements.TrainModel;
 import trainelements.Wagon;
 import update.Timer;
 import update.Updateable;
@@ -19,6 +20,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	private int defWaitTime;
 	private Timer timer;
 	private boolean randomGeneration = false;
+	private List<Train> trainList = new ArrayList<Train>();
 	
 	private final int WAGONWEIGHT = 10000;
 	private final int LOCOMOTIVEWEIGHT = 20000;
@@ -36,7 +38,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		t.registerElement(this);
 	}
 	
-	public Wagon createWagon(int c, int passengerCount, String wagonType){
+	private Wagon createWagon(int c, int passengerCount, String wagonType){
 		Wagon w = null;
 		
 		if (wagonType.equals("LOVE")){
@@ -51,9 +53,15 @@ public class EntryPoint extends BoardElement implements Updateable{
 		return w;
 	}
 	
-	public Locomotive createLocomotive(int enginePower){
-		Locomotive loc = new Locomotive(enginePower, LOCOMOTIVEWEIGHT);
-		return loc;
+	public void createTrain(TrainModel tm) throws Exception{
+		List<Wagon> wagonList = new ArrayList<Wagon>();
+		for (int i=0; i<tm.countOfWagons; i++){
+			Wagon w = createWagon(tm.color[i], tm.passCount[i], tm.type[i]);
+			wagonList.add(w);
+		}
+		Locomotive loc = new Locomotive(tm.defDrivingForce, LOCOMOTIVEWEIGHT);
+		Train t = new Train(wagonList, loc, this);
+		trainList.add(t);
 	}
 
 	
