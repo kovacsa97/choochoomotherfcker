@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import color.Color;
+import main.EndGameException;
 import trainelements.CoalWagon;
 import trainelements.Locomotive;
 import trainelements.LoveWagon;
@@ -119,10 +120,9 @@ public class EntryPoint extends BoardElement implements Updateable{
 		//System.out.println("update returned");
 	}
 	
-	@Override
-	public void enter(Train t) throws Exception{
+	public void enter(Train t) throws EndGameException{
 
-		if (next.isOccupied() == true) throw new Exception("Game Over"); 
+		if (next.isOccupied() == true) throw new EndGameException(); 
 		
 	}
 	
