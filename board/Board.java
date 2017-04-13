@@ -63,5 +63,13 @@ public class Board {
 		}
 	}
 	
+	public void setRandomness(boolean r){
+		for (EntryPoint ep: entryPointList.values()){
+			ep.setRandomGeneration(r);
+		}
+		for (Station st: stationList.values()){
+			st.setRandomness(r);
+		}
+	}
 	
 }
