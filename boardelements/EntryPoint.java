@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import color.Color;
+import main.EndGameException;
 import trainelements.Locomotive;
 import trainelements.LoveWagon;
 import trainelements.Train;
@@ -43,7 +44,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		int wagonNumber = rand.nextInt(n) + 1;
 		List<Wagon> wagonsList = new ArrayList<Wagon>();
 		for (int i= 0; i<wagonNumber; i++){
-			wagonsList.add(createWagon());
+			//wagonsList.add(createWagon());
 		}
 		return wagonsList;
 	}
@@ -62,7 +63,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		//System.out.println("resetTimer returned");
 	}
 	
-	public void update() throws Exception{
+	public void update() throws EndGameException{
 		//System.out.println("update was called inside class EntryPoint");
 		if (time == 0){
 			createTrain();
@@ -74,9 +75,9 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	@Override
-	public void enter(Train t) throws Exception{
+	public void enter(Train t) throws EndGameException{
 		//System.out.println("getNext was called inside class EntryPoint");
-		if (next.isOccupied() == true) throw new Exception("Game Over"); 
+		if (next.isOccupied() == true) throw new EndGameException(); 
 		
 	}
 	

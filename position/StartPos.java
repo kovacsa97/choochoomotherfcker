@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import boardelements.BoardElement;
+import main.EndGameException;
 import trainelements.Train;
 
 public class StartPos extends Position {
@@ -11,7 +12,7 @@ public class StartPos extends Position {
 	private List<BoardElement> BEfifo;
 	Train myTrain;
 
-	public StartPos(BoardElement cbe, Train t) throws Exception {
+	public StartPos(BoardElement cbe, Train t) throws EndGameException {
 		super(cbe);
 		//System.out.println("StartPos was created with parameters type of "+ cbe.toString());
 		pos = cbe.getLength();
@@ -21,7 +22,7 @@ public class StartPos extends Position {
 	}
 
 	@Override
-	public void move(int dist) throws Exception {
+	public void move(int dist) throws EndGameException {
 		//System.out.println("BEfifo size: " + BEfifo.size());
 		//System.out.println("move was called inside class StartPos with parameters of type int");
 		if (dist + pos < CurrentBE.getLength()){

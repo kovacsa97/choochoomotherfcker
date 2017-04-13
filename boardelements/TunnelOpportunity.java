@@ -1,5 +1,6 @@
 package boardelements;
 
+import main.EndGameException;
 import trainelements.Train;
 
 public class TunnelOpportunity extends BoardElement{
@@ -16,9 +17,9 @@ public class TunnelOpportunity extends BoardElement{
 	}
 
 	@Override
-	public void enter(Train t) throws Exception {
+	public void enter(Train t) throws EndGameException {
 		//System.out.println("enter was called inside class TunnelOpportunity");
-		if (locked == true) throw new Exception("GAME OVER");
+		if (locked == true) throw new EndGameException();
 		locked = true;
 		//System.out.println("enter returned");
 	}

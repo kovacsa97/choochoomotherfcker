@@ -1,5 +1,6 @@
 package boardelements;
 
+import main.EndGameException;
 import trainelements.Train;
 
 public class BoardElement {
@@ -27,7 +28,7 @@ public class BoardElement {
 		return locked;
 	}
 	
-	public void enter(Train t) throws Exception {
+	public void enter(Train t) throws EndGameException {
 		//System.out.println("enter was called inside class BoardElement");
 		//System.out.println("I am entered");
 		lock();
@@ -52,10 +53,10 @@ public class BoardElement {
 		//System.out.println("leave returned");
 	}
 	
-	public BoardElement getNext() throws Exception{
+	public BoardElement getNext() throws EndGameException{
 		//System.out.println("getNext was called inside class BoardElement");
 		if (next.isOccupied() == true && prev.isOccupied() == true)
-			throw new Exception("Game Over");
+			throw new EndGameException();
 		if (next.isOccupied() == false){
 			//System.out.println("getNext returned BoardElement");
 			return next;
