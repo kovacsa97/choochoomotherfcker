@@ -20,7 +20,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	private int defWaitTime;
 	private Timer timer;
 	private boolean randomGeneration = false;
-	private List<Train> trainList = new ArrayList<Train>();
+	private List<TrainModel> trainModelList = new ArrayList<TrainModel>();
 	
 	private final int WAGONWEIGHT = 10000;
 	private final int LOCOMOTIVEWEIGHT = 20000;
@@ -53,15 +53,8 @@ public class EntryPoint extends BoardElement implements Updateable{
 		return w;
 	}
 	
-	public void createTrain(TrainModel tm) throws Exception{
-		List<Wagon> wagonList = new ArrayList<Wagon>();
-		for (int i=0; i<tm.countOfWagons; i++){
-			Wagon w = createWagon(tm.color.get(i), tm.passCount.get(i), tm.type.get(i));
-			wagonList.add(w);
-		}
-		Locomotive loc = new Locomotive(tm.defDrivingForce, LOCOMOTIVEWEIGHT);
-		Train t = new Train(wagonList, loc, this);
-		trainList.add(t);
+	public void addTrain(TrainModel tm){
+		trainModelList.add(tm);
 	}
 
 	
@@ -118,12 +111,20 @@ public class EntryPoint extends BoardElement implements Updateable{
 
 	}
 	
-	public void getNextTrain(){
-		if (trainList.isEmpty()) return;
-		timer.registerElement(trainList.remove(0));
+	public void getNextTrain() throws EndGameException{
+		List<Wagon> wagonList = new ArrayList<Wagon>();
+		for (int i=0; i<trainModelList.get(0).countOfWagons; i++){
+			Wagon w = createWagon(trainModelList.get(0).color.get(i), trainModelList.get(0).passCount.get(i), trainModelList.get(0).type.get(i));
+			wagonList.add(w);
+		}
+		Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
+		Train t = new Train(wagonList, loc, this);
+		timer.registerElement(t);
+		trainModelList.remove(0);
 	}
 	
 	public void update() throws EndGameException{
+		
 		if (time == 0){
 			createTrainRandom();
 			resetTimer();

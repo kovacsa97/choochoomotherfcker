@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import boardelements.*;
+import main.EndGameException;
 
 public class Board {
 	
@@ -57,7 +58,7 @@ public class Board {
 		toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
 	}	
 	
-	public void getNextTrain(){
+	public void getNextTrain() throws EndGameException{
 		for (EntryPoint ep: entryPointList.values()){
 			ep.getNextTrain();
 		}
@@ -71,5 +72,4 @@ public class Board {
 			st.setRandomness(r);
 		}
 	}
-	
 }
