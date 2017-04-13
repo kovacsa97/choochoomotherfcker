@@ -10,10 +10,10 @@
 	<rail id="r06" prevId="r05" nextId="r07" /> 
 	<rail id="r07" prevId="r04" nextId="r06" /> 	 
 </map> 
-<train id=”train1”>
-		<locomotive defDrivingForce=”1” /> 
-	<train/>
-	<train id=”train2”>
-		<locomotive defDrivingForce=”1” /> 
-	<train/> 
+<train id="train1">
+		<locomotive defDrivingForce="1" /> 
+	</train>
+	<train id="train2">
+		<locomotive defDrivingForce="1" /> 
+	</train> 
 </data>
