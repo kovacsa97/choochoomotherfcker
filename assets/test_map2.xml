@@ -1,6 +1,3 @@
-test_map2.xml
-
-
 <data>
 <map>
 	<entrypoint id="e01" nextid="r01" defWaitTime="100" timerId="0" /> 
@@ -13,10 +10,10 @@ test_map2.xml
 	<rail id="r06" prevId="r05" nextId="r07" /> 
 	<rail id="r07" prevId="r04" nextId="r06" /> 	 
 </map> 
-<train id=”train1”>
-		<locomotive defDrivingForce=”1” /> 
+<train id=â€train1â€>
+		<locomotive defDrivingForce=â€1â€ /> 
 	<train/>
-	<train id=”train2”>
-		<locomotive defDrivingForce=”1” /> 
+	<train id=â€train2â€>
+		<locomotive defDrivingForce=â€1â€ /> 
 	<train/> 
 </data>
