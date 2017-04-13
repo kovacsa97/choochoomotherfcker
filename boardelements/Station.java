@@ -38,7 +38,8 @@ public class Station extends BoardElement{
 
 	@Override
 	public String toString(){
-		return "Station";
+		return super.toString() + " " + color.toString() + " " + point;
 	}
+	
 
 }

@@ -8,11 +8,6 @@ public class Tunnel extends BoardElement {
 
 	}
 	
-	@Override
-	public String toString(){
-		return "Tunnel";
-	}
-	
 	public void destroy(){
 		if (next!=null) next.lock();
 		if (prev!=null) prev.lock();

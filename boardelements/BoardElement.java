@@ -76,7 +76,7 @@ public class BoardElement {
 	
 	@Override
 	public String toString(){
-		return "BoardElement";
+		return prev.getId() + " " + next.getId();
 	}
 
 	public String getId() {

@@ -136,6 +136,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	@Override
 	public String toString(){
-		return "EntryPoint";
+		return this.getId();
 	}
 }

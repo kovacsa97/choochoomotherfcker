@@ -10,11 +10,7 @@ public class TunnelOpportunity extends BoardElement{
 		locked = true;
 		//System.out.println("New TunnelOpportunity created with parameters of type int");
 	}
-	
-	@Override
-	public String toString(){
-		return "TunnelOpportunity";
-	}
+
 
 	@Override
 	public void enter(Train t) throws EndGameException {

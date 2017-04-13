@@ -36,7 +36,7 @@ public class Switch extends BoardElement{
 	
 	@Override
 	public String toString(){
-		return "Switch";
+		return super.toString() + " " + nextSecond.getId();
 	}
 
 }

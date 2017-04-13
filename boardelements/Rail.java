@@ -8,8 +8,4 @@ public class Rail extends BoardElement{
 
 	}
 	
-	@Override
-	public String toString(){
-		return "Rail";
-	}
 }
