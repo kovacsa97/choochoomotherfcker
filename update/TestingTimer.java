@@ -29,7 +29,7 @@ public class TestingTimer extends Timer {
 			int size = toUpdate.size();
 			for (int j=0; j<size; j++){
 				try {
-					toUpdate.get(i).update();
+					toUpdate.get(j).update();
 				} catch (EndGameException e) {
 					e.printStackTrace();
 				}

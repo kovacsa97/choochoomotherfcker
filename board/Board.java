@@ -49,7 +49,5 @@ public class Board {
 	
 	public void list(PrintStream ps, String type) {
 		
-	}
-	
-	
+	}	
 }
