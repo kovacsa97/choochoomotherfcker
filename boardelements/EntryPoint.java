@@ -139,6 +139,10 @@ public class EntryPoint extends BoardElement implements Updateable{
 		
 	}
 	
+	public void setRandomGeneration(boolean randomGeneration) {
+		this.randomGeneration = randomGeneration;
+	}
+
 	@Override
 	public String toString(){
 		return this.getId();

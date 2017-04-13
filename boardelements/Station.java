@@ -9,6 +9,8 @@ public class Station extends BoardElement{
 	private int point;
 	private int newPassengerCount;
 	private double newPassengerProbability;
+	private boolean randomness = true;
+	private boolean enablePassengers = false;
 	
 	public Station(int c, int length){
 		super(length);
@@ -27,7 +29,10 @@ public class Station extends BoardElement{
 		//System.out.println("POINTS: "+ point);
 		locked = true;
 		point += t.getPassengers(color);
-		t.passengerGetOn(this.color, this.newPassengerCount);
+		
+		if ((randomness && newPassengerProbability<Math.random()) || (!randomness && enablePassengers)){
+			t.passengerGetOn(this.color, this.newPassengerCount);
+		}
 		
 		//System.out.println("POINTS: "+ point);
 		//System.out.println("enter returned");
@@ -42,5 +47,12 @@ public class Station extends BoardElement{
 		return super.toString() + " " + color.toString() + " " + point;
 	}
 	
+	public void setRandomness(boolean r){
+		randomness = r;
+	}
+	
+	public void setPassengerGetOn(boolean s){
+		this.enablePassengers = s;
+	}
 
 }
