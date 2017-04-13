@@ -7,7 +7,7 @@
 	<rail id="r04" prevId="r03" nextId="r05" /> 
 	<rail id="r05" prevId="r04" nextId="st02" /> 
 	<rail id="r06" prevId="st02" nextId="r07" /> 
-	<rail id="r07" prevId="r06" nextId=null /> 
+	<rail id="r07" prevId="r06" nextId="null" /> 
 	<station id="st01" prevId="r02" nextId="r03" color="1" newPassengerCount="50" newPassengerProbability="1"/>
 	<station id="st02" prevId="r05" nextId="r06" color="1" newPassengerCount="0" newPassengerProbability="0"/>
 </map> 

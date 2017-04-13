@@ -8,7 +8,7 @@
 	<rail id="r05" prevId="r04" nextId="r06" /> 
 	<rail id="r06" prevId="r05" nextId="r07" /> 
 	<rail id="r07" prevId="r06" nextId="r08" /> 
-	<rail id="r08" prevId="r07" nextId=null />  	 
+	<rail id="r08" prevId="r07" nextId="null" />  	 
 </map> 
 	<train id="train1">
 		<locomotive defDrivingForce="1" /> 
