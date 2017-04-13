@@ -1,6 +1,7 @@
 package position;
 
 import boardelements.BoardElement;
+import main.EndGameException;
 
 /**
  * Pozíció osztály mely tárol egy pályaelemet és azon belüli helyzetet
@@ -30,7 +31,7 @@ public abstract class Position {
 	 * @return a következõ, vagy jelenlegi pályaelem
 	 * @throws Exception
 	 */
-	public abstract void move(int dist) throws Exception;
+	public abstract void move(int dist) throws EndGameException;
 	
 	@Override
 	public String toString(){
