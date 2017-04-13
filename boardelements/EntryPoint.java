@@ -118,6 +118,11 @@ public class EntryPoint extends BoardElement implements Updateable{
 
 	}
 	
+	public void getNextTrain(){
+		if (trainList.isEmpty()) return;
+		timer.registerElement(trainList.remove(0));
+	}
+	
 	public void update() throws EndGameException{
 		if (time == 0){
 			createTrainRandom();
