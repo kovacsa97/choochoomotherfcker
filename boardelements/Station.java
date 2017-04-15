@@ -20,10 +20,18 @@ public class Station extends BoardElement{
 	 * felszálló utasok száma
 	 */
 	private int newPassengerCount;
+	
+	public void setNewPassengerCount(int val){
+		newPassengerCount = val;
+	}
 	/**
 	 * utasok felszállásának valószínûsége
 	 */
 	private double newPassengerProbability;
+	
+	public void setNewPassengerProbability(double val){
+		newPassengerProbability = val;
+	}
 	/**
 	 * randomness
 	 */
