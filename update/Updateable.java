@@ -3,8 +3,8 @@ package update;
 import main.EndGameException;
 
 /**
- * Updateable interface
- *
+ * A játék önállóan mûködõ elemeit fogja össze, 
+ * a közös funkcionalitás - reagálás az idõ múlására - alapján. 
  */
 public interface Updateable {
 	/**

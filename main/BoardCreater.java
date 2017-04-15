@@ -7,7 +7,7 @@ import update.Timer;
 
 public class BoardCreater {
 	public static EntryPoint createBoard(Timer t){
-		EntryPoint ep = new EntryPoint(10000, 300, t);
+		EntryPoint ep = new EntryPoint(50, 300, t);
 		
 		Rail r1 = new Rail(40);
 		Rail r2 = new Rail(40);
