@@ -14,13 +14,14 @@ import javax.sound.sampled.Clip;
 import board.Board;
 import boardelements.*;
 import color.Color;
+import update.TestingTimer;
 import update.Timer;
 
 
 public class Main {	
 	public static void main(String args[]) {
 		Board b=null;
-		Timer t=new Timer();
+		TestingTimer t=new TestingTimer();
 		boolean exit=false;
 		PrintStream os=System.out;
 		
@@ -31,7 +32,7 @@ public class Main {
 			switch (cmdargs[0]) {
 			case "load-file":
 				// b=loadFile(cmdargs[1], t);
-				t=new Timer();
+				t=new TestingTimer();
 				break;
 			case "set-output":
 				if (cmdargs[1].equals("cls")) os=System.out;
@@ -44,10 +45,10 @@ public class Main {
 					}
 				break;
 			case "list":
-				// TODO
+				b.list(os, cmdargs[1]);
 				break;
 			case "step":
-				// TODO
+				t.step(Integer.parseInt(cmdargs[1]));
 				break;
 			case "enable-randomness":
 				// TODO
@@ -59,10 +60,10 @@ public class Main {
 				
 				break;
 			case "build-tunnel":
-				// TODO
+				b.buildTunnel(cmdargs[1], cmdargs[2]);
 				break;
 			case "destroy-tunnel":
-				// TODO
+				b.destroyTunnel();
 				break;
 			case "set-passenger-get-on":
 				// TODO
