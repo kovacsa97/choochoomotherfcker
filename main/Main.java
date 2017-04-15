@@ -51,13 +51,18 @@ public class Main {
 				t.step(Integer.parseInt(cmdargs[1]));
 				break;
 			case "enable-randomness":
-				// TODO
+				b.setRandomness(Boolean.getBoolean(cmdargs[1]));
 				break;
 			case "generate-next-train":
-				// TODO
+				try {
+					b.getNextTrain();
+				} catch (EndGameException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case "set-driving-force":
-				
+				// TODO
 				break;
 			case "build-tunnel":
 				b.buildTunnel(cmdargs[1], cmdargs[2]);
