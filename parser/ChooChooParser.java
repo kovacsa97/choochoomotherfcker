@@ -86,6 +86,7 @@ public class ChooChooParser {
 					}
         			//allBEs.put(b, element);
         			//allNodes.put(element, b);
+	        		
 	        	}
 	        }
 	        for(Map.Entry<BoardElement, Node> BE : allBEs.entrySet()){
