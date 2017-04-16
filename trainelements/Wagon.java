@@ -5,24 +5,24 @@ import java.util.List;
 import color.Color;
 
 /**
- * A vagont reprezentáló osztály
+ * A vagont reprezentï¿½lï¿½ osztï¿½ly
  */
 public class Wagon {
 	
 	/**
-	 * vagon tömegét reprezentáló attribútum
+	 * vagon tï¿½megï¿½t reprezentï¿½lï¿½ attribï¿½tum
 	 */
 	protected int weight;
 	/**
-	 * a vagonon lévõ utasok boldogságpontja
+	 * a vagonon lï¿½vï¿½ utasok boldogsï¿½gpontja
 	 */
 	protected int happinessOfPassengers;
 	/**
-	 * a vagonon lévõ utasok száma
+	 * a vagonon lï¿½vï¿½ utasok szï¿½ma
 	 */
 	protected int numberOfPassengers;
 	/**
-	 * vagon színe
+	 * vagon szï¿½ne
 	 */
 	protected Color color;
 	
@@ -30,7 +30,7 @@ public class Wagon {
 	 * @param weight
 	 * @param color
 	 * @param numPass
-	 * létrehoz egy vagont a megadott paraméterekkel(tömeg, szín, utasok száma)
+	 * lï¿½trehoz egy vagont a megadott paramï¿½terekkel(tï¿½meg, szï¿½n, utasok szï¿½ma)
 	 */
 	public Wagon(int weight, Color color, int numPass)
 	{
@@ -38,12 +38,12 @@ public class Wagon {
 		this.color = color;
 		this.weight = weight;
 		this.numberOfPassengers = numPass;
-		happinessOfPassengers = 1000;                   // Ki kéne találni mi legyen a kezdõérték
-														// Át lehetne adni konstruktorban és akkor változhat a nehézség és a kocsikért kapott pont			
+		happinessOfPassengers = 1000;                   // Ki kï¿½ne talï¿½lni mi legyen a kezdï¿½ï¿½rtï¿½k
+														// ï¿½t lehetne adni konstruktorban ï¿½s akkor vï¿½ltozhat a nehï¿½zsï¿½g ï¿½s a kocsikï¿½rt kapott pont			
 	}
 		
 	/**
-	 * @return vagon tömege
+	 * @return vagon tï¿½mege
 	 */
 	public int getWeight() 
 	{
@@ -51,15 +51,15 @@ public class Wagon {
 	}
 	
 	/**
-	 * @return vagon színe
+	 * @return vagon szï¿½ne
 	 */
 	public Color getColor(){
 		return color;
 	}
 	
 	/**
-	 * @return boldogságpont
-	 * leszállítja az utasokat, és visszatér a boldogságpontjukkal
+	 * @return boldogsï¿½gpont
+	 * leszï¿½llï¿½tja az utasokat, ï¿½s visszatï¿½r a boldogsï¿½gpontjukkal
 	 */
 	public int getPassengers(){
 		int numPass = numberOfPassengers;
@@ -68,14 +68,14 @@ public class Wagon {
 	}
 	
 	/**
-	 * minden ütemben csökkenti/növeli az utasok boldogságpontját
+	 * minden ï¿½temben csï¿½kkenti/nï¿½veli az utasok boldogsï¿½gpontjï¿½t
 	 */
 	public void handlePassengers(){
 		happinessOfPassengers--;
 	}
 	
 	/**
-	 * @return utasok száma
+	 * @return utasok szï¿½ma
 	 */
 	public int getNumberOfPassengers(){
 		return numberOfPassengers;
@@ -83,10 +83,18 @@ public class Wagon {
 	
 	/**
 	 * @param n
-	 * felszállít utasokat, megkapja a felszálló utasok számát
+	 * felszï¿½llï¿½t utasokat, megkapja a felszï¿½llï¿½ utasok szï¿½mï¿½t
 	 */
 	public void passengersGetOn(int n){
 		this.numberOfPassengers +=n;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder ret = new StringBuilder("wagon");
+		ret.append(" " + color);
+		ret.append(" " + numberOfPassengers);
+		return ret.toString();
 	}
 	
 }

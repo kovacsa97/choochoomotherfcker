@@ -121,7 +121,16 @@ public class Train implements Updateable {
 	//TODO
 	@Override
 	public String toString(){
-		return "Train";
+		StringBuilder ret = new StringBuilder("train");
+		ret.append(" " + id);
+		ret.append(" " + startPos);
+		ret.append(" " + endPos);
+		ret.append(" " + myWagons.size() + 1);
+		ret.append("\n\t\t" + myLocomotive.toString());
+		for(int i = 0; i < myWagons.size(); i++){
+			ret.append("\n\t\t" + myWagons.get(i).toString());
+		}
+		return ret.toString();
 	}
 
 }

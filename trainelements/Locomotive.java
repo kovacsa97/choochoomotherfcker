@@ -25,7 +25,7 @@ public class Locomotive {
 		double a = enginePower / weight - FRICTION*weight*10;	// a = F/m - Fs;
 		double v0 = a*0.002;									// v0 = a*t
 		//System.out.println("getExcursion returned");
-		return (int) (v0*0.02 + a / 2 * 0.002 * 0.002);			// s = v0 * t - a/2*t*t (idõ a képfrissítés)
+		return (int) (v0*0.02 + a / 2 * 0.002 * 0.002);			// s = v0 * t - a/2*t*t (idï¿½ a kï¿½pfrissï¿½tï¿½s)
 	}
 	
 	public void setWeight(int weight){
@@ -33,7 +33,9 @@ public class Locomotive {
 	}
 	@Override
 	public String toString(){
-		return "Locomotive";
+		StringBuilder ret = new StringBuilder("locomotive");
+		ret.append(" " + enginePower);
+		return ret.toString();
 	}
 	
 }
