@@ -1,6 +1,6 @@
 <data>
 <map>
-	<entrypoint id="e01" nextid="s01" defWaitTime="100" timerId="0" /> 	
+	<entrypoint id="e01" nextid="r01" defWaitTime="100" timerId="0" /> 	
 	<rail id="r01" prevId="e01" nextId="r02" /> 
 	<rail id="r02" prevId="r01" nextId="r03" /> 
 	<rail id="r03" prevId="r02" nextId="r04" /> 
