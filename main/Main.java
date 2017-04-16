@@ -19,7 +19,12 @@ import update.TestingTimer;
 import update.Timer;
 
 
-public class Main {	
+public class Main {
+	
+	/**
+	 * Main függvény, implementálja a menüt
+	 * @param args bemeneti paraméterek, nincs használatban
+	 */
 	public static void main(String args[]) {
 		Board b=null;
 		TestingTimer t=new TestingTimer();
@@ -81,7 +86,8 @@ public class Main {
 				b.destroyTunnel();
 				break;
 			case "set-passenger-get-on":
-				if (b!=null) ;
+				if (b!=null) 
+					;
 				break;
 			case "quit":
 				exit=true;

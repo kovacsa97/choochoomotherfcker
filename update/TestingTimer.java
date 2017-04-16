@@ -49,4 +49,9 @@ public class TestingTimer extends Timer {
 			ps.println(toUpdate.get(i).toString());
 	}
 	
+	public void setDrivingForce(String id, int force) {
+		for (int i=1;i<toUpdate.size();i++)
+			;
+	}
+	
 }
