@@ -136,5 +136,8 @@ public class Train implements Updateable {
 		}
 		return ret.toString();
 	}
-
+	
+	public void setDrivingForce(int drivingForce){
+		this.myLocomotive.setEnginePower(drivingForce);
+	}
 }
