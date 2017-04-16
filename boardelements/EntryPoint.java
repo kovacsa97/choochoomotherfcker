@@ -255,7 +255,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	public void setTimer(Timer t){
 		timer = t;
-		t.register(this);
+		t.registerElement(this);
 	}
 	
 	public boolean locked(){
