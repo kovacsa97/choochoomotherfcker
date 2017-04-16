@@ -140,7 +140,6 @@ public class ChooChooParser {
 	        			tm.type.add(trainElement.getNodeName());
 	        			tm.color.add(Integer.parseInt(trainElement.getAttributes().getNamedItem("color").getNodeValue()));
 	        			tm.passCount.add(Integer.parseInt(trainElement.getAttributes().getNamedItem("passengerCount").getNodeValue())); 
-	        			System.out.println(trainElement.getNodeName() + " " + trainElement.getAttributes().getNamedItem("color"));
 	        		}
 	        	}
 	        	entrypoint.addTrain(tm);
