@@ -4,6 +4,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import boardelements.*;
 import main.EndGameException;
@@ -62,7 +63,10 @@ public class Board {
 	}
 	
 	public void list(PrintStream ps, String type) {
-		toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
+		if (type.equals("train")) 
+			for  (Map.Entry<String, TunnelOpportunity> t : tunnelOpportunityList.entrySet())
+				ps.println(type);
+		else toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
 	}	
 	
 	public void getNextTrain() throws EndGameException{
