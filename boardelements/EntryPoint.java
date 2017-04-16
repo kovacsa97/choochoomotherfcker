@@ -253,12 +253,12 @@ public class EntryPoint extends BoardElement implements Updateable{
 		return next;
 	}
 	
+	/**
+	 * @param Timer
+	 * megkapja a timer-t és beállítja az entripointnak, majd beregisztrálja
+	 */
 	public void setTimer(Timer t){
 		timer = t;
 		t.registerElement(this);
-	}
-	
-	public boolean locked(){
-		return locked;
 	}
 }
