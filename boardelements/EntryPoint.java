@@ -259,13 +259,4 @@ public class EntryPoint extends BoardElement implements Updateable{
 	public boolean locked(){
 		return locked;
 	}
-
-	/* (non-Javadoc)
-	 * @see boardelements.BoardElement#toString()
-	 * kiirás teszteléshez
-	 */
-	@Override
-	public String toString(){
-		return "null " + next.getId();
-	}
 }
