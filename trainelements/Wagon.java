@@ -5,32 +5,33 @@ import java.util.List;
 import color.Color;
 
 /**
- * A vagont reprezent�l� oszt�ly
+ * A vagont reprezentalo osztaly
  */
+
 public class Wagon {
 	
 	/**
-	 * vagon t�meg�t reprezent�l� attrib�tum
+	 * wagon tomege
 	 */
 	protected int weight;
 	/**
-	 * a vagonon l�v� utasok boldogs�gpontja
+	 * a vagonon utazo utasok boldogsagpontja
 	 */
 	protected int happinessOfPassengers;
 	/**
-	 * a vagonon l�v� utasok sz�ma
+	 * a vagonon utazo utasok szama
 	 */
 	protected int numberOfPassengers;
 	/**
-	 * vagon sz�ne
+	 * vagon szine
 	 */
 	protected Color color;
 	
 	/**
-	 * @param weight
-	 * @param color
-	 * @param numPass
-	 * l�trehoz egy vagont a megadott param�terekkel(t�meg, sz�n, utasok sz�ma)
+	 * Letrehoz egy vagont a megadott parameterekkel
+	 * @param weight: wagon tomege
+	 * @param color: wagon szine
+	 * @param numPass: utasok szama
 	 */
 	public Wagon(int weight, Color color, int numPass)
 	{
@@ -38,12 +39,12 @@ public class Wagon {
 		this.color = color;
 		this.weight = weight;
 		this.numberOfPassengers = numPass;
-		happinessOfPassengers = 1000;                   // Ki k�ne tal�lni mi legyen a kezd��rt�k
-														// �t lehetne adni konstruktorban �s akkor v�ltozhat a neh�zs�g �s a kocsik�rt kapott pont			
+		happinessOfPassengers = 1000;                  			
 	}
 		
 	/**
-	 * @return vagon t�mege
+	 * Wagon tomeget visszaado metodus
+	 * @return wight: tomeg
 	 */
 	public int getWeight() 
 	{
@@ -51,15 +52,16 @@ public class Wagon {
 	}
 	
 	/**
-	 * @return vagon sz�ne
+	 * Wagon szinet visszaado metodus
+	 * @return color: wagon szine
 	 */
 	public Color getColor(){
 		return color;
 	}
 	
 	/**
-	 * @return boldogs�gpont
-	 * lesz�ll�tja az utasokat, �s visszat�r a boldogs�gpontjukkal
+	 * Leszallitja az utasokat,visszater a boldogsagpontjukkal
+	 * @return int: boldogsagpont
 	 */
 	public int getPassengers(){
 		int numPass = numberOfPassengers;
@@ -68,27 +70,33 @@ public class Wagon {
 	}
 	
 	/**
-	 * minden �temben cs�kkenti/n�veli az utasok boldogs�gpontj�t
+	 * Minden utemben csokkenti az utasok boldogsagpontjait
 	 */
 	public void handlePassengers(){
 		happinessOfPassengers--;
 	}
 	
 	/**
-	 * @return utasok sz�ma
+	 * Utasok szamaval visszatero metodus
+	 * @return numberofPassengers: utasok szama
 	 */
 	public int getNumberOfPassengers(){
 		return numberOfPassengers;
 	}
 	
 	/**
-	 * @param n
-	 * felsz�ll�t utasokat, megkapja a felsz�ll� utasok sz�m�t
+	 * Felszallitja az utasokat
+	 * @param n: felszallo utasok szama
 	 */
 	public void passengersGetOn(int n){
 		this.numberOfPassengers +=n;
 	}
-
+	
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 * toString feluldefinialasa
+	 */
 	@Override
 	public String toString() {
 		StringBuilder ret = new StringBuilder("wagon");

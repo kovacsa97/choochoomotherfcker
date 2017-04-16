@@ -3,15 +3,15 @@ package trainelements;
 import color.Color;
 
 /**
- *speciális vagon, melyen nõ az utasok boldogságpontja az idõ elteltével
+ *Specialis vagon, melyen no az utasok boldogsagpontja az ido elteltevel
  */
 public class LoveWagon extends Wagon{
 
 	/**
-	 * @param weight
-	 * @param color
-	 * @param numPass
-	 * konstruktor
+	 * konstruktor, mely letrehoz egy LoveWagont adott parameterekkel
+	 * @param weight: wagon tomege
+	 * @param color: wagon szine
+	 * @param numPass: utasok szama
 	 */
 	public LoveWagon(int weight, Color color, int numPass) {
 		super(weight, color, numPass);
@@ -20,7 +20,7 @@ public class LoveWagon extends Wagon{
 	
 	/* (non-Javadoc)
 	 * @see trainelements.Wagon#handlePassengers()
-	 * növeli az utasok boldogságpontját
+	 * noveli az utasok boldogsagpontjat
 	 */
 	@Override
 	public void handlePassengers(){

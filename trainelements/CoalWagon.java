@@ -8,8 +8,8 @@ import color.Color;
 public class CoalWagon extends Wagon{
 
 	/**
-	 * @param weight
-	 * konstruktor, weight-el és szürke színnel meghívja a Wagon konstruktorát
+	 * konstruktor, weight-el és szurke szinnel meghivja a Wagon konstruktorat
+	 * @param weight: wagon tomege
 	 */
 	public CoalWagon(int weight) {
 		super(weight, Color.GRAY, 0);
@@ -18,7 +18,7 @@ public class CoalWagon extends Wagon{
 	
 	/* (non-Javadoc)
 	 * @see trainelements.Wagon#handlePassengers()
-	 * Nem csinál semmit utasok híján
+	 * Nem csinal semmit utasok hijan
 	 */
 	@Override
 	public void handlePassengers(){
@@ -27,7 +27,7 @@ public class CoalWagon extends Wagon{
 	
 	/* (non-Javadoc)
 	 * @see trainelements.Wagon#getPassengers()
-	 * 0 utasssal tér vissza
+	 * 0 utasssal ter vissza
 	 */
 	@Override
 	public int getPassengers(){
@@ -36,7 +36,7 @@ public class CoalWagon extends Wagon{
 	
 	/* (non-Javadoc)
 	 * @see trainelements.Wagon#passengersGetOn(int)
-	 * Nem csinál semmit utasok híján
+	 * Nem csinal semmit utasok hijan
 	 */
 	@Override
 	public void passengersGetOn(int n){

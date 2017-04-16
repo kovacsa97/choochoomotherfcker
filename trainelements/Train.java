@@ -11,23 +11,25 @@ import update.Timer;
 import update.Updateable;
 
 /**
- * A vonatot reprezentáló osztály
+ * A vonatot reprezentalo osztaly
  */
+
+
 public class Train implements Updateable {
 	/**
-	 * A vonathoz tartozó vagonok listája
+	 * A vonathoz tartozo wagonok listaja
 	 */
 	private List<Wagon> myWagons;
 	/**
-	 * A vonathoz tartozó mozdony
+	 * A vonathoz tartozo mozdony
 	 */
 	private Locomotive myLocomotive;
 	/**
-	 * A vonat elejét reprezentáló paraméter
+	 * A vonat elejet reprezentalo parameter
 	 */
 	private StartPos startPos;
 	/**
-	 * A vonat végét reprezentáló paraméter
+	 * A vonat veget reprezentalo parameter
 	 */
 	private EndPos endPos;
 	/**
@@ -36,12 +38,11 @@ public class Train implements Updateable {
 	private String id;
 	
 	/**
-	 * @param wagons
-	 * @param loc
-	 * @param ep
+	 * Konstruktor mely letrehoz egy vonatot adott parameterekkel
+	 * @param wagons: vonathoz tartozo wagonok
+	 * @param loc: vonathoz tartozo mozdony
+	 * @param ep: a vonat kezdo palyaeleme (belepesi pont)
 	 * @throws EndGameException
-	 * vagonokat, egy mozdonyt kap, 
-	 * valamint a kezdő pályaelemét, mellyel a kező- és végpozícióját állítja be
 	 */
 	public Train(List<Wagon> wagons, Locomotive loc, EntryPoint ep) throws EndGameException{
 		//System.out.println("New Train created with parameters of type List<Wagon>, " + loc.toString() + " " + ep.toString());
@@ -55,10 +56,9 @@ public class Train implements Updateable {
 	}
 	
 	/**
-	 * @param c
-	 * @return
-	 * utasokat leszállító függvény, egy színt kap, 
-	 * mely alapján kiválasztja a megfelelő vagont, melyről leszállhatnak az utasok
+	 * Utasokat leszallito fuggveny 
+	 * @param c: allomas szine ahova avonat erkezett
+	 * @return int: wagonokon utazo utasok 
 	 */
 	public int getPassengers(Color c){
 		int i = 0;
@@ -75,10 +75,9 @@ public class Train implements Updateable {
 	}
 	
 	/**
-	 * @param c
-	 * @param n
-	 * Utasokat felszállító függvény, mely megkapja egy egész számban, 
-	 * hogy hány utas száll fel, valamint egy színt, hogy melyik vonatra szállhatnak fel
+	 * Utasokat felszallito fuggveny
+	 * @param c: az allomas szine ahova a vonat erkezett
+	 * @param n: felszallo utasok szama
 	 */
 	public void passengerGetOn(Color c, int n){
 		//System.out.println("getPassengers was called inside class Train with parameters of type Color");
@@ -95,7 +94,7 @@ public class Train implements Updateable {
 
 	/* (non-Javadoc)
 	 * @see update.Updateable#update()
-	 * A vonat változásait kezelő függvény: mozgás és utaspontszám ciklusonkénti változását kezeli.
+	 * A vonat valtozassait kezelo fuggveny
 	 */
 	@Override
 	public void update() throws EndGameException {
@@ -108,21 +107,26 @@ public class Train implements Updateable {
 	}
 	
 	/**
-	 * @return a vonat id-je
+	 * Id visszaado fuggveny
+	 * @return id: a vonat azonositoja
 	 */
 	public String getId() {
 		return id;
 	}
 
 	/**
-	 * @param id
-	 * Vonat id-jét beállítja
+	 * Vonat azonositojat beallitja
+	 * @param id: vonat azonositoja
 	 */
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	//TODO
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 * toString metodus feluldefinialasa
+	 */
 	@Override
 	public String toString(){
 		StringBuilder ret = new StringBuilder("train");
@@ -137,6 +141,10 @@ public class Train implements Updateable {
 		return ret.toString();
 	}
 	
+	/**
+	 * Huzoerot beallito fuggveny
+	 *@param drivingForce: huzoero nagysaga
+	 */
 	public void setDrivingForce(int drivingForce){
 		this.myLocomotive.setEnginePower(drivingForce);
 	}
