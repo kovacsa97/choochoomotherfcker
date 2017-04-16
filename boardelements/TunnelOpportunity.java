@@ -4,13 +4,13 @@ import main.EndGameException;
 import trainelements.Train;
 
 /**
- * Az alagutak végpontjait reprezentáló osztály
+ * Az alagutak vegpontjait reprezentalo osztaly
  */
 public class TunnelOpportunity extends BoardElement{
 	
 	/**
-	 * @param length
-	 * length hosszal meghívja a BoardElement konstruktorát.
+	 * length hosszal meghivja a BoardElement konstruktorat.
+	 * @param length: palyaelem hossza
 	 */
 	public TunnelOpportunity(int length) {
 		super(length);
@@ -21,7 +21,7 @@ public class TunnelOpportunity extends BoardElement{
 
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#enter(trainelements.Train)
-	 * Ha az egyik vége null véget vet a játéknak, ha nincs, lockolja.
+	 * Ha az egyik vege null veget vet a jateknak, ha nincs, lockolja.
 	 */
 	@Override
 	public void enter(Train t) throws EndGameException {

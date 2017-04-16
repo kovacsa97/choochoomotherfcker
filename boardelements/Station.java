@@ -4,48 +4,39 @@ import color.Color;
 import trainelements.Train;
 
 /**
- * A megállót reprezentáló osztály
+ * A megallot reprezentalo osztaly
  */
 public class Station extends BoardElement{
 	
 	/**
-	 * Állomás színe
+	 * Allomas szine
 	 */
 	private Color color;
 	/**
-	 * játékos pontjait tárolja az állomáson
+	 * Jatekos pontjait tarolja az allomason
 	 */
 	private int point;
 	/**
-	 * felszálló utasok száma
+	 * Felszallo utasok szama
 	 */
 	private int newPassengerCount;
-	
-	//TODO COMMENT
-	public void setNewPassengerCount(int val){
-		newPassengerCount = val;
-	}
 	/**
-	 * utasok felszállásának valószínûsége
+	 * Utasok felszallasanak valoszinusege
 	 */
 	private double newPassengerProbability = 0.5;
-	//TODO COMMENT
-	public void setNewPassengerProbability(double val){
-		newPassengerProbability = val;
-	}
 	/**
-	 * randomness
+	 * Utasok felszallasa random tortenik-e
 	 */
 	private boolean randomness = true;
 	/**
-	 * utasok elérhetõek-e
+	 * Utasok felszallasa engedelyezett-e
 	 */
 	private boolean enablePassengers = false;
 	
 	/**
-	 * @param c
-	 * @param length
-	 * létrehoz egy állomást adott színnel.
+	 * Letrehoz egy allomast adott szinnel.
+	 * @param c: allomas szine
+	 * @param length: allomas hossza
 	 */
 	public Station(int c, int length){
 		super(length);
@@ -55,7 +46,7 @@ public class Station extends BoardElement{
 	}
 	
 	/**
-	 * @return állomáson összegyûjtött pontszámot adja vissza
+	 * @return Allomason osszegyujtott pontszamot adja vissza
 	 */
 	public int getAllPoints(){
 		return point;
@@ -63,26 +54,22 @@ public class Station extends BoardElement{
 	
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#enter(trainelements.Train)
-	 * Meghívja a kapott vonat getPassengers() függvényét és a kapott int-et a pontjaihoz adja, 
-	 * ezzel megvalósítva a leszállást. 
+	 * Meghivja a kapott vonat getPassengers() fuggvenyet es a kapott int-et a pontjaihoz adja, 
+	 * ezzel megvalositva a leszallast. 
 	 */
 	@Override
 	public void enter(Train t) {
-		//System.out.println("enter was called inside class Station with parameters of type " + t.toString());
-		//System.out.println("POINTS: "+ point);
 		locked = true;
 		point += t.getPassengers(color);
 		
 		if ((randomness && newPassengerProbability<Math.random()) || (!randomness && enablePassengers)){
 			t.passengerGetOn(this.color, this.newPassengerCount);
 		}
-		
-		//System.out.println("POINTS: "+ point);
-		//System.out.println("enter returned");
 	} 
 	
 	/**
-	 * @return állomásról felszálló utasok száma
+	 * A felszallo utasok szamat adja vissza
+	 * @return ánewPassengerCount: allomasrol felszallo utasok szama
 	 */
 	public int getCount() {
 		return newPassengerCount;
@@ -90,7 +77,7 @@ public class Station extends BoardElement{
 
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#toString()
-	 * kiirás teszteléshez
+	 * Kiiras tesztelesehez
 	 */
 	@Override
 	public String toString(){
@@ -98,18 +85,34 @@ public class Station extends BoardElement{
 	}
 	
 	/**
-	 * @param r
-	 * randomness beállítása
+	 * randomness beallitasa
+	 * @param r: igaz/hamis ertek
 	 */
 	public void setRandomness(boolean r){
 		randomness = r;
 	}
 	
 	/**
-	 * @param s
-	 * enablePassengers beállítása
+	 * enablePassengers beallitasa
+	 * @param s: igaz/hamis ertek
 	 */
 	public void setPassengerGetOn(boolean s){
 		this.enablePassengers = s;
+	}
+	
+	/**
+	 * Felszallo utasok szamanak beallitasa
+	 * @param val: felszallo utasok szama
+	 */
+	public void setNewPassengerCount(int val){
+		newPassengerCount = val;
+	}
+	
+	/**
+	 * Utasok felszallasanak valoszinuseget allito fuggveny
+	 * @param val: valoszinusege a felszallasnak
+	 */
+	public void setNewPassengerProbability(double val){
+		newPassengerProbability = val;
 	}
 }

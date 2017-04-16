@@ -234,8 +234,8 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	/**
-	 * @param randomGeneration
 	 * Beallitja a random generator erteket
+	 * @param randomGeneration: randomgeneracio erteke
 	 */
 	public void setRandomGeneration(boolean randomGeneration) {
 		this.randomGeneration = randomGeneration;
@@ -255,7 +255,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/**
 	 * Megkapja a timer-t es beallitja az entripointnak, majd beregisztralja
-	 * @param Timer
+	 * @param Timer: beallitando Timer
 	 */
 	public void setTimer(Timer t){
 		timer = t;

@@ -3,42 +3,41 @@ package boardelements;
 import main.EndGameException;
 
 /**
- *Váltó, a hozzá csatlakozó két BoardElement közül az egyik felé továbbítja 
- *a rá érkezõ vonatot
+ *Valto, a hozza csatlakozo ket BoardElement kozul az egyik fele tovabbitja 
+ *a ra erkezo vonatot
  *
  */
 public class Switch extends BoardElement{
 	
 	/**
-	 * Pályaelem, melyre eltérítheti a vonatot az eredeti útvonal helyett
+	 * Palyaelem, melyre elteritheti a vonatot az eredeti utvonal helyett
 	 */
 	private BoardElement nextSecond;
 	/**
-	 * a vonat irányát határozza meg a két kijárat közül.
+	 * A vonat iranyat hatarozza meg a ket kijarat kozul.
 	 */
 	private boolean nextActive;
 
 	/**
-	 * @param length
-	 * konstruktor, length hosszal létrehoz egy váltót
+	 * Konstruktor, length hosszal letrehoz egy valtot
+	 * @param length: a palyaelem hossza
 	 */
 	public Switch(int length) {
 		super(length);
-		//System.out.println("New Switch created with parameters of int");
 		nextActive = true;
 
 	}
 	
 	/**
-	 * @param b
-	 * váltóhoz az eredeti útvonalhoz képest másik, b kijáratot adó metódus
+	 * Valtohoz az eredeti utvonalhoz kepest masik kijaratot ado metodus
+	 * @param b: masik kijarat
 	 */
 	public void addExit(BoardElement b){
 		nextSecond = b  ;
 	}
 	
 	/**
-	 * váltó irányát változtatja
+	 * Valto iranyat valtoztatja
 	 */
 	public void changeDir(){
 		if (nextActive == true)
@@ -62,7 +61,7 @@ public class Switch extends BoardElement{
 	
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#toString()
-	 * Kiirás teszthez
+	 * Kiiras teszthez
 	 */
 	@Override
 	public String toString(){

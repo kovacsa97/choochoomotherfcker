@@ -1,23 +1,21 @@
 package boardelements;
 
 /**
- * Két TunnelOpportunityt összekötõ pályaelem
+ * Ket TunnelOpportunityt osszekoto palyaelem
  *
  */
 public class Tunnel extends BoardElement {
 
 	/**
-	 * @param length
-	 * Length hosszal meghívja a BoardElement konstruktorát
+	 * Length hosszal mehivja a BoardElement konstruktorat
+	 * @param length: palyaelem hossza
 	 */
 	public Tunnel(int length) {
 		super(length);
-		//System.out.println("New Tunnel created with parameters of type int");
-
 	}
 	
 	/**
-	 * Lerombol egy meglévõ alagutat
+	 * Lerombol egy meglevo alagutat
 	 */
 	public void destroy(){
 		if (next!=null) next.lock();
@@ -26,17 +24,15 @@ public class Tunnel extends BoardElement {
 	
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#setEnds(boardelements.BoardElement, boardelements.BoardElement)
-	 * Végpontok beállítása.
+	 * Vegpontok beallitasa.
 	 */
 	@Override
 	public void setEnds(BoardElement p, BoardElement n){
-		//System.out.println("setEnds was called inside class Tunnel with parameters of type " + p.toString() + ", "+ n.toString());
 		destroy();
 		next = n;
 		n.unlock();
 		prev = p;
 		p.unlock();
-		//System.out.println("setEnds returned");
 	}
 
 }
