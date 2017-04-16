@@ -254,6 +254,11 @@ public class EntryPoint extends BoardElement implements Updateable{
 			throw new EndGameException();
 		return next;
 	}
+	
+	@Override
+	public boolean locked(){
+		return locked;
+	}
 
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#toString()

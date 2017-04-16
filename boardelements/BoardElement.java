@@ -56,6 +56,7 @@ public class BoardElement {
 	public boolean isOccupied(){
 		//System.out.println("isOccupied was called inside class BoardElement");
 		//System.out.println("isOccupied returned boolean");
+		if (prev == null || next == null) return true;
 		return locked;
 	}
 	
