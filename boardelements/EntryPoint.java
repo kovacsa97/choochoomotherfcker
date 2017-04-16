@@ -192,6 +192,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 			Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
 			Train t = new Train(null, loc, this);
 			timer.registerElement(t);
+			t.setId(trainModelList.get(0).id);
 			trainModelList.remove(0);
 			return;
 		}
@@ -202,6 +203,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
 		Train t = new Train(wagonList, loc, this);
 		timer.registerElement(t);
+		t.setId(trainModelList.get(0).id);
 		trainModelList.remove(0);
 	}
 	
