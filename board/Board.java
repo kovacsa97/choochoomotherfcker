@@ -8,6 +8,7 @@ import java.util.Map;
 
 import boardelements.*;
 import main.EndGameException;
+import update.Timer;
 
 public class Board {
 	
@@ -83,6 +84,12 @@ public class Board {
 		}
 		for (Station st: stationList.values()){
 			st.setRandomness(r);
+		}
+	}
+	
+	public void setAllTimers(Timer t) {
+		for (EntryPoint ep: entryPointList.values()){
+			ep.setTimer(t);
 		}
 	}
 }
