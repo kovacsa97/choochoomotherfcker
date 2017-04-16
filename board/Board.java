@@ -81,7 +81,13 @@ public class Board {
 		}
 		for (Station st: stationList.values()){
 			st.setRandomness(r);
-			st.setPassengerGetOn(r);
+			
+		}
+	}
+	
+	public void setPassengerGetOn(boolean r){
+		for (Station st: stationList.values()){
+			st.setPassengerGetOn(r);			
 		}
 	}
 	
