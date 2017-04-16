@@ -11,6 +11,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import board.Board;
 import boardelements.BoardElement;
 import boardelements.CrossingRail;
 import boardelements.EntryPoint;
@@ -20,10 +21,10 @@ import boardelements.Switch;
 import boardelements.Tunnel;
 import boardelements.TunnelOpportunity;
 import trainelements.TrainModel;
+import update.Timer;
 
 public class ChooChooParser {
-	HashMap<BoardElement, Node> allBEs = new HashMap<BoardElement, Node>();
-	HashMap<Node, BoardElement> allNodes = new HashMap<Node, BoardElement>();
+	HashMap<String, BoardElement> id_to_BE = new HashMap<String, BoardElement>();
 	HashMap<String, Rail> rails = new HashMap<String, Rail>(); 
 	HashMap<String, TunnelOpportunity> tunnelopps = new HashMap<String, TunnelOpportunity>();
 	HashMap<String, Station> stations = new HashMap<String, Station>();
@@ -31,7 +32,7 @@ public class ChooChooParser {
 	EntryPoint entrypoint;
 	Tunnel tunnel;
 	
-	public void parse(String filename){
+	public Board parse(String filename){
 		try{
 			File inputFile = new File(filename);
 	        DocumentBuilderFactory dbFactory 
@@ -42,7 +43,7 @@ public class ChooChooParser {
 	        Node map = doc.getElementsByTagName("map").item(0);
 	        for(Node element = map.getFirstChild(); element != null; element = element.getNextSibling()){
 	        	if (element.getNodeType() == Node.ELEMENT_NODE) {
-	        		BoardElement b;
+	        		BoardElement b = null;
 	        		String id = element.getAttributes().getNamedItem("id").getNodeValue();
 	        		if(element.getNodeName().equals("rail")){
 	        			Rail r = new Rail(20);
@@ -75,7 +76,7 @@ public class ChooChooParser {
 						rails.put(id, new CrossingRail(20));
 					}
 					else if(element.getNodeName().equals("entrypoint")){
-						entrypoint = new EntryPoint(Integer.parseInt(element.getAttributes().getNamedItem("defWaitTime").getNodeValue()), 20, null /*SCARY!!!*/);
+						entrypoint = new EntryPoint(Integer.parseInt(element.getAttributes().getNamedItem("defWaitTime").getNodeValue()), 20, new Timer() /*SCARY!!!*/);
 						entrypoint.setId(id);
 						b = entrypoint;
 					}
@@ -84,26 +85,46 @@ public class ChooChooParser {
 						tunnel.setId(id);
 						b = tunnel;
 					}
-        			//allBEs.put(b, element);
-        			//allNodes.put(element, b);
-	        		
+	        		if(b == null)
+	        			throw new Exception("Invalid BoardElement");
+        			id_to_BE.put(id, b);
 	        	}
 	        }
-	        for(Map.Entry<BoardElement, Node> BE : allBEs.entrySet()){
-	        	//BE.getKey().setEnds(BE.getValue().getAttributes().getNamedItem("prevId"), BE.getValue().getAttributes().getNamedItem("nextId"));
-	        }
-	        /*for(Map.Entry<String, TunnelOpportunity> entry : tunnelopps.entrySet()){
-	        	System.out.println(entry.getKey() + " "  + entry.getValue());
-	        }
-	        for(Map.Entry<String, Station> entry : stations.entrySet()){
-	        	System.out.println(entry.getKey() + " "  + entry.getValue());
-	        }
-	        for(Map.Entry<String, Switch> entry : switches.entrySet()){
-	        	System.out.println(entry.getKey() + " "  + entry.getValue());
-	        }
-	        System.out.println(entrypoint);
-	        System.out.println(tunnel);*/
-	        
+	        for(Node element = map.getFirstChild(); element != null; element = element.getNextSibling()){
+	        	if (element.getNodeType() == Node.ELEMENT_NODE) {
+	        		String id = element.getAttributes().getNamedItem("id").getNodeValue();
+	        		if(element.getNodeName().equals("rail")){
+	        			Rail r = rails.get(id);
+	        			r.setEnds(id_to_BE.get(element.getAttributes().getNamedItem("prevId").getNodeValue()), id_to_BE.get(element.getAttributes().getNamedItem("nextId").getNodeValue()));
+	        		}
+	        		else if(element.getNodeName().equals("tunnelopp")){
+	        			TunnelOpportunity t = tunnelopps.get(id);
+	        			t.setEnds(id_to_BE.get(element.getAttributes().getNamedItem("inId").getNodeValue()), id_to_BE.get(element.getAttributes().getNamedItem("outId").getNodeValue()));
+	        		}
+	        		else if(element.getNodeName().equals("station")){
+	        			Station s = stations.get(id);
+	        			s.setEnds(id_to_BE.get(element.getAttributes().getNamedItem("prevId").getNodeValue()), id_to_BE.get(element.getAttributes().getNamedItem("nextId").getNodeValue()));
+	        			s.setNewPassengerCount(Integer.parseInt(element.getAttributes().getNamedItem("newPassengerCount").getNodeValue()));
+	        			s.setNewPassengerProbability(Double.parseDouble(element.getAttributes().getNamedItem("newPassengerProbability").getNodeValue()));
+	        		}
+					else if(element.getNodeName().equals("switch")){
+						Switch s = switches.get(id);
+						s.setEnds(id_to_BE.get(element.getAttributes().getNamedItem("inId").getNodeValue()), id_to_BE.get(element.getAttributes().getNamedItem("currentOutId").getNodeValue()));
+						s.addExit(id_to_BE.get(element.getAttributes().getNamedItem("otherOutId").getNodeValue()));
+					}
+					else if(element.getNodeName().equals("crossingrail")){
+						CrossingRail cr = (CrossingRail) rails.get(id);
+						cr.setEnds(id_to_BE.get(element.getAttributes().getNamedItem("prevId").getNodeValue()), id_to_BE.get(element.getAttributes().getNamedItem("nextId").getNodeValue()));
+						cr.setOtherRail(rails.get(element.getAttributes().getNamedItem("otherRailId").getNodeValue()));
+					}
+					else if(element.getNodeName().equals("entrypoint")){
+						entrypoint.setEnds(null, id_to_BE.get(element.getAttributes().getNamedItem("nextid").getNodeValue()));
+					}
+					else if(element.getNodeName().equals("tunnel")){						
+						tunnel.setEnds(id_to_BE.get(element.getAttributes().getNamedItem("defInId").getNodeValue()), id_to_BE.get(element.getAttributes().getNamedItem("defOutId").getNodeValue()));
+					}
+	        	}
+	        }	        
 	        NodeList trains = doc.getElementsByTagName("train");
 	        for(Node train = trains.item(0); train != null; train = train.getNextSibling()){
 	        	NodeList trainElements = train.getChildNodes();
@@ -123,9 +144,12 @@ public class ChooChooParser {
 	        	}
 	        	entrypoint.addTrain(tm);
 	        }
-		} catch(Exception e){
+	    } catch(Exception e){
 			e.printStackTrace();
 			System.out.println("PARSER ERROR!!!!!!!!!!!!!!!!!! - szoljatok az Adamnak (a szebbnek)");
 		}
+		HashMap<String, EntryPoint> tmp = new HashMap<String, EntryPoint>();
+        tmp.put(entrypoint.getId(), entrypoint);
+        return new Board(stations, switches, tunnelopps, rails, tmp, tunnel);
 	}
 }
