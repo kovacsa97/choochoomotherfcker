@@ -33,7 +33,7 @@ public abstract class Position {
 
 	@Override
 	public String toString() {
-		return CurrentBE.toString();
+		return CurrentBE.getId();
 	}
 	
 }
