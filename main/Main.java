@@ -60,7 +60,11 @@ public class Main {
 				break;
 			case "step":
 				if (b!=null)
-				t.step(Integer.parseInt(cmdargs[1]));
+				try {
+					t.step(Integer.parseInt(cmdargs[1]));
+				} catch (EndGameException e) {
+					os.println("crash!!!");
+				}
 				break;
 			case "enable-randomness":
 				if (b!=null)
