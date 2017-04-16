@@ -64,7 +64,7 @@ public class Board {
 	
 	public void list(PrintStream ps, String type) {
 		if (type.equals("train")) 
-			for  (Map.Entry<String, TunnelOpportunity> t : tunnelOpportunityList.entrySet())
+			for  (TunnelOpportunity t : tunnelOpportunityList.values())
 				ps.println(type);
 		else toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
 	}	
