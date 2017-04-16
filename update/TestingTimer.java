@@ -1,7 +1,7 @@
 package update;
 
 import java.io.PrintStream;
-
+import trainelements.Train;
 import main.EndGameException;
 
 /**
@@ -50,8 +50,10 @@ public class TestingTimer extends Timer {
 	}
 	
 	public void setDrivingForce(String id, int force) {
-		for (int i=1;i<toUpdate.size();i++)
-			;
+		for (int i=1;i<toUpdate.size();i++) {
+			Train t=(Train)(toUpdate.get(i));
+			if (t.getId().equals(id)) t.setDrivingForce(force);
+		}
 	}
 	
 }
