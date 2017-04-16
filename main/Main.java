@@ -61,8 +61,7 @@ public class Main {
 				try {
 					b.getNextTrain();
 				} catch (EndGameException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					os.println("crash!!!");
 				}
 				break;
 			case "set-driving-force":
