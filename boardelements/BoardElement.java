@@ -136,6 +136,13 @@ public class BoardElement {
 	 */
 	@Override
 	public String toString(){
+		if (prev == null){
+			return "null " + next.getId();
+		}
+		
+		if (next == null){
+			return prev.getId() + " null";
+		}
 		return prev.getId() + " " + next.getId();
 	}
 
