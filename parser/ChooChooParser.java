@@ -1,6 +1,7 @@
 package parser;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -144,7 +145,10 @@ public class ChooChooParser {
 	        	}
 	        	entrypoint.addTrain(tm);
 	        }
-	    } catch(Exception e){
+	    } catch(FileNotFoundException f){
+	    	System.out.println("Invalid File Path. try assets/*");
+	    	return null;
+	    }catch(Exception e){
 			e.printStackTrace();
 			System.out.println("PARSER ERROR!!!!!!!!!!!!!!!!!! - szoljatok az Adamnak (a szebbnek)");
 		}
