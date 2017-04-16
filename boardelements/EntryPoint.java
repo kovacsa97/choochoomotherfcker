@@ -170,7 +170,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 		loc.setWeight(wagonList.size()*WAGONWEIGHT);
 		Train train = new Train(createWagonList(), loc, this);
 		timer.registerElement(train);
-
 	}
 	
 	/**
