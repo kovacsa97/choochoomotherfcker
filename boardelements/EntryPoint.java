@@ -117,10 +117,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 		trainModelList.add(tm);
 	}
 
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
 	/**
 	 * @return
 	 * @throws EndGameException
@@ -177,9 +173,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 
 	}
 	
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
 	/**
 	 * Újraindítja a saját idõzítõjét
 	 */
@@ -195,6 +188,12 @@ public class EntryPoint extends BoardElement implements Updateable{
 	 */
 	public void getNextTrain() throws EndGameException{
 		List<Wagon> wagonList = new ArrayList<Wagon>();
+		if(trainModelList.get(0).countOfWagons == 0){
+			Train t = new Train(wagonList, loc, this);
+			timer.registerElement(t);
+			trainModelList.remove(0);
+			return;
+		}
 		for (int i=0; i<trainModelList.get(0).countOfWagons; i++){
 			Wagon w = createWagon(trainModelList.get(0).color.get(i), trainModelList.get(0).passCount.get(i), trainModelList.get(0).type.get(i));
 			wagonList.add(w);
