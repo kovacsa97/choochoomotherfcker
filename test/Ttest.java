@@ -215,8 +215,10 @@ public class Ttest {
 			e.printStackTrace();
 		}
 		finally {
-			expectedInputScanner.close();
-			actualInputScanner.close();
+			if(expectedInputScanner != null)
+				expectedInputScanner.close();
+			if(actualInputScanner != null)
+				actualInputScanner.close();
 		}
 	}
 
