@@ -255,7 +255,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		return next;
 	}
 	
-	@Override
+	
 	public boolean locked(){
 		return locked;
 	}
