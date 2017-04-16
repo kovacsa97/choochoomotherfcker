@@ -189,6 +189,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	public void getNextTrain() throws EndGameException{
 		List<Wagon> wagonList = new ArrayList<Wagon>();
 		if(trainModelList.get(0).countOfWagons == 0){
+			Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
 			Train t = new Train(null, loc, this);
 			timer.registerElement(t);
 			trainModelList.remove(0);
