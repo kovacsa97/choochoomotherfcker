@@ -1,5 +1,7 @@
 package update;
 
+import java.io.PrintStream;
+
 import main.EndGameException;
 
 /**
@@ -36,6 +38,15 @@ public class TestingTimer extends Timer {
 			}
 		
 		}
+	}
+	
+	/**
+	 * Kiprinteli az aktív vonatokat
+	 * @param ps Stream, ahova ki kell írni
+	 */
+	public void listTrains(PrintStream ps) {
+		for (int i=1;i<toUpdate.size();i++)
+			ps.println(toUpdate.get(i).toString());
 	}
 	
 }

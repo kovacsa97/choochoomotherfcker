@@ -34,6 +34,8 @@ public class Main {
 			case "load-file":
 				b=new ChooChooParser().parse(cmdargs[1]);
 				t=new TestingTimer();
+				if (b!=null)
+					b.setAllTimers(t);
 				break;
 			case "set-output":
 				if (cmdargs[1].equals("cls")) os=System.out;
@@ -47,7 +49,9 @@ public class Main {
 				break;
 			case "list":
 				if (b!=null)
-				b.list(os, cmdargs[1]);
+					if (cmdargs[1].equals("train"))
+						t.listTrains(os);
+					else b.list(os, cmdargs[1]);
 				break;
 			case "step":
 				if (b!=null)
@@ -77,11 +81,13 @@ public class Main {
 				b.destroyTunnel();
 				break;
 			case "set-passenger-get-on":
-				// TODO
+				if (b!=null) ;
 				break;
 			case "quit":
 				exit=true;
 				break;
+			default:
+				os.println("invalid command");	
 			}
 			
 		}	
