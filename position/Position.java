@@ -4,20 +4,20 @@ import boardelements.BoardElement;
 import main.EndGameException;
 
 /**
- * A vonat pozícióját határozza meg
+ * A vonat poziciojat hatarozza meg
  */
 public abstract class Position {
 	/**
-	 * A jelenlegi pályaelemen belüli pozíció
+	 * A jelenlegi palyaelemen beluli pozicio
 	 */
 	protected int pos;
 	/**
-	 * jelenlegi pályaelem, melyen a vonat tartózkodik
+	 * jelenlegi palyaelem, melyen a vonat tartozkodik
 	 */
 	protected BoardElement CurrentBE;
 	
 	/**
-	 * létrehoz egy pozíciót a vonatnak
+	 * letrehoz egy poziciot a vonatnak
 	 * @param cbe
 	 */
 	Position (BoardElement cbe){
@@ -26,7 +26,7 @@ public abstract class Position {
 	}
 	
 	/**
-	 * Vonat mozgását koordináló függvény, adott távolsággal mozgatja előre (dist)
+	 * Vonat mozgasat koordinalo fuggveny, adott tavolsaggal mozgatja elore (dist)
 	 * @param dist
 	 * @throws EndGameException
 	 */

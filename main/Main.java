@@ -75,7 +75,7 @@ public class Main {
 				}
 				break;
 			case "set-driving-force":
-				// TODO
+				t.setDrivingForce(cmdargs[1], Integer.parseInt(cmdargs[2]));
 				break;
 			case "build-tunnel":
 				if (b!=null)
@@ -87,7 +87,7 @@ public class Main {
 				break;
 			case "set-passenger-get-on":
 				if (b!=null) 
-					;
+					b.setPassengerGetOn(Boolean.getBoolean(cmdargs[1]));
 				break;
 			case "quit":
 				exit=true;
