@@ -3,7 +3,6 @@ package parser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -22,8 +21,13 @@ import boardelements.Switch;
 import boardelements.Tunnel;
 import boardelements.TunnelOpportunity;
 import trainelements.TrainModel;
-import update.Timer;
 
+
+/**
+ * A test bemenetek beolvasásáért felelõs osztály.
+ * @author AdamBelakovics
+ *
+ */
 public class ChooChooParser {
 	HashMap<String, BoardElement> id_to_BE = new HashMap<String, BoardElement>();
 	HashMap<String, Rail> rails = new HashMap<String, Rail>(); 
@@ -33,6 +37,11 @@ public class ChooChooParser {
 	EntryPoint entrypoint;
 	Tunnel tunnel;
 	
+	/**
+	 * A bemeneti fájl alapján felépíti a pályát és visszatér vele.
+	 * @param filename A beolvasandó fájl elérési útvonala
+	 * @return A bemenet alapján felépített pálya a vonatokkal.
+	 */
 	public Board parse(String filename){
 		try{
 			File inputFile = new File(filename);
