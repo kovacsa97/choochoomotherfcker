@@ -46,12 +46,15 @@ public class Main {
 					}
 				break;
 			case "list":
+				if (b!=null)
 				b.list(os, cmdargs[1]);
 				break;
 			case "step":
+				if (b!=null)
 				t.step(Integer.parseInt(cmdargs[1]));
 				break;
 			case "enable-randomness":
+				if (b!=null)
 				b.setRandomness(Boolean.getBoolean(cmdargs[1]));
 				break;
 			case "generate-next-train":
