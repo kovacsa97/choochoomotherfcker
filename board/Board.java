@@ -81,6 +81,7 @@ public class Board {
 		}
 		for (Station st: stationList.values()){
 			st.setRandomness(r);
+			st.setPassengerGetOn(r);
 		}
 	}
 	

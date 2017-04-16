@@ -20,6 +20,7 @@ public class Station extends BoardElement{
 	 * felszálló utasok száma
 	 */
 	private int newPassengerCount;
+	
 	//TODO COMMENT
 	public void setNewPassengerCount(int val){
 		newPassengerCount = val;
@@ -27,7 +28,7 @@ public class Station extends BoardElement{
 	/**
 	 * utasok felszállásának valószínûsége
 	 */
-	private double newPassengerProbability;
+	private double newPassengerProbability = 0.5;
 	//TODO COMMENT
 	public void setNewPassengerProbability(double val){
 		newPassengerProbability = val;
@@ -111,5 +112,4 @@ public class Station extends BoardElement{
 	public void setPassengerGetOn(boolean s){
 		this.enablePassengers = s;
 	}
-
 }
