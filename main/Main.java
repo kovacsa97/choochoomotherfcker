@@ -14,6 +14,7 @@ import javax.sound.sampled.Clip;
 import board.Board;
 import boardelements.*;
 import color.Color;
+import parser.ChooChooParser;
 import update.TestingTimer;
 import update.Timer;
 
@@ -31,7 +32,7 @@ public class Main {
 			String[] cmdargs=cmd.split(" ");
 			switch (cmdargs[0]) {
 			case "load-file":
-				// b=loadFile(cmdargs[1], t);
+				b=new ChooChooParser().parse(cmdargs[1]);
 				t=new TestingTimer();
 				break;
 			case "set-output":

@@ -32,6 +32,13 @@ public class Board {
 		switchList = sw;
 		stationList = sl;
 		tunnel = t;
+		
+		toStringList=new HashMap<String, HashMap<String, ? extends BoardElement>>();
+		toStringList.put("station", stationList);
+		toStringList.put("rail", railList);
+		toStringList.put("switch", switchList);
+		toStringList.put("entrypoint", entryPointList);
+		toStringList.put("tunnelopp", tunnelOpportunityList);
 	}
 	
 	public int calculatePoints(){
@@ -59,7 +66,7 @@ public class Board {
 	}	
 	
 	public void getNextTrain() throws EndGameException{
-		for (EntryPoint ep: entryPointList.values()){
+		for (EntryPoint ep: entryPointList.values()) {
 			ep.getNextTrain();
 		}
 	}
