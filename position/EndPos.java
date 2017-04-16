@@ -25,7 +25,6 @@ public class EndPos extends Position {
 		this.pos = pos;
 	}
 
-	
 	/* (non-Javadoc)
 	 * @see position.Position#move(int)
 	 */
@@ -40,6 +39,4 @@ public class EndPos extends Position {
 			CurrentBE = myStartPos.popBack();
 		}
 	}
-	
-
 }

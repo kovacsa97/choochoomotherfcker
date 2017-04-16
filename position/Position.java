@@ -7,10 +7,12 @@ import main.EndGameException;
  * A vonat poziciojat hatarozza meg
  */
 public abstract class Position {
+	
 	/**
 	 * A jelenlegi palyaelemen beluli pozicio
 	 */
 	protected int pos;
+	
 	/**
 	 * jelenlegi palyaelem, melyen a vonat tartozkodik
 	 */
@@ -35,5 +37,4 @@ public abstract class Position {
 	public String toString() {
 		return CurrentBE.getId();
 	}
-	
 }
