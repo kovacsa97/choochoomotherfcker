@@ -66,6 +66,8 @@ public class Board {
 		if (type.equals("train")) 
 			for  (TunnelOpportunity t : tunnelOpportunityList.values())
 				ps.println(type);
+		else if (toStringList.get(type)!=null)
+			ps.println("invalid command");
 		else toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
 	}	
 	
