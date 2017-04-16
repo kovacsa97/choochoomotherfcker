@@ -1,5 +1,6 @@
 package trainelements;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import boardelements.EntryPoint;
@@ -46,6 +47,9 @@ public class Train implements Updateable {
 		//System.out.println("New Train created with parameters of type List<Wagon>, " + loc.toString() + " " + ep.toString());
 		myLocomotive = loc;
 		myWagons = wagons;
+		if(myWagons == null){
+			myWagons = new ArrayList<Wagon>(); 
+		}
 		startPos = new StartPos(ep, this);
 		endPos = new EndPos(ep, startPos, 0);
 	}
@@ -125,7 +129,7 @@ public class Train implements Updateable {
 		ret.append(" " + id);
 		ret.append(" " + startPos);
 		ret.append(" " + endPos);
-		ret.append(" " + myWagons.size() + 1);
+		ret.append(" " + (myWagons.size() + 1));
 		ret.append("\n\t\t" + myLocomotive.toString());
 		for(int i = 0; i < myWagons.size(); i++){
 			ret.append("\n\t\t" + myWagons.get(i).toString());
