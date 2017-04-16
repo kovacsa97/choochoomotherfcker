@@ -15,70 +15,69 @@ import update.Timer;
 import update.Updateable;
 
 /**
- *Megadott idõközönként (vagy ha a randomGeneration false-ra van állítva, 
- *akkor a megadott parancsra) új vonatot generál, 
- *és elindítja a hozzá kapcsolt BoardElement felé.
+ *Megadott idokozonkent (vagy ha a randomGeneration false-ra van allitva, 
+ *akkor a megadott parancsra) uj vonatot general, 
+ *es elinditja a hozza kapcsolt BoardElement fele.
  */
 public class EntryPoint extends BoardElement implements Updateable{
 	
 	/**
-	 * A belépési pont számlálója, ha eléri a 0 értéket új vonatot küld a pályára
+	 * A belepesi pont szamlaloja, ha eleri a 0 erteket uj vonatot kuld a palyara
 	 */
 	private int time;
 	/**
-	 * Default várakozási idõ, ha az újonnan létrehozott vonat elhagyja a belépési pontot, 
-	 * erre az értékre ugrik vissza a számláló
+	 * Default varakozasi ido, ha az ujonnan letrehozott vonat elhagyja a belepesi pontot, 
+	 * erre az ertekre ugrik vissza a szamlalo
 	 */
 	private int defWaitTime;
 	/**
-	 * referencia a Timer objektumra, hogy az új vonatok beregisztrálhatók
+	 * referencia a Timer objektumra, hogy az uj vonatok beregisztralhatok
 	 */
 	private Timer timer;
 	/**
-	 * ettõl függõen generál a belépési pont random paraméterekkel vonatot, 
-	 * ha hamis, megadott értékek alapján teszi ezt.
+	 * ettol fuggoen general a belepesi pont random parameterekkel vonatot, 
+	 * ha hamis, megadott ertekek alapjan teszi ezt.
 	 */
 	private boolean randomGeneration = false;
 	/**
-	 * trainModellek listája
+	 * trainModellek listaja
 	 */
 	private List<TrainModel> trainModelList = new ArrayList<TrainModel>();
 	
 	/**
-	 * Wagon súlya
+	 * Wagon tomege
 	 */
 	private final int WAGONWEIGHT = 10000;
 	/**
-	 * Mozdony súlya
+	 * Mozdony tomege
 	 */
 	private final int LOCOMOTIVEWEIGHT = 20000;
 	/**
-	 * Mozdony erõ
+	 * Mozdony ero
 	 */
 	private final int LOCOMOTIVEPOWER = 10000000;
 	/**
-	 * utas szám
+	 * Utas szam
 	 */
 	private final int PASSENGERCOUNT = 50;
 	/**
-	 * maximum wagonok száma
+	 * Wagonok maximalis szama
 	 */
 	private final int MAXWAGONNUMBER = 6;
 	/**
-	 * speciális wagon esélye
+	 * Specialis wagon eselye
 	 */
 	private final double SPECIALWAGONCHANCE = 0.3;
 	/**
-	 * LoweWagon esélye
+	 * LoweWagon eselye
 	 */
 	private final double LOVEWAGONCHANCE = 0.5;
 	
 	/**
-	 * @param defWaitTime
-	 * @param length
-	 * @param t
-	 * , beállítja a default várakozási idõt, és kap egy referenciát a Timer-hez, 
-	 * hogy beregisztrálhassa az újonnan létrejövõ vonatokat.
+	 * Beallitja a default varakozasi idot, es kap egy referenciat a Timer-hez, 
+	 * hogy beregisztralhassa az ujonnan letrejovo vonatokat.
+	 * @param defWaitTime: default varakozasi ido
+	 * @param length: palyaelem hossza
 	 */
 	public EntryPoint(int defWaitTime, int length){
 		super(length);
@@ -87,12 +86,12 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	/**
-	 * @param c
-	 * @param passengerCount
-	 * @param wagonType
-	 * @return
-	 * egy vagon létrehozásáért felelõs, 
-	 * teszteléshez, manuális validáláshoz szükséges.
+	 * Egy vagon letrehozasaert felelos, 
+	 * tesztelesehez, manualis validalasahoz szukseges.
+	 * @param c: wagon szine
+	 * @param passengerCount: utasok szama
+	 * @param wagonType: wagon tipusa
+	 * @return w: kesz wagon
 	 */
 	private Wagon createWagon(int c, int passengerCount, String wagonType){
 		Wagon w = null;
@@ -110,17 +109,17 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	/**
-	 * @param tm
-	 * tm vonat hozzáadása trainModel listához
+	 * Vonat modell hozzaadasa trainModel listahoz
+	 * @param tm: a vonat modellje
 	 */
 	public void addTrain(TrainModel tm){
 		trainModelList.add(tm);
 	}
 
 	/**
-	 * @return
+	 * Random ertekekkel wagonok letrehozasa
+	 * @return w: random wagon
 	 * @throws EndGameException
-	 * random wagonok létrehozása
 	 */
 	private Wagon createWagonRandom() throws EndGameException{
 		Wagon w;
@@ -144,9 +143,9 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	/**
-	 * @return
+	 * Keszit egy wagon listat, random generalt ertekekkel.
+	 * @return wagonList: uj wagonok listaja
 	 * @throws EndGameException
-	 * készít egy vagon listát, a megadott számnak megfelelõen, random értékekkel.
 	 */
 	private List<Wagon> createWagonList() throws EndGameException{
 		
@@ -161,7 +160,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/**
 	 * @throws EndGameException
-	 * vonat létrehozása
+	 * Uj vonat letrehozasa
 	 */
 	public void createTrainRandom() throws EndGameException{
 
@@ -173,7 +172,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	/**
-	 * Újraindítja a saját idõzítõjét
+	 * Ujrainditja a sajat idozitojet
 	 */
 	public void resetTimer(){
 
@@ -182,8 +181,8 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	/**
+	 * Ha nincs engedelyezve a random, akkor palyara engedi a vonatot
 	 * @throws EndGameException
-	 * Ha nincs engedélyezve a random, akkor pályára engedi a vonatot
 	 */
 	public void getNextTrain() throws EndGameException{
 		if (trainModelList.size() == 0) return;
@@ -209,8 +208,8 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/* (non-Javadoc)
 	 * @see update.Updateable#update()
-	 * A számlálójának függvényében cselekszik (csökkenti a számlálót, 
-	 * új vonatot hoz létre, ha van új vonat, de még nem hagyta el, akkor vár)
+	 * A szamlalojanak fuggvenyeben cselekszik (csokkenti a szamlalot, 
+	 * uj vonatot hoz letre, ha van uj vonat, de meg nem hagyta el, akkor var)
 	 */
 	public void update() throws EndGameException{
 		
@@ -222,12 +221,11 @@ public class EntryPoint extends BoardElement implements Updateable{
 		}
 		else
 			time--;
-		//System.out.println("update returned");
 	}
 	
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#enter(trainelements.Train)
-	 * lekezeli a vonat érkezését
+	 * Lekezeli a vonat erkezeset
 	 */
 	public void enter(Train t) throws EndGameException{
 
@@ -237,7 +235,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/**
 	 * @param randomGeneration
-	 * beállítja a random generátor értékét
+	 * Beallitja a random generator erteket
 	 */
 	public void setRandomGeneration(boolean randomGeneration) {
 		this.randomGeneration = randomGeneration;
@@ -245,7 +243,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#getNext()
-	 * visszaadja a következõ pályaelemet
+	 * Visszaadja a kovetkezo palyaelemet
 	 */
 	@Override
 	public BoardElement getNext() throws EndGameException{
@@ -256,8 +254,8 @@ public class EntryPoint extends BoardElement implements Updateable{
 	}
 	
 	/**
+	 * Megkapja a timer-t es beallitja az entripointnak, majd beregisztralja
 	 * @param Timer
-	 * megkapja a timer-t és beállítja az entripointnak, majd beregisztrálja
 	 */
 	public void setTimer(Timer t){
 		timer = t;

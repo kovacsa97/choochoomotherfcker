@@ -34,7 +34,6 @@ public class BoardElement {
 	 * @param length: palyaelem hossza
 	 */
 	public BoardElement(int length){
-		//System.out.println("New BoardELement created with parameters of type int");
 		this.length = length;
 		locked = false;
 	}
@@ -44,8 +43,6 @@ public class BoardElement {
 	 * @return length: palyaelem hossza
 	 */
 	public int getLength(){
-		//System.out.println("getLength was called inside class BoardElement");
-		//System.out.println("getLength returned int");
 		return length;
 	}
 	
@@ -54,8 +51,6 @@ public class BoardElement {
 	 * @return locked: palya foglaltsaga
 	 */
 	public boolean isOccupied(){
-		//System.out.println("isOccupied was called inside class BoardElement");
-		//System.out.println("isOccupied returned boolean");
 		if (prev == null || next == null) return true;
 		return locked;
 	}
@@ -66,37 +61,28 @@ public class BoardElement {
 	 * @throws EndGameException
 	 */
 	public void enter(Train t) throws EndGameException {
-		//System.out.println("enter was called inside class BoardElement");
-		//System.out.println("I am entered");
 		lock();
-		//System.out.println("enter returned");
 	}
 	
 	/**
 	 * Zarolja a palyaelemet vonat erkezesekor
 	 */
 	public void lock(){
-		//System.out.println("lock was called inside class BoardElement");
 		locked = true;
-		//System.out.println("lock returned");
 	}
 	
 	/**
 	 * Feloldja a palyaelemet ha a vonat elhagyja
 	 */
 	public void unlock(){
-		//System.out.println("unlock was called inside class BoardElement");
 		locked = false;
-		//System.out.println("unlock returned");
 	}
 	
 	/**
 	 * Meghivja a palyaelemfelszabadito metodust
 	 */
 	public void leave(){
-		//System.out.println("leave was called inside class BoardElement");
 		unlock();
-		//System.out.println("leave returned");
 	}
 	
 	/**
@@ -105,15 +91,12 @@ public class BoardElement {
 	 * @throws EndGameException
 	 */
 	public BoardElement getNext() throws EndGameException{
-		//System.out.println("getNext was called inside class BoardElement");
 		if (next.isOccupied() == true && prev.isOccupied() == true)
 			throw new EndGameException();
 		if (next.isOccupied() == false){
-			//System.out.println("getNext returned BoardElement");
 			return next;
 		}
 		if (prev.isOccupied() == false)
-			//System.out.println("getNext returned BoardElement");
 			return prev;
 		return null;
 	}
@@ -124,15 +107,13 @@ public class BoardElement {
 	 * @param n: kovetkezo palyaelem
 	 */
 	public void setEnds(BoardElement p, BoardElement n){
-		//System.out.println("setEnds was called inside class BoardElement with parameters of type " + p.toString() + ", "+ n.toString());
 		next = n;
 		prev = p;
-		//System.out.println("setEnds returned");
 	}
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
-	 * Kiirja a prev és a next id-jet
+	 * Kiirja a prev es a next id-jet
 	 */
 	@Override
 	public String toString(){
