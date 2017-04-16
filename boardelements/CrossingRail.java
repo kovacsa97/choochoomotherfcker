@@ -1,28 +1,28 @@
 package boardelements;
 
 /**
- * olyan sínpárt reprezentál, amit egy másik (hasonló osztályú) sínpár keresztez, 
- * és kezeli a keresztezõdésben való ütközést.
+ * Olyan sinpart reprezental, melyet egy masik sinpar keresztez, 
+ * es kezeli a keresztezodesben valo utkozest.
  *
  */
 public class CrossingRail extends Rail{
 	
 	/**
-	 * keresztezõ sínt tárolja
+	 * Keresztezo sint tarolja
 	 */
 	private Rail otherRail;
 
 	/**
-	 * @param length
-	 * Rail konstruktorát meghívja lengt hosszal
+	 * Rail konstruktorat meghivja length hosszal
+	 * @param length: a palyaelem hossza
 	 */
 	public CrossingRail(int length) {
 		super(length);
 	}
 	
 	/**
-	 * @param r
-	 * beállítja az õt keresztezõ sínt.
+	 * Beallitja az ot keresztezo sint.
+	 * @param r: a keresztezo sin
 	 */
 	public void setOtherRail(Rail r){
 		otherRail = r;
@@ -30,7 +30,7 @@ public class CrossingRail extends Rail{
 	
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#lock()
-	 * a másik sínt is lockolja.
+	 * a masik sint is lockolja.
 	 */
 	@Override
 	public void lock(){
@@ -40,7 +40,7 @@ public class CrossingRail extends Rail{
 	
 	/* (non-Javadoc)
 	 * @see boardelements.BoardElement#unlock()
-	 * másik sínt is feloldja.
+	 * masik sint is feloldja.
 	 */
 	@Override
 	public void unlock(){
