@@ -24,7 +24,7 @@ import trainelements.TrainModel;
 
 
 /**
- * A test bemenetek beolvasásáért felelõs osztály.
+ * A test bemenetek beolvasasaert felelos osztaly.
  * @author AdamBelakovics
  *
  */
@@ -38,9 +38,9 @@ public class ChooChooParser {
 	Tunnel tunnel;
 	
 	/**
-	 * A bemeneti fájl alapján felépíti a pályát és visszatér vele.
-	 * @param filename A beolvasandó fájl elérési útvonala
-	 * @return A bemenet alapján felépített pálya a vonatokkal.
+	 * A bemeneti fajl alapjan felepiti a palyat és visszater vele.
+	 * @param filename A beolvasando fajl eleresi utvonala
+	 * @return A bemenet alapjan felepitett palya a vonatokkal.
 	 */
 	public Board parse(String filename){
 		try{
@@ -137,21 +137,23 @@ public class ChooChooParser {
 	        }	        
 	        NodeList trains = doc.getElementsByTagName("train");
 	        for(Node train = trains.item(0); train != null; train = train.getNextSibling()){
-	        	NodeList trainElements = train.getChildNodes();
-	        	TrainModel tm = new TrainModel();
-	        	tm.id = train.getAttributes().getNamedItem("id").getNodeValue();
-	        	for(Node trainElement = trainElements.item(0); trainElement != null; trainElement = trainElement.getNextSibling()){
-	        		if(trainElement.getNodeName().equals("locomotive")){
-	        			tm.defDrivingForce = Integer.parseInt(trainElement.getAttributes().getNamedItem("defDrivingForce").getNodeValue());
-	        		}
-	        		if(trainElement.getNodeName().contains("wagon")){
-	        			tm.countOfWagons++;
-	        			tm.type.add(trainElement.getNodeName());
-	        			tm.color.add(Integer.parseInt(trainElement.getAttributes().getNamedItem("color").getNodeValue()));
-	        			tm.passCount.add(Integer.parseInt(trainElement.getAttributes().getNamedItem("passengerCount").getNodeValue())); 
-	        		}
-	        	}
-	        	entrypoint.addTrain(tm);
+	        	if (train.getNodeType() == Node.ELEMENT_NODE) {
+		        	NodeList trainElements = train.getChildNodes();
+		        	TrainModel tm = new TrainModel();
+		        	tm.id =  train.getAttributes().getNamedItem("id").getNodeValue();
+		        	for(Node trainElement = trainElements.item(0); trainElement != null; trainElement = trainElement.getNextSibling()){
+		        		if(trainElement.getNodeName().equals("locomotive")){
+		        			tm.defDrivingForce = Integer.parseInt(trainElement.getAttributes().getNamedItem("defDrivingForce").getNodeValue());
+		        		}
+		        		if(trainElement.getNodeName().contains("wagon")){
+		        			tm.countOfWagons++;
+		        			tm.type.add(trainElement.getNodeName());
+		        			tm.color.add(Integer.parseInt(trainElement.getAttributes().getNamedItem("color").getNodeValue()));
+		        			tm.passCount.add(Integer.parseInt(trainElement.getAttributes().getNamedItem("passengerCount").getNodeValue())); 
+		        		}
+		        	}
+		        	entrypoint.addTrain(tm);
+		        }
 	        }
 	    } catch(FileNotFoundException f){
 	    	System.out.println("Invalid File Path. try assets/*");
