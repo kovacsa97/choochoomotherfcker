@@ -50,6 +50,9 @@ public class ChooChooParser {
 	        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	        Document doc = dBuilder.parse(inputFile);
 	        doc.getDocumentElement().normalize();
+	        
+	        ///Parsing Map
+	        
 	        Node map = doc.getElementsByTagName("map").item(0);
 	        for(Node element = map.getFirstChild(); element != null; element = element.getNextSibling()){
 	        	if (element.getNodeType() == Node.ELEMENT_NODE) {
@@ -100,6 +103,9 @@ public class ChooChooParser {
         			id_to_BE.put(id, b);
 	        	}
 	        }
+	        
+	        ///Parsing  Map Connections
+	        
 	        for(Node element = map.getFirstChild(); element != null; element = element.getNextSibling()){
 	        	if (element.getNodeType() == Node.ELEMENT_NODE) {
 	        		String id = element.getAttributes().getNamedItem("id").getNodeValue();
@@ -135,6 +141,9 @@ public class ChooChooParser {
 					}
 	        	}
 	        }	        
+	        
+	        ///Parsing Train
+	        
 	        NodeList trains = doc.getElementsByTagName("train");
 	        for(Node train = trains.item(0); train != null; train = train.getNextSibling()){
 	        	if (train.getNodeType() == Node.ELEMENT_NODE) {
@@ -156,7 +165,7 @@ public class ChooChooParser {
 		        }
 	        }
 	    } catch(FileNotFoundException f){
-	    	System.out.println("Invalid File Path. try assets/*");
+	    	System.out.println("Invalid File Path. try load-file assets/*");
 	    	return null;
 	    }catch(Exception e){
 			e.printStackTrace();
