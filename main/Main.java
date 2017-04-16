@@ -58,6 +58,7 @@ public class Main {
 				b.setRandomness(Boolean.getBoolean(cmdargs[1]));
 				break;
 			case "generate-next-train":
+				if (b!=null)
 				try {
 					b.getNextTrain();
 				} catch (EndGameException e) {
@@ -68,9 +69,11 @@ public class Main {
 				// TODO
 				break;
 			case "build-tunnel":
+				if (b!=null)
 				b.buildTunnel(cmdargs[1], cmdargs[2]);
 				break;
 			case "destroy-tunnel":
+				if (b!=null)
 				b.destroyTunnel();
 				break;
 			case "set-passenger-get-on":
