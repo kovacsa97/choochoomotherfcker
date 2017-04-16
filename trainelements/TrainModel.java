@@ -3,6 +3,7 @@ package trainelements;
 import java.util.ArrayList;
 
 public class TrainModel {
+	public String id;
 	public int defDrivingForce;
 	public int countOfWagons;
 	public ArrayList<String> type = new ArrayList<String>();
