@@ -80,12 +80,10 @@ public class EntryPoint extends BoardElement implements Updateable{
 	 * , beállítja a default várakozási idõt, és kap egy referenciát a Timer-hez, 
 	 * hogy beregisztrálhassa az újonnan létrejövõ vonatokat.
 	 */
-	public EntryPoint(int defWaitTime, int length, Timer t){
+	public EntryPoint(int defWaitTime, int length){
 		super(length);
 		this.defWaitTime = defWaitTime;
 		time = 0;
-		this.timer = t;
-		t.registerElement(this);
 	}
 	
 	/**
@@ -255,6 +253,10 @@ public class EntryPoint extends BoardElement implements Updateable{
 		return next;
 	}
 	
+	public void setTimer(Timer t){
+		timer = t;
+		t.register(this);
+	}
 	
 	public boolean locked(){
 		return locked;
