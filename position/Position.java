@@ -4,21 +4,21 @@ import boardelements.BoardElement;
 import main.EndGameException;
 
 /**
- * A vonat pozÌciÛj·t hat·rozza meg
+ * A vonat poz√≠ci√≥j√°t hat√°rozza meg
  */
 public abstract class Position {
 	/**
-	 * A jelenlegi p·lyaelemen bel¸li pozÌciÛ
+	 * A jelenlegi p√°lyaelemen bel√ºli poz√≠ci√≥
 	 */
 	protected int pos;
 	/**
-	 * jelenlegi p·lyaelem, melyen a vonat tartÛzkodik
+	 * jelenlegi p√°lyaelem, melyen a vonat tart√≥zkodik
 	 */
 	protected BoardElement CurrentBE;
 	
 	/**
+	 * l√©trehoz egy poz√≠ci√≥t a vonatnak
 	 * @param cbe
-	 * lÈtrehoz egy pozÌciÛt a vonatnak
 	 */
 	Position (BoardElement cbe){
 		//System.out.println("Position was created with parameters type of "+ cbe.toString());
@@ -26,9 +26,9 @@ public abstract class Position {
 	}
 	
 	/**
+	 * Vonat mozg√°s√°t koordin√°l√≥ f√ºggv√©ny, adott t√°vols√°ggal mozgatja el≈ëre (dist)
 	 * @param dist
 	 * @throws EndGameException
-	 * Vonat mozg·s·t koordin·lÛ f¸ggvÈny, adott t·vols·ggal mozgatja elıre (dist)
 	 */
 	public abstract void move(int dist) throws EndGameException;
 	
