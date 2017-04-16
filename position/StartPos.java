@@ -8,24 +8,24 @@ import main.EndGameException;
 import trainelements.Train;
 
 /**
- * A vonat elejét reprezentáló osztály
+ * A vonat elejet reprezentalo osztaly
  */
 public class StartPos extends Position {
 	
 	/**
-	 * vonat által lefoglalt pályaelemeket tartalmazza
+	 * vonat altal lefoglalt palyaelemeket tartalmazza
 	 */
 	private List<BoardElement> BEfifo;
 	/**
-	 * vonat referenciája amelyikhez tartozik
+	 * vonat referenciaja amelyikhez tartozik
 	 */
 	Train myTrain;
 
 	/**
-	 * @param cbe
-	 * @param t
-	 * @throws EndGameException
-	 * létrehozza a kapott vonat kezdõpozícióját a kapott pályaelemen.
+	 * letrehozza a kapott vonat kezdopoziciojat a kapott palyaelemen.
+	 * @param cbe: (current board element) a letrehozas helye
+	 * @param t: a vonat referenciaja amihez tartozik
+	 * @throws EndGameException: ha ket vonat utkozik vagy a vonat kisiklik ez a kivetel keletkezik
 	 */
 	public StartPos(BoardElement cbe, Train t) throws EndGameException {
 		super(cbe);
@@ -38,10 +38,10 @@ public class StartPos extends Position {
 
 	/* (non-Javadoc)
 	 * @see position.Position#move(int)
-	 * A kapott dist értéket hozzáadja a belsõ pos értékhez. 
-	 * Ha ez meghaladja a currentBE hosszát, elkéri a currentBE.getNext() metódussal a következõ pálya elemet, 
-	 * lock()-ot hív rá, beleteszi a BEFifo végére a korábbi elemet, meghívja az enter() függvényt (callback miatt szükséges a felszállásnál), 
-	 * és módosítja a currentBE-t.
+	 * A kapott dist ï¿½rtï¿½ket hozzï¿½adja a belsï¿½ pos ï¿½rtï¿½khez. 
+	 * Ha ez meghaladja a currentBE hosszï¿½t, elkï¿½ri a currentBE.getNext() metï¿½dussal a kï¿½vetkezï¿½ pï¿½lya elemet, 
+	 * lock()-ot hï¿½v rï¿½, beleteszi a BEFifo vï¿½gï¿½re a korï¿½bbi elemet, meghï¿½vja az enter() fï¿½ggvï¿½nyt (callback miatt szï¿½ksï¿½ges a felszï¿½llï¿½snï¿½l), 
+	 * ï¿½s mï¿½dosï¿½tja a currentBE-t.
 	 */
 	@Override
 	public void move(int dist) throws EndGameException {
@@ -65,7 +65,7 @@ public class StartPos extends Position {
 	
 	/**
 	 * @return
-	 * eltávolítja, majd visszatér a fenti listából a legutolsó elemmel, ha a vonat elhagyta.
+	 * eltï¿½volï¿½tja, majd visszatï¿½r a fenti listï¿½bï¿½l a legutolsï¿½ elemmel, ha a vonat elhagyta.
 	 */
 	public BoardElement popBack(){
 		//System.out.println("popBack was called inside class StartPos: " + BEfifo.get(0).toString());

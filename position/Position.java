@@ -18,18 +18,22 @@ public abstract class Position {
 	
 	/**
 	 * letrehoz egy poziciot a vonatnak
-	 * @param cbe
+	 * @param cbe: (current board element) a letrehozas helye
 	 */
 	Position (BoardElement cbe){
-		//System.out.println("Position was created with parameters type of "+ cbe.toString());
 		CurrentBE = cbe;
 	}
 	
 	/**
-	 * Vonat mozgasat koordinalo fuggveny, adott tavolsaggal mozgatja elore (dist)
-	 * @param dist
-	 * @throws EndGameException
+	 * Vonat mozgasat koordinalo fuggveny
+	 * @param dist: ezt a tavolsagot teszi meg a vonat
+	 * @throws EndGameException: ha ket vonat utkozik vagy a vonat kisiklik ez a kivetel keletkezik
 	 */
 	public abstract void move(int dist) throws EndGameException;
+
+	@Override
+	public String toString() {
+		return CurrentBE.toString();
+	}
 	
 }

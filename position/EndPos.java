@@ -3,36 +3,34 @@ package position;
 import boardelements.BoardElement;
 
 /**
- * A vonat végét reprezentáló osztály
+ * A vonat veget reprezentalo osztaly
  *
  */
 public class EndPos extends Position {
 	
 	/**
-	 * hozzátartozó vonat eleje
+	 * hozzatartozo vonat eleje
 	 */
 	private StartPos myStartPos;
 
 	/**
-	 * @param cbe
-	 * @param sp
-	 * @param pos
-	 * létrehozza a vonat végének pozícióját
+	 * letrehozza a vonat vegenek poziciojat
+	 * @param cbe: (current board element) a letrehozas helye
+	 * @param sp: (start position) a vonat kezdopozicioja 
+	 * @param pos: a board element-en beluli pozicio
 	 */
 	public EndPos(BoardElement cbe, StartPos sp, int pos) {
 		super(cbe);
-		//System.out.println("EndPos was created with parameters type of "+ cbe.toString() + " " + sp.toString());
 		myStartPos = sp;
 		this.pos = pos;
 	}
 
+	
 	/* (non-Javadoc)
 	 * @see position.Position#move(int)
-	 * mozgatás, a startpos move()-hoz hasonlóan
 	 */
 	@Override
 	public void move(int dist) {
-		//System.out.println("move was called inside class EndPos with parameters of type int");
 		if (dist + pos < CurrentBE.getLength()){
 			pos+= dist;
 		}
@@ -41,8 +39,6 @@ public class EndPos extends Position {
 			CurrentBE.leave();
 			CurrentBE = myStartPos.popBack();
 		}
-		
-		//System.out.println("move returned BoardElement");
 	}
 	
 
