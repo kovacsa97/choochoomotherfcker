@@ -186,6 +186,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	 * Ha nincs engedélyezve a random, akkor pályára engedi a vonatot
 	 */
 	public void getNextTrain() throws EndGameException{
+		if (trainModelList.size() == 0) return;
 		List<Wagon> wagonList = new ArrayList<Wagon>();
 		if(trainModelList.get(0).countOfWagons == 0){
 			Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
