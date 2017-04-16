@@ -165,7 +165,7 @@ public class ChooChooParser {
 		        }
 	        }
 	    } catch(FileNotFoundException f){
-	    	System.out.println("Invalid File Path. try load-file assets/*");
+	    	System.out.println("Invalid File Path. Try load-file assets/*");
 	    	return null;
 	    }catch(Exception e){
 			e.printStackTrace();
