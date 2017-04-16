@@ -11,23 +11,23 @@ import update.Timer;
 import update.Updateable;
 
 /**
- * A vonatot reprezent·lÛ oszt·ly
+ * A vonatot reprezent√°l√≥ oszt√°ly
  */
 public class Train implements Updateable {
 	/**
-	 * A vonathoz tartozÛ vagonok list·ja
+	 * A vonathoz tartoz√≥ vagonok list√°ja
 	 */
 	private List<Wagon> myWagons;
 	/**
-	 * A vonathoz tartozÛ mozdony
+	 * A vonathoz tartoz√≥ mozdony
 	 */
 	private Locomotive myLocomotive;
 	/**
-	 * A vonat elejÈt reprezent·lÛ paramÈter
+	 * A vonat elej√©t reprezent√°l√≥ param√©ter
 	 */
 	private StartPos startPos;
 	/**
-	 * A vonat vÈgÈt reprezent·lÛ paramÈter
+	 * A vonat v√©g√©t reprezent√°l√≥ param√©ter
 	 */
 	private EndPos endPos;
 	/**
@@ -36,12 +36,12 @@ public class Train implements Updateable {
 	private String id;
 	
 	/**
-	 * Vagonokat Ès egy mozdonyt kap, 
-	 * valamint a kezdı p·lyaelemÈt, mellyel a kezdı Ès vÈgpozÌciÛt ·llÌtja be
 	 * @param wagons
 	 * @param loc
 	 * @param ep
 	 * @throws EndGameException
+	 * vagonokat, egy mozdonyt kap, 
+	 * valamint a kezd≈ë p√°lyaelem√©t, mellyel a kez≈ë- √©s v√©gpoz√≠ci√≥j√°t √°ll√≠tja be
 	 */
 	public Train(List<Wagon> wagons, Locomotive loc, EntryPoint ep) throws EndGameException{
 		//System.out.println("New Train created with parameters of type List<Wagon>, " + loc.toString() + " " + ep.toString());
@@ -55,10 +55,10 @@ public class Train implements Updateable {
 	}
 	
 	/**
-	 * Utasokat lesz√°ll√≠t√≥ f√ºggv√©ny, egy sz√≠nt kap, 
-	 * mely alapj√°n kiv√°lasztja a megfelel≈ë vagont, melyr≈ël lesz√°llhatnak az utasok
 	 * @param c
 	 * @return
+	 * utasokat lesz√°ll√≠t√≥ f√ºggv√©ny, egy sz√≠nt kap, 
+	 * mely alapj√°n kiv√°lasztja a megfelel≈ë vagont, melyr≈ël lesz√°llhatnak az utasok
 	 */
 	public int getPassengers(Color c){
 		int i = 0;

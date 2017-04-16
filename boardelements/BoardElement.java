@@ -4,34 +4,34 @@ import main.EndGameException;
 import trainelements.Train;
 
 /**
- * A BoardElement absztrakt õsosztály összefogja a pálya elemeinek közös funkcionalitását (pozíció, hosszúság)
+ * A BoardElement absztrakt ososztalya osszefogja a palya elemeinek kozos funkcionalitasat (pozicio, hosszusag)
  *
  */
 public class BoardElement {
 	/**
-	 * A következõ pályaelem a sorban
+	 * A kovetkezo palyaelem a sorban
 	 */
 	protected BoardElement prev;
 	/**
-	 * : Az õt megelõzõ pályaelem
+	 *Az ot megelozo palyaelem
 	 */
 	protected BoardElement next;
 	/**
-	 * A pályaelem foglaltságát jelzõ attribútum
+	 * A palyaelem foglaltsagat jelzo attributum
 	 */
 	protected boolean locked;
 	/**
-	 * A pályaelem hossza
+	 * A palyaelem hossza
 	 */
 	protected int length;
 	/**
-	 * 
+	 * Egyedi azonosito
 	 */
 	protected String id;
 	
 	/**
-	 * @param length
-	 * Konstruktor, mely létrehozza a pályaelemet length hosszal
+	 * Konstruktor, mely letrehozza a palyaelemet length hosszal
+	 * @param length: palyaelem hossza
 	 */
 	public BoardElement(int length){
 		//System.out.println("New BoardELement created with parameters of type int");
@@ -40,8 +40,8 @@ public class BoardElement {
 	}
 	
 	/**
-	 * @return length
-	 * a pálya hosszával visszatér
+	 * A palyaelem hosszaval ter vissza
+	 * @return length: palyaelem hossza
 	 */
 	public int getLength(){
 		//System.out.println("getLength was called inside class BoardElement");
@@ -50,8 +50,8 @@ public class BoardElement {
 	}
 	
 	/**
-	 * @return locked
-	 * visszaadja, hogy foglalt-e a pálya
+	 * Visszaadja, hogy foglalt-e a palya
+	 * @return locked: palya foglaltsaga
 	 */
 	public boolean isOccupied(){
 		//System.out.println("isOccupied was called inside class BoardElement");
@@ -61,9 +61,9 @@ public class BoardElement {
 	}
 	
 	/**
-	 * @param t
+	 * Lekezeli a vonat erkezeset az adott palyaelemre
+	 * @param t: az erkezo vonat
 	 * @throws EndGameException
-	 * lekezeli a vonat érkezését az adott pályaelemre úgy, hogy lock-olja
 	 */
 	public void enter(Train t) throws EndGameException {
 		//System.out.println("enter was called inside class BoardElement");
@@ -73,7 +73,7 @@ public class BoardElement {
 	}
 	
 	/**
-	 * zárolja a pályaelemet, ha a vonat belép
+	 * Zarolja a palyaelemet vonat erkezesekor
 	 */
 	public void lock(){
 		//System.out.println("lock was called inside class BoardElement");
@@ -82,7 +82,7 @@ public class BoardElement {
 	}
 	
 	/**
-	 * feloldja a pályaelemet, ha a vonat elhagyja
+	 * Feloldja a palyaelemet ha a vonat elhagyja
 	 */
 	public void unlock(){
 		//System.out.println("unlock was called inside class BoardElement");
@@ -91,7 +91,7 @@ public class BoardElement {
 	}
 	
 	/**
-	 * meghívja a felszabadító függvényét a pályaelememnek, ha a vonat elhagyja
+	 * Meghivja a palyaelemfelszabadito metodust
 	 */
 	public void leave(){
 		//System.out.println("leave was called inside class BoardElement");
@@ -100,9 +100,9 @@ public class BoardElement {
 	}
 	
 	/**
-	 * @return
+	 * Visszaadja az ot koveto, szabad palyaelemet. Ha nincs ilyen utkozes tortent, kivetelt dob
+	 * @return prev/next: a kovetkezo palyaelem
 	 * @throws EndGameException
-	 * visszaadja az õt követõ, szabad pályaelemet. Ha nincs ilyen ütközés történt, kivételt dob.
 	 */
 	public BoardElement getNext() throws EndGameException{
 		//System.out.println("getNext was called inside class BoardElement");
@@ -119,9 +119,9 @@ public class BoardElement {
 	}
 	
 	/**
-	 * @param p
-	 * @param n
-	 * beállítja az õt követõ és megelõzõ pályaelemet
+	 * Beallitja az ot koveto es megelozo palyaelemet
+	 * @param p: elozo palyaelem
+	 * @param n: kovetkezo palyaelem
 	 */
 	public void setEnds(BoardElement p, BoardElement n){
 		//System.out.println("setEnds was called inside class BoardElement with parameters of type " + p.toString() + ", "+ n.toString());
@@ -132,7 +132,7 @@ public class BoardElement {
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
-	 * Kiirja a prev és a next id-jét
+	 * Kiirja a prev és a next id-jet
 	 */
 	@Override
 	public String toString(){
@@ -147,16 +147,16 @@ public class BoardElement {
 	}
 
 	/**
-	 * @return id
-	 * visszatér a BoardElement id-jával
+	 * Visszater a BoardElement id-javal
+	 * @return id: a palyaelem azonositoja
 	 */
 	public String getId() {
 		return id;
 	}
 
 	/**
-	 * @param id
-	 * beállítja az id-t
+	 * Beallitja az id-t
+	 * @param id: a palyaelem azonositoja
 	 */
 	public void setId(String id) {
 		this.id = id;
