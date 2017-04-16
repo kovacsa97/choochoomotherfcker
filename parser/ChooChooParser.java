@@ -160,7 +160,7 @@ public class ChooChooParser {
 	    	return null;
 	    }catch(Exception e){
 			e.printStackTrace();
-			System.out.println("PARSER ERROR!!!!!!!!!!!!!!!!!! - szoljatok az Adamnak (a szebbnek)");
+			System.out.println("PARSER ERROR!");
 		}
 		HashMap<String, EntryPoint> tmp = new HashMap<String, EntryPoint>();
         tmp.put(entrypoint.getId(), entrypoint);
