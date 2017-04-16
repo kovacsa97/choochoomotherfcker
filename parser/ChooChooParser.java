@@ -142,7 +142,6 @@ public class ChooChooParser {
 	        	for(Node trainElement = trainElements.item(0); trainElement != null; trainElement = trainElement.getNextSibling()){
 	        		if(trainElement.getNodeName().equals("locomotive")){
 	        			tm.defDrivingForce = Integer.parseInt(trainElement.getAttributes().getNamedItem("defDrivingForce").getNodeValue());
-	        			System.out.println(trainElement.getNodeName() + " " + trainElement.getAttributes().getNamedItem("defDrivingForce"));
 	        		}
 	        		if(trainElement.getNodeName().contains("wagon")){
 	        			tm.countOfWagons++;
