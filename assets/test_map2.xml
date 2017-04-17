@@ -11,9 +11,9 @@
 	<rail id="r07" prevId="r04" nextId="r06" /> 	 
 </map> 
 <train id="train1">
-		<locomotive defDrivingForce="1" /> 
+		<locomotive defDrivingForce="50000" /> 
 	</train>
 	<train id="train2">
-		<locomotive defDrivingForce="1" /> 
+		<locomotive defDrivingForce="50000" /> 
 	</train> 
 </data>
