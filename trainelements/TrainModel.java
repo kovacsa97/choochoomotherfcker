@@ -2,6 +2,9 @@ package trainelements;
 
 import java.util.ArrayList;
 
+/**
+ * Vonat modelljet reprezentalo osztaly
+ */
 public class TrainModel {
 	public String id;
 	public int defDrivingForce;
