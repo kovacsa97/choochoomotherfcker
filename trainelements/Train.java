@@ -86,6 +86,7 @@ public class Train implements Updateable {
 		while (i!=myWagons.size()){
 			if (myWagons.get(i).getColor() == c){
 				myWagons.get(i).passengersGetOn(n);
+				return;
 			}
 			else{
 				i++;

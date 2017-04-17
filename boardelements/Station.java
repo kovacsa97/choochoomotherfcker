@@ -57,14 +57,16 @@ public class Station extends BoardElement{
 	 * Meghivja a kapott vonat getPassengers() fuggvenyet es a kapott int-et a pontjaihoz adja, 
 	 * ezzel megvalositva a leszallast. 
 	 */
+	
 	@Override
 	public void enter(Train t) {
 		locked = true;
-		point += t.getPassengers(color);
-		
+
 		if ((randomness && newPassengerProbability<Math.random()) || (!randomness && enablePassengers)){
 			t.passengerGetOn(this.color, this.newPassengerCount);
 		}
+		point += t.getPassengers(color);
+
 	} 
 	
 	/**

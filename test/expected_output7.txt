@@ -2,6 +2,6 @@ train train1 r01 e01 2
 		locomotive 1
 		wagon 1 100
 takeoff st01 100
-train train1 st01 e01 2
+train train1 st01 r01 2
 		locomotive 1
 		wagon 1 0
