@@ -65,7 +65,9 @@ public class Station extends BoardElement{
 		if ((randomness && newPassengerProbability<Math.random()) || (!randomness && enablePassengers)){
 			t.passengerGetOn(this.color, this.newPassengerCount);
 		}
-		point += t.getPassengers(color);
+		int out=t.getPassengers(color);
+		System.out.println("takeoff "+id+" "+out);
+		point += out;
 
 	} 
 	
