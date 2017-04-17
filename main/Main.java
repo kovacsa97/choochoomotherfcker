@@ -37,12 +37,14 @@ public class Main {
 			String[] cmdargs=cmd.split(" ");
 			switch (cmdargs[0]) {
 			case "load-file":
+				if (cmdargs.length<2) break;
 				b=new ChooChooParser().parse(cmdargs[1]);
 				t=new TestingTimer();
 				if (b!=null)
 					b.setAllTimers(t);
 				break;
 			case "set-output":
+				if (cmdargs.length<2) break;
 				if (cmdargs[1].equals("cls")) os=System.out;
 				else
 					try {
@@ -53,12 +55,14 @@ public class Main {
 					}
 				break;
 			case "list":
+				if (cmdargs.length<2) break;
 				if (b!=null)
 					if (cmdargs[1].equals("train"))
 						t.listTrains(os);
 					else b.list(os, cmdargs[1]);
 				break;
 			case "step":
+				if (cmdargs.length<2) break;
 				if (b!=null)
 				try {
 					t.step(Integer.parseInt(cmdargs[1]));
@@ -67,6 +71,7 @@ public class Main {
 				}
 				break;
 			case "enable-randomness":
+				if (cmdargs.length<2) break;
 				if (b!=null)
 				b.setRandomness(Boolean.getBoolean(cmdargs[1]));
 				break;
@@ -79,9 +84,11 @@ public class Main {
 				}
 				break;
 			case "set-driving-force":
+				if (cmdargs.length<3) break;
 				t.setDrivingForce(cmdargs[1], Integer.parseInt(cmdargs[2]));
 				break;
 			case "build-tunnel":
+				if (cmdargs.length<3) break;
 				if (b!=null)
 				b.buildTunnel(cmdargs[1], cmdargs[2]);
 				break;
@@ -90,10 +97,13 @@ public class Main {
 				b.destroyTunnel();
 				break;
 			case "set-passenger-get-on":
+				if (cmdargs.length<2) break;
+
 				if (b!=null) 
 					b.setPassengerGetOn(Boolean.getBoolean(cmdargs[1]));
 				break;
 			case "switch":
+				if (cmdargs.length<2) break;
 				if (b!=null)
 					b.changeSwitch(cmdargs[1]);
 				break;
