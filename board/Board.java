@@ -49,12 +49,21 @@ public class Board {
 	/**
 	 * letrehozza a palyat, 
 	 * eltarolja a palyahoz tartoza palyaelemeket
+<<<<<<< HEAD
 	 * @param sl
 	 * @param sw
 	 * @param to
 	 * @param rl
 	 * @param rp
 	 * @param t
+=======
+	 * @param sl allomasok hashmapja
+	 * @param sw switchek hashmapja
+	 * @param to tunnelopportunityk hashmapja
+	 * @param rl sinek hashmapja
+	 * @param rp entrypointok hashmapja
+	 * @param t elozetesen megepitett alagut, ha van
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public Board(HashMap<String,Station> sl, 
 			HashMap<String,Switch> sw, 
@@ -80,7 +89,11 @@ public class Board {
 	
 	/**
 	 * a jatekos pontjait szamolja meg, és ter vissza vele
+<<<<<<< HEAD
 	 * @return points
+=======
+	 * @return point a pontszam, amit az osszes allomasbol gyujt ossze
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public int calculatePoints(){
 		int point = 0;
@@ -91,10 +104,16 @@ public class Board {
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * Felépit egy alagutat a parameterkent kapott ket bejárat kozott.
 	 * @param t1
 	 * @param t2
 
+=======
+	 * Felepit egy alagutat a parameterkent kapott ket bejárat kozott.
+	 * @param t1 az elso tunnelopportunity
+	 * @param t2 a masodik tunnelopportunity
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public void buildTunnel(TunnelOpportunity t1, TunnelOpportunity t2) {
 		tunnel=new Tunnel(10);
@@ -117,8 +136,13 @@ public class Board {
 	
 	/**
 	 * kilistazza a palya elemeit
+<<<<<<< HEAD
 	 * @param ps
 	 * @param type
+=======
+	 * @param ps a stream, ahova listaz
+	 * @param type a boardelementek tipusa
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public void list(PrintStream ps, String type) {
 		if (toStringList.get(type)==null)
@@ -128,7 +152,11 @@ public class Board {
 	
 	/**
 	 * letrehozza a kovetkezo uj vonatot
+<<<<<<< HEAD
 	 * @throws EndGameException
+=======
+	 * @throws EndGameException ilyet dob, ha az entrypointon mar van vonat
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public void getNextTrain() throws EndGameException{
 		for (EntryPoint ep: entryPointList.values()) {
@@ -138,7 +166,11 @@ public class Board {
 	
 	/**
 	 * beallitja a randomness ertekeket
+<<<<<<< HEAD
 	 * @param r
+=======
+	 * @param r logikai ertek, ha hamis, nincsenek veletlen elemek
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public void setRandomness(boolean r){
 		for (EntryPoint ep: entryPointList.values()){
@@ -151,8 +183,13 @@ public class Board {
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * engedelyezi az utasok leszallasat
 	 * @param r
+=======
+	 * beallitja az utasok felszallasat a kapott ertekre
+	 * @param r logikai ertek, ha igaz, felszallnak utasok az allomasokon
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public void setPassengerGetOn(boolean r){
 		for (Station st: stationList.values()){
@@ -162,7 +199,11 @@ public class Board {
 	
 	/**
 	 * a t ertekkel beallitja a Timert minden entryPointnak
+<<<<<<< HEAD
 	 * @param t
+=======
+	 * @param t a Timer objektuma
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public void setAllTimers(Timer t) {
 		for (EntryPoint ep: entryPointList.values()){
@@ -172,7 +213,11 @@ public class Board {
 	
 	/**
 	 * A parameterkent kapott Switch iranyat valtja
+<<<<<<< HEAD
 	 * @param id
+=======
+	 * @param id a switch id-je
+>>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public void changeSwitch(String id) {
 		if (switchList.get(id)!=null)
