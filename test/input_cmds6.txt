@@ -1,9 +1,9 @@
 load-file assets/test_map6.xml
 generate-next-train
-set-driving-force train1 1500
+set-driving-force train1 10
 step 30
 list train
-set-driving-force train1 2000
+set-driving-force train1 20
 step 30
 list train
 quit
