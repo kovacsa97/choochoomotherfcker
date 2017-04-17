@@ -43,15 +43,12 @@ public class StartPos extends Position {
 	public void move(int dist) throws EndGameException {
 		if (dist + pos < CurrentBE.getLength()){
 			pos+= dist;
-			System.out.println("POS: " + pos);
 		}
 		else{
 			BEfifo.add(CurrentBE.getNext());
 			pos = dist + pos - CurrentBE.getLength();
 			CurrentBE = CurrentBE.getNext();
 			CurrentBE.enter(myTrain);
-			System.out.println(CurrentBE.toString());
-			System.out.println("POS: " + pos);
 		}
 	}
 	

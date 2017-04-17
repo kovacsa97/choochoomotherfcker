@@ -1,0 +1,6 @@
+load-file assets/test_map1.xml
+list rail
+list station
+list tunnelopp
+list switch
+quit
