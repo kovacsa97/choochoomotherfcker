@@ -57,7 +57,10 @@ public class Board {
 	}
 	
 	public void buildTunnel(String t1id, String t2id) {
-		buildTunnel(tunnelOpportunityList.get(t1id),tunnelOpportunityList.get(t2id));
+		TunnelOpportunity t1=tunnelOpportunityList.get(t1id);
+		TunnelOpportunity t2=tunnelOpportunityList.get(t2id);
+		if (t1!=null && t2!=null)
+			buildTunnel(t1,t2);
 	}
 	
 	public void destroyTunnel() {
