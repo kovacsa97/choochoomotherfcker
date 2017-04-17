@@ -171,8 +171,6 @@ public class ChooChooParser {
 			e.printStackTrace();
 			System.out.println("PARSER ERROR!");
 		}
-		if(tunnel == null)
-			tunnel = new Tunnel(20);
 		HashMap<String, EntryPoint> tmp = new HashMap<String, EntryPoint>();
         tmp.put(entrypoint.getId(), entrypoint);
         return new Board(stations, switches, tunnelopps, rails, tmp, tunnel);
