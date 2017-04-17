@@ -5,6 +5,10 @@ import color.Color;
 import update.Timer;
 
 
+/**
+ * Letrehozza a Default palyat
+ *
+ */
 public class BoardCreater {
 	public static EntryPoint createBoard(Timer t){
 		EntryPoint ep = new EntryPoint(50, 300);

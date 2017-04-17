@@ -47,14 +47,14 @@ public class Board {
 	private Tunnel tunnel;
 	
 	/**
+	 * letrehozza a palyat, 
+	 * eltarolja a palyahoz tartoza palyaelemeket
 	 * @param sl
 	 * @param sw
 	 * @param to
 	 * @param rl
 	 * @param rp
 	 * @param t
-	 * letrehozza a palyat, 
-	 * eltarolja a palyahoz tartoza palyaelemeket
 	 */
 	public Board(HashMap<String,Station> sl, 
 			HashMap<String,Switch> sw, 
@@ -79,8 +79,8 @@ public class Board {
 	}
 	
 	/**
-	 * @return points
 	 * a jatekos pontjait szamolja meg, és ter vissza vele
+	 * @return points
 	 */
 	public int calculatePoints(){
 		int point = 0;
@@ -91,9 +91,10 @@ public class Board {
 	}
 	
 	/**
+	 * Felépit egy alagutat a parameterkent kapott ket bejárat kozott.
 	 * @param t1
 	 * @param t2
-	 * : Felépit egy alagutat a parameterkent kapott ket bejárat kozott.
+
 	 */
 	public void buildTunnel(TunnelOpportunity t1, TunnelOpportunity t2) {
 		tunnel=new Tunnel(10);
@@ -115,9 +116,9 @@ public class Board {
 	}
 	
 	/**
+	 * kilistazza a palya elemeit
 	 * @param ps
 	 * @param type
-	 * kilistazza a palya elemeit
 	 */
 	public void list(PrintStream ps, String type) {
 		if (toStringList.get(type)==null)
@@ -126,8 +127,8 @@ public class Board {
 	}	
 	
 	/**
-	 * @throws EndGameException
 	 * letrehozza a kovetkezo uj vonatot
+	 * @throws EndGameException
 	 */
 	public void getNextTrain() throws EndGameException{
 		for (EntryPoint ep: entryPointList.values()) {
@@ -136,8 +137,8 @@ public class Board {
 	}
 	
 	/**
-	 * @param r
 	 * beallitja a randomness ertekeket
+	 * @param r
 	 */
 	public void setRandomness(boolean r){
 		for (EntryPoint ep: entryPointList.values()){
@@ -150,8 +151,8 @@ public class Board {
 	}
 	
 	/**
-	 * @param r
 	 * engedelyezi az utasok leszallasat
+	 * @param r
 	 */
 	public void setPassengerGetOn(boolean r){
 		for (Station st: stationList.values()){
@@ -160,8 +161,8 @@ public class Board {
 	}
 	
 	/**
-	 * @param t
 	 * a t ertekkel beallitja a Timert minden entryPointnak
+	 * @param t
 	 */
 	public void setAllTimers(Timer t) {
 		for (EntryPoint ep: entryPointList.values()){
@@ -170,8 +171,8 @@ public class Board {
 	}
 	
 	/**
-	 * @param id
 	 * A parameterkent kapott Switch iranyat valtja
+	 * @param id
 	 */
 	public void changeSwitch(String id) {
 		if (switchList.get(id)!=null)

@@ -69,7 +69,7 @@ public class Station extends BoardElement{
 	
 	/**
 	 * A felszallo utasok szamat adja vissza
-	 * @return ánewPassengerCount: allomasrol felszallo utasok szama
+	 * @return newPassengerCount: allomasrol felszallo utasok szama
 	 */
 	public int getCount() {
 		return newPassengerCount;
