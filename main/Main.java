@@ -63,7 +63,7 @@ public class Main {
 				try {
 					t.step(Integer.parseInt(cmdargs[1]));
 				} catch (EndGameException e) {
-					os.println("crash!!!");
+					os.println("crash!!! " + e.tid);
 				}
 				break;
 			case "enable-randomness":
