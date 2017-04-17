@@ -39,7 +39,7 @@ public class Wagon {
 		this.color = color;
 		this.weight = weight;
 		this.numberOfPassengers = numPass;
-		happinessOfPassengers = 1000;                  			
+		happinessOfPassengers = 100;                  			
 	}
 		
 	/**
