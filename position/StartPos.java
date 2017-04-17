@@ -33,6 +33,7 @@ public class StartPos extends Position {
 		pos = cbe.getLength();
 		BEfifo = new ArrayList<BoardElement>();
 		BEfifo.add(cbe);
+		myTrain = t;
 		cbe.lock();
 	}
 
