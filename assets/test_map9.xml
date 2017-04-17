@@ -12,7 +12,7 @@
 	<station id="st02" prevId="r05" nextId="r06" color="1" newPassengerCount="0" newPassengerProbability="0"/>
 </map> 
 	<train id="train1">
-		<locomotive defDrivingForce="1" />
+		<locomotive defDrivingForce="50000" />
 		<wagon passengerCount="100" color="1" /> 
 	</train>  
 </data> 
