@@ -96,4 +96,9 @@ public class Board {
 			ep.setTimer(t);
 		}
 	}
+	
+	public void changeSwitch(String id) {
+		if (switchList.get(id)!=null)
+			switchList.get(id).changeDir();
+	}
 }

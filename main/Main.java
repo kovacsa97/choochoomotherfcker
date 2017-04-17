@@ -93,6 +93,10 @@ public class Main {
 				if (b!=null) 
 					b.setPassengerGetOn(Boolean.getBoolean(cmdargs[1]));
 				break;
+			case "switch":
+				if (b!=null)
+					b.changeSwitch(cmdargs[1]);
+				break;
 			case "quit":
 				exit=true;
 				break;
