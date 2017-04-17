@@ -49,21 +49,12 @@ public class Board {
 	/**
 	 * letrehozza a palyat, 
 	 * eltarolja a palyahoz tartoza palyaelemeket
-<<<<<<< HEAD
-	 * @param sl
-	 * @param sw
-	 * @param to
-	 * @param rl
-	 * @param rp
-	 * @param t
-=======
 	 * @param sl allomasok hashmapja
 	 * @param sw switchek hashmapja
 	 * @param to tunnelopportunityk hashmapja
 	 * @param rl sinek hashmapja
 	 * @param rp entrypointok hashmapja
 	 * @param t elozetesen megepitett alagut, ha van
->>>>>>> branch 'master' of https://github.com/kovacsa97/choochoomotherfcker.git
 	 */
 	public Board(HashMap<String,Station> sl, 
 			HashMap<String,Switch> sw, 
