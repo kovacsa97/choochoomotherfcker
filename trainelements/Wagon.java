@@ -89,7 +89,8 @@ public class Wagon {
 	 * @param n: felszallo utasok szama
 	 */
 	public void passengersGetOn(int n){
-		this.numberOfPassengers +=n;
+		this.numberOfPassengers += n;
+		happinessOfPassengers=500;
 	}
 	
 	
