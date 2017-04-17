@@ -35,7 +35,7 @@ public class Wagon {
 	 */
 	public Wagon(int weight, Color color, int numPass)
 	{
-		System.out.println("New Wagon created with parameters of type int, Color, int");
+		//System.out.println("New Wagon created with parameters of type int, Color, int");
 		this.color = color;
 		this.weight = weight;
 		this.numberOfPassengers = numPass;
