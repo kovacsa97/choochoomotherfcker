@@ -52,11 +52,15 @@ public class Board {
 	}
 	
 	public void buildTunnel(TunnelOpportunity t1, TunnelOpportunity t2) {
+		tunnel=new Tunnel(10);
 		tunnel.setEnds(t1, t2);
 	}
 	
 	public void buildTunnel(String t1id, String t2id) {
-		buildTunnel(tunnelOpportunityList.get(t1id),tunnelOpportunityList.get(t2id));
+		TunnelOpportunity t1=tunnelOpportunityList.get(t1id);
+		TunnelOpportunity t2=tunnelOpportunityList.get(t2id);
+		if (t1!=null && t2!=null)
+			buildTunnel(t1,t2);
 	}
 	
 	public void destroyTunnel() {
@@ -95,5 +99,10 @@ public class Board {
 		for (EntryPoint ep: entryPointList.values()){
 			ep.setTimer(t);
 		}
+	}
+	
+	public void changeSwitch(String id) {
+		if (switchList.get(id)!=null)
+			switchList.get(id).changeDir();
 	}
 }
