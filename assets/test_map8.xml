@@ -1,6 +1,6 @@
 <data>
 <map>
-	<entrypoint id="e01" nextid="s01" defWaitTime="100" timerId="0" /> 	
+	<entrypoint id="e01" nextid="r01" defWaitTime="100" timerId="0" /> 	
 	<rail id="r01" prevId="e01" nextId="s01" /> 
 	<rail id="r02" prevId="s01" nextId="r03" /> 
 	<rail id="r03" prevId="r02" nextId="st01" /> 
@@ -8,7 +8,7 @@
 	<station id="st01" prevId="s01" nextId="r03" color="1" newPassengerCount="100" newPassengerProbability="1"/>
 </map> 
 	<train id="train1">
-		<locomotive defDrivingForce="1" />
+		<locomotive defDrivingForce="100000" />
 		<wagon passengerCount="0" color="1" /> 
 	</train>  
 </data> 
