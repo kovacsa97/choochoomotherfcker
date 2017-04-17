@@ -8,10 +8,10 @@ public class Locomotive {
 	private int enginePower;
 	private int weight;
 	private final double FRICTION = 0.05;
+	private final int MEGA = 100000;
 	
 	
 	public Locomotive(int enginePower, int weight){
-		//System.out.println("New Locomotive created with parameters of type int, int, double");
 		this.enginePower = enginePower;
 		this.weight = weight;
 	}
@@ -21,11 +21,9 @@ public class Locomotive {
 	}
 	
 	public int getExcursion(){
-		//System.out.println("getExcursion was called inside class Locomotive");
-		double a = enginePower / weight - FRICTION*weight*10;	// a = F/m - Fs;
-		double v0 = a*0.002;									// v0 = a*t
-		//System.out.println("getExcursion returned");
-		return (int) (v0*0.02 + a / 2 * 0.002 * 0.002);			// s = v0 * t - a/2*t*t (id� a k�pfriss�t�s)
+		double a = enginePower*MEGA / weight - FRICTION*weight*10;	
+		double v0 = a*0.002;									
+		return (int) (v0*0.02 + a / 2 * 0.002 * 0.002);			
 	}
 	
 	public void setWeight(int weight){
@@ -34,7 +32,7 @@ public class Locomotive {
 	@Override
 	public String toString(){
 		StringBuilder ret = new StringBuilder("locomotive");
-		ret.append(" " + enginePower);
+		ret.append(" " + (enginePower * MEGA));
 		return ret.toString();
 	}
 	
