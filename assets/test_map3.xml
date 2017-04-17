@@ -4,8 +4,9 @@
 	<rail id="r01" prevId="s01" nextId="to01" /> 
 	<rail id="r02" prevId="s01" nextId="to02" /> 
 	<switch id="s01" inId="e01" currentOutId="r01" otherOutId="r02" /> 
-	<tunnelopp id="to01" inId="r01" outId="null" /> 
-	<tunnelopp id="to02" inId="r02" outId="null" /> 	 
+	<tunnelopp id="to01" inId="r01" outId="t01" /> 
+	<tunnelopp id="to02" inId="t01" outId="r02" /> 
+	<tunnel id="t01" defInId="to01" defOutId="to02" /> 	 
 </map> 
 	<train id="train1">
 		<locomotive defDrivingForce="100000" /> 
