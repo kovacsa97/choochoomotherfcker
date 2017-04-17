@@ -1,2 +1,2 @@
 train train1 r02 t01 1
-    locomotive 1
+    locomotive 100000
