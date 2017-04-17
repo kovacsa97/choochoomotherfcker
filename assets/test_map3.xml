@@ -8,6 +8,6 @@
 	<tunnelopp id="to02" inId="r02" outId="null" /> 	 
 </map> 
 	<train id="train1">
-		<locomotive defDrivingForce="1" /> 
+		<locomotive defDrivingForce="100000" /> 
 	</train> 
 </data> 
