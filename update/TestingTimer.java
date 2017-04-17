@@ -5,7 +5,7 @@ import trainelements.Train;
 import main.EndGameException;
 
 /**
- * TestingTimer osztály
+ * TestingTimer osztaly
  *
  */
 public class TestingTimer extends Timer {
@@ -23,8 +23,8 @@ public class TestingTimer extends Timer {
 	public void stop(){}
 	
 	/**
-	 * @param step
 	 * A parameterkent kapott step-szer fogja elvegezni az update-et.
+	 * @param step
 	 */
 	public void step(int step) throws EndGameException {
 		for(int i = 0; i < step; i++){
@@ -45,7 +45,7 @@ public class TestingTimer extends Timer {
 	}
 	
 	/**
-	 * Beállítja az adott vonat huzoerejet
+	 * Beallitja az adott vonat huzoerejet
 	 * @param id a vonat azonositoja
 	 * @param force a huzoero
 	 */

@@ -3,13 +3,13 @@ package update;
 import main.EndGameException;
 
 /**
- * A játék önállóan mûködõ elemeit fogja össze, 
- * a közös funkcionalitás - reagálás az idõ múlására - alapján. 
+ * A jatek onalloan mukodo elemeit fogja ossze, 
+ * a kozos funkcionalitas - reagalas az ido mulasara - alapjan. 
  */
 public interface Updateable {
 	/**
-	 * @throws EndGameException
 	 * Az Updateable interface-t megvalosito objektumok override-oljak a z update() fuggvenyt
+	 * @throws EndGameException
 	 */
 	public void update() throws EndGameException;
 }

@@ -19,8 +19,8 @@ public class Timer {
 	protected List<Updateable> toUpdate = new ArrayList<Updateable>();
 	
 	/**
-	 * @param element
 	 * Regisztralja az elemeket a Timer reszere
+	 * @param element
 	 */
 	public void registerElement(Updateable element){
 		toUpdate.add(element);
