@@ -1,0 +1,6 @@
+load-file assets/test_map8.xml
+generate-next-train
+list train
+step 30
+list train
+quit

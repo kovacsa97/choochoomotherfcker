@@ -1,0 +1,4 @@
+train train1 r02 r01
+    locomotive 1
+train train1 r08 r07
+    locomotive 2
