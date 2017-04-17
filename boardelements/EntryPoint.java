@@ -151,7 +151,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 	private List<Wagon> createWagonList() throws EndGameException{
 		
 		int wagonNumber =(int)((Math.random()*10)%MAXWAGONNUMBER);
-		System.out.println(wagonNumber);
 		List<Wagon> wagonsList = new ArrayList<Wagon>();
 		for (int i= 0; i<wagonNumber; i++){
 			wagonsList.add(createWagonRandom());
@@ -198,7 +197,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 		}
 		for (int i=0; i<trainModelList.get(0).countOfWagons; i++){
 			Wagon w = createWagon(trainModelList.get(0).color.get(i), trainModelList.get(0).passCount.get(i), trainModelList.get(0).type.get(i));
-			System.out.println(w.toString());
 			wagonList.add(w);
 		}
 		Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
