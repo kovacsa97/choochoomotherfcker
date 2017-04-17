@@ -136,6 +136,7 @@ public class Train implements Updateable {
 		ret.append(" " + endPos);
 		ret.append(" " + (myWagons.size() + 1));
 		ret.append("\n\t" + myLocomotive.toString());
+		if (myWagons.size() == 0 || myWagons == null) return ret.toString();
 		for(int i = 0; i < myWagons.size(); i++){
 			ret.append("\n\t" + myWagons.get(i).toString());
 		}
