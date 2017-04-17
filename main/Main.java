@@ -32,7 +32,7 @@ public class Main {
 		PrintStream os=System.out;
 		
 		Scanner sc=new Scanner(System.in);
-		while (!exit) {
+		while (!exit&&sc.hasNext()) {
 			String cmd=sc.nextLine();
 			String[] cmdargs=cmd.split(" ");
 			switch (cmdargs[0]) {
@@ -75,7 +75,7 @@ public class Main {
 				try {
 					b.getNextTrain();
 				} catch (EndGameException e) {
-					os.println("crash!!!");
+					os.println("crash!!! "+e.tid);
 				}
 				break;
 			case "set-driving-force":

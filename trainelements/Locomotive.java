@@ -16,7 +16,7 @@ public class Locomotive {
 	}
 	
 	public void setEnginePower(int ep){
-		enginePower+= ep; 
+		enginePower = ep;
 	}
 	
 	public int getExcursion(){
