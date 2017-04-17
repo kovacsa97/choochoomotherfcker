@@ -208,7 +208,7 @@ public class Ttest {
 				}
 			}
 			
-			System.out.println("input maches expected");
+			System.out.println("input matches expected");
 			
 		} catch (FileNotFoundException e) {
 			System.out.println("could not open " + args[0]);
