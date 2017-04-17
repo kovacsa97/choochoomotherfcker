@@ -47,15 +47,15 @@ public class EntryPoint extends BoardElement implements Updateable{
 	/**
 	 * Wagon tomege
 	 */
-	private final int WAGONWEIGHT = 10000;
+	private final int WAGONWEIGHT = 1;
 	/**
 	 * Mozdony tomege
 	 */
-	private final int LOCOMOTIVEWEIGHT = 20000;
+	private final int LOCOMOTIVEWEIGHT = 2;
 	/**
 	 * Mozdony ero
 	 */
-	private final int LOCOMOTIVEPOWER = 10000000;
+	private final int LOCOMOTIVEPOWER = 0;
 	/**
 	 * Utas szam
 	 */
