@@ -196,15 +196,11 @@ public class EntryPoint extends BoardElement implements Updateable{
 			trainModelList.remove(0);
 			return;
 		}
-		System.out.println("MIVAN?");
 		for (int i=0; i<trainModelList.get(0).countOfWagons; i++){
 			Wagon w = createWagon(trainModelList.get(0).color.get(i), trainModelList.get(0).passCount.get(i), trainModelList.get(0).type.get(i));
 			System.out.println(w.toString());
 			wagonList.add(w);
 		}
-		System.out.println("FASZ" + wagonList
-				.get(0)
-		.getNumberOfPassengers());
 		Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
 		Train t = new Train(wagonList, loc, this);
 		timer.registerElement(t);
