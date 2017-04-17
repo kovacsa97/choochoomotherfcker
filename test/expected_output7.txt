@@ -1,7 +1,7 @@
 train train1 e01 e01 2
 	locomotive 70000
 	wagon RED 100
-takeoff st01 2000
+takeoff st01 48000
 train train1 st01 r01 2
 	locomotive 70000
 	wagon RED 0
