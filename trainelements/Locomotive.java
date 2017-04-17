@@ -8,7 +8,7 @@ public class Locomotive {
 	private int enginePower;
 	private int weight;
 	private final double FRICTION = 0.05;
-	private final int MEGA = 100000;
+	private final int MEGA = 1000000;
 	
 	
 	public Locomotive(int enginePower, int weight){
