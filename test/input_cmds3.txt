@@ -1,6 +1,7 @@
 load-file assets/test_map3.xml
 build-tunnel to01 to02
 generate-next-train
-step 50
+set-driving-force train1 1280080000
+step 25
 list train
 quit
