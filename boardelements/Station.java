@@ -23,7 +23,7 @@ public class Station extends BoardElement{
 	/**
 	 * Utasok felszallasanak valoszinusege
 	 */
-	private double newPassengerProbability = 0.5;
+	private double newPassengerProbability = 0;
 	/**
 	 * Utasok felszallasa random tortenik-e
 	 */
@@ -61,14 +61,14 @@ public class Station extends BoardElement{
 	@Override
 	public void enter(Train t) {
 		locked = true;
-
-		if ((randomness && newPassengerProbability<Math.random()) || (!randomness && enablePassengers)){
-			t.passengerGetOn(this.color, this.newPassengerCount);
-		}
+		
 		int out=t.getPassengers(color);
 		System.out.println("takeoff "+id+" "+out);
 		point += out;
-
+		
+		if ((randomness && newPassengerProbability>Math.random()) || (!randomness && enablePassengers)){
+			t.passengerGetOn(this.color, this.newPassengerCount);
+		}
 	} 
 	
 	/**
