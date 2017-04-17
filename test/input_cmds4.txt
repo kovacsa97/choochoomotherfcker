@@ -1,6 +1,5 @@
-load-file asstes/test_map4.xml
+load-file assets/test_map4.xml
 build-tunnel to01 to02
 generate-next-train
 destroy-tunnel
 step 20
-quit
