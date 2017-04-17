@@ -41,14 +41,18 @@ public class StartPos extends Position {
 	 */
 	@Override
 	public void move(int dist) throws EndGameException {
-		if (dist + pos < CurrentBE.getLength()){
-			pos+= dist;
-		}
-		else{
-			BEfifo.add(CurrentBE.getNext());
-			pos = dist + pos - CurrentBE.getLength();
-			CurrentBE = CurrentBE.getNext();
-			CurrentBE.enter(myTrain);
+		try{
+			if (dist + pos < CurrentBE.getLength()){
+				pos+= dist;
+			}
+			else{
+				BEfifo.add(CurrentBE.getNext());
+				pos = dist + pos - CurrentBE.getLength();
+				CurrentBE = CurrentBE.getNext();
+				CurrentBE.enter(myTrain);
+			}
+		} catch (EndGameException e){
+			throw new EndGameException(myTrain.getId());
 		}
 	}
 	

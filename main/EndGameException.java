@@ -1,9 +1,16 @@
 package main;
 
 /**
- * Kivétel a játék végének jelzéséhez
+ * Kivetel a jatek vegenek jelzesehez
  */
 public class EndGameException extends Exception {
-		public String t1id;
-		public String t2id;
+	public String tid;
+	
+	public EndGameException(String id){
+		tid = id;
+	}
+	
+	public EndGameException(){
+
+	}
 }
