@@ -1,4 +1,4 @@
 train train1 r02 r01 1
-    locomotive 1
-train train1 r08 r07 1
-    locomotive 2
+    locomotive 95000
+train train1 r07 r06 1
+    locomotive 190000
