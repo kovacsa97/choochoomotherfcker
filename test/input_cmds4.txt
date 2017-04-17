@@ -3,3 +3,5 @@ build-tunnel to01 to02
 generate-next-train
 destroy-tunnel
 step 20
+quit
+
