@@ -53,6 +53,7 @@ public class Train implements Updateable {
 		}
 		startPos = new StartPos(ep, this);
 		endPos = new EndPos(ep, startPos, 0);
+		id = "";
 	}
 	
 	/**
