@@ -52,6 +52,7 @@ public class Board {
 	}
 	
 	public void buildTunnel(TunnelOpportunity t1, TunnelOpportunity t2) {
+		tunnel=new Tunnel(10);
 		tunnel.setEnds(t1, t2);
 	}
 	
