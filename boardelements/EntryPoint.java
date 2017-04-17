@@ -103,7 +103,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 			w = new CoalWagon(WAGONWEIGHT);
 		}
 		else if (wagonType.equals("wagon")){
-			w = new LoveWagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
+			w = new Wagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
 		}
 		return w;
 	}
