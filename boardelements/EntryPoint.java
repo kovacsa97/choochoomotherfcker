@@ -105,6 +105,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		else if (wagonType.equals("wagon")){
 			w = new Wagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
 		}
+		
 		return w;
 	}
 	
