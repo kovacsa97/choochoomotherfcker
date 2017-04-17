@@ -2,6 +2,6 @@ load-file assets/test_map10.xml
 enable-randomness true
 generate-next-train
 list train
-step 50
+step 21
 list train
 quit
