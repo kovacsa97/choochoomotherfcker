@@ -1,11 +1,11 @@
 train train1 e01 e01 2
     locomotive 50000
     wagon RED 100
-takeoff st01 100
-train train1 st01 r01 2
+takeoff st01 46100
+train train1 st01 r02 2
     locomotive 50000
     wagon RED 50
-takeoff st02 50
-train train1 st02 r04 2
+takeoff st02 21000
+train train1 st02 r05 2
     locomotive 50000
     wagon RED 0
