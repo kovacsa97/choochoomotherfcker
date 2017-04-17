@@ -95,7 +95,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 	 */
 	private Wagon createWagon(int c, int passengerCount, String wagonType){
 		Wagon w = null;
-		System.out.println(wagonType);
 		
 		if (wagonType.equals("lovewagon")){
 			w = new LoveWagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
