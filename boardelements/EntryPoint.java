@@ -95,14 +95,15 @@ public class EntryPoint extends BoardElement implements Updateable{
 	 */
 	private Wagon createWagon(int c, int passengerCount, String wagonType){
 		Wagon w = null;
+		System.out.println(wagonType);
 		
-		if (wagonType.equals("LOVE")){
+		if (wagonType.equals("lovewagon")){
 			w = new LoveWagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
 		}
-		else if (wagonType.equals("COAL")){
+		else if (wagonType.equals("coalwagon")){
 			w = new CoalWagon(WAGONWEIGHT);
 		}
-		else if (wagonType.equals("BASIC")){
+		else if (wagonType.equals("wagon")){
 			w = new LoveWagon(WAGONWEIGHT, Color.values()[c-1], passengerCount);
 		}
 		return w;
@@ -195,10 +196,15 @@ public class EntryPoint extends BoardElement implements Updateable{
 			trainModelList.remove(0);
 			return;
 		}
+		System.out.println("MIVAN?");
 		for (int i=0; i<trainModelList.get(0).countOfWagons; i++){
 			Wagon w = createWagon(trainModelList.get(0).color.get(i), trainModelList.get(0).passCount.get(i), trainModelList.get(0).type.get(i));
+			System.out.println(w.toString());
 			wagonList.add(w);
 		}
+		System.out.println("FASZ" + wagonList
+				.get(0)
+		.getNumberOfPassengers());
 		Locomotive loc = new Locomotive(trainModelList.get(0).defDrivingForce, LOCOMOTIVEWEIGHT);
 		Train t = new Train(wagonList, loc, this);
 		timer.registerElement(t);
