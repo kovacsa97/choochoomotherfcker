@@ -75,7 +75,7 @@ public class Main {
 				try {
 					b.getNextTrain();
 				} catch (EndGameException e) {
-					os.println("crash!!! "+e.tid);
+					os.println("crash!!! " + e.tid);
 				}
 				break;
 			case "set-driving-force":
