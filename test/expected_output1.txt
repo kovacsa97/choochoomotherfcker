@@ -6,4 +6,4 @@ rail cr02 st01 r03
 station st01 cr02 to01 RED 0
 tunnelopp to01 st01 t01
 tunnelopp to02 t01 s01
-switch s01 to02 r02 r03 
+switch s01 to02 r02 r03
