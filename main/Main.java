@@ -113,7 +113,6 @@ public class Main {
 			default:
 				os.println("invalid command");	
 			}
-			
 		}	
 	}
 }
