@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import boardelements.*;
 import main.EndGameException;
@@ -127,7 +129,10 @@ public class Board {
 	public void list(PrintStream ps, String type) {
 		if (toStringList.get(type)==null)
 			ps.println("invalid command");
-		else toStringList.get(type).forEach((s, b)->ps.println(type+" "+s+" "+b.toString()));
+		else {
+			for (Entry<String,? extends BoardElement> e : toStringList.get(type).entrySet())
+				ps.println(type+" "+e.getKey()+" "+e.getValue().toString());
+		}
 	}	
 	
 	/**

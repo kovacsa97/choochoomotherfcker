@@ -1,0 +1,1 @@
+"%JAVA_HOME%\bin\javac" board\*.java boardelements\*.java color\*.java main\*.java parser\*.java position\*.java test\*.java trainelements\*.java update\*.java
