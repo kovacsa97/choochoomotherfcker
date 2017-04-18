@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/**
+ * Tesztelest megvalosito osztalyt.
+ */
 public class Ttest {
 
 	public static void main(String[] args) {

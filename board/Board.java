@@ -100,6 +100,11 @@ public class Board {
 		tunnel.setEnds(t1, t2);
 	}
 	
+	/**
+	 * Felepit egy alagutat a parameterkent kapott ket bejáratID kozott.
+	 * @param t1id az elso tunnelopportunity
+	 * @param t2id a masodik tunnelopportunity
+	 */
 	public void buildTunnel(String t1id, String t2id) {
 		TunnelOpportunity t1=tunnelOpportunityList.get(t1id);
 		TunnelOpportunity t2=tunnelOpportunityList.get(t2id);
