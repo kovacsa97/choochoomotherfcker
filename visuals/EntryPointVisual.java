@@ -39,7 +39,7 @@ public class EntryPointVisual extends StaticVisual{
 		}
 				
 		c.save();
-	    c.transform(new Affine(new Rotate(alpha, this.startPos.x, this.startPos.y-d/2)));
+	    c.transform(new Affine(new Rotate(alpha, this.startPos.x, this.startPos.y+ d/2)));
 	    c.setFill(Color.GREEN);
 		c.fillRect(this.startPos.x, this.startPos.y-d/2, d, d);
 	    c.restore();
