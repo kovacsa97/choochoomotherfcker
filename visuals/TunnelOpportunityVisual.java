@@ -12,7 +12,7 @@ public class TunnelOpportunityVisual extends DynamicVisual{
 	@Override
 	public void draw(GraphicsContext c) {
 		c.setFill(Color.BLUE);
-	    c.fillOval(startPos.x-10, startPos.y-10, 30, 30);
+	    c.fillOval(startPos.x-5, startPos.y-5, 20, 20);
 	}
 	
 

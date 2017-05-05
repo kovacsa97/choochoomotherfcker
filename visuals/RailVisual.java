@@ -45,9 +45,9 @@ public class RailVisual extends StaticVisual{
 		}
 		
 		c.save();
-	    c.transform(new Affine(new Rotate(alpha, x1, y1+7.5)));
+	    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
 	    c.setFill(Color.GRAY);
-	    c.fillRect(x1, y1, d, 15);
+	    c.fillRect(x1, y1, d, 10);
 	    c.restore();
 	}
 }
