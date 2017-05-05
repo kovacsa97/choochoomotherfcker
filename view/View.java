@@ -22,12 +22,20 @@ public class View {
 	}
 	
 	public void initBoard(ArrayList<StaticVisual> list){
+		staticVisuals=list;
 		for (StaticVisual staticVisual : list) {
 			staticVisual.draw(boardCanvas.getGraphicsContext2D());
 		}
 	}
 	
 	public void update(ArrayList<DynamicVisual> list){
+		for (StaticVisual staticVisual : staticVisuals) {
+			staticVisual.draw(boardCanvas.getGraphicsContext2D());
+		}
 		
+		for (DynamicVisual dynamicVisual : list) {
+			dynamicVisual.draw(boardCanvas.getGraphicsContext2D());
+		}
+
 	}
 }
