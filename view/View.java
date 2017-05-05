@@ -15,15 +15,16 @@ public class View {
 	
 	@FXML
 	Canvas boardCanvas;
-	private ArrayList<StaticVisual> staticVisuals;
-	GraphicsContext c;
 	
-	public View(GraphicsContext c){
-		this.c = c;
+	private ArrayList<StaticVisual> staticVisuals;
+	
+	public View(){
 	}
 	
 	public void initBoard(ArrayList<StaticVisual> list){
-		
+		for (StaticVisual staticVisual : list) {
+			staticVisual.draw(boardCanvas.getGraphicsContext2D());
+		}
 	}
 	
 	public void update(ArrayList<DynamicVisual> list){
