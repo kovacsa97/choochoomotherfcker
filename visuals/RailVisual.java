@@ -22,13 +22,16 @@ public class RailVisual extends StaticVisual{
 		int a = x2 - x1;
 		int b = y2 - y1;
 		
+		if (a<0) a*=-1;
+		if (b<0) b*=-1;
+		
 		int d = (int)Math.sqrt(a*a+b*b);
 
-		double cosa = b/d;
-		double alpha = Math.acos(cosa);
+		double sina = (double) b / (double)d;
+		double alpha = Math.asin(sina) * 57;
 		
 		c.save();
-	    c.transform(new Affine(new Rotate(alpha*57, x1, y1)));
+	    c.transform(new Affine(new Rotate(alpha, x1, y1)));
 	    c.setFill(Color.GRAY);
 	    c.fillRect(x1, y1, d, 15);
 	    c.restore();
