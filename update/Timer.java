@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
+import controller.Controller;
 import main.EndGameException;
 
 
@@ -16,6 +17,7 @@ import main.EndGameException;
 public class Timer {
 	
 	private boolean game = false;
+	private Controller myController;
 	protected List<Updateable> toUpdate = new ArrayList<Updateable>();
 	
 	/**
