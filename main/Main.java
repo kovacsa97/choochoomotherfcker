@@ -9,12 +9,14 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-	
+	private Controller c;
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		c=new Controller(null, null, null);
 		FXMLLoader l=new FXMLLoader(getClass().getResource("choochoo_ui.fxml"));
-		l.setController(new Controller(null, null, null));
+		l.setController(c);
 		primaryStage.setScene(new Scene((Parent)l.load()));
+		c.DisplayChange();
 		primaryStage.show();
 	}
 	

@@ -1,12 +1,14 @@
 package visuals;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public abstract class DynamicVisual {
 	
 	private Point startPos;
 	private Point endPos;
 	private String id;
 	
-	public abstract void draw();
+	public abstract void draw(GraphicsContext c);
 	public DynamicVisual(Point sp, Point ep, String id){
 		startPos = sp;
 		endPos = ep;

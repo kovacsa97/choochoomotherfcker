@@ -6,12 +6,22 @@ import board.Board;
 import boardelements.Switch;
 import boardelements.Tunnel;
 import boardelements.TunnelOpportunity;
+import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import trainelements.Train;
 import view.View;
 import visuals.DynamicVisual;
 import visuals.StaticVisual;
 
 public class Controller {
+	@FXML
+	TreeView<String> tvElements;
+	
+	@FXML
+	Canvas boardCanvas;
+	
 	private String fileToParse;
 	private Board board;
 	private ArrayList<Train> allTrain;
@@ -56,7 +66,7 @@ public class Controller {
 	}
 	
 	public void DisplayChange(){
-		
+		tvElements.setRoot(new TreeItem<String>("it works"));
 	}
 	
 	public void parse(){
