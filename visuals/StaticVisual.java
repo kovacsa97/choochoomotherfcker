@@ -1,5 +1,7 @@
 package visuals;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public abstract class StaticVisual {
 	
 	private Point startPos;
@@ -12,5 +14,5 @@ public abstract class StaticVisual {
 		this.id = id;
 	}
 	
-	public abstract void draw();
+	public abstract void draw(GraphicsContext c);
 }

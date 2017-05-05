@@ -1,5 +1,7 @@
 package visuals;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public class StationVisual extends StaticVisual{
 
 	public StationVisual(Point sp, Point ep, String id) {
@@ -7,7 +9,7 @@ public class StationVisual extends StaticVisual{
 		// TODO Auto-generated constructor stub
 	}
 
-	public void draw() {
+	public void draw(GraphicsContext c) {
 		// TODO Auto-generated method stub
 		
 	}

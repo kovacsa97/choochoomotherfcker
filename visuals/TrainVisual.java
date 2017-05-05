@@ -2,6 +2,8 @@ package visuals;
 
 import java.util.ArrayList;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public class TrainVisual extends DynamicVisual {
 	private ArrayList<Point> myPoints;
 	
@@ -15,7 +17,7 @@ public class TrainVisual extends DynamicVisual {
 	}
 
 	@Override
-	public void draw() {
+	public void draw(GraphicsContext c) {
 		// TODO Auto-generated method stub
 		
 	}

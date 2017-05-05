@@ -1,5 +1,7 @@
 package visuals;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public class SwitchVisual extends DynamicVisual {
 	private Point otherEnd;
 	
@@ -9,7 +11,7 @@ public class SwitchVisual extends DynamicVisual {
 	}
 
 	@Override
-	public void draw() {
+	public void draw(GraphicsContext c) {
 		// TODO Auto-generated method stub
 		
 	}
