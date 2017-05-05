@@ -1,6 +1,7 @@
 package visuals;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 public class RailVisual extends StaticVisual{
 
@@ -24,7 +25,8 @@ public class RailVisual extends StaticVisual{
 		double alpha = Math.acos(cosa);
 		
 		c.rotate(alpha);
-		c.fillRect(x1, y1, d, 30);
+		c.setFill(Color.GRAY);
+		c.fillRect(x1, y1, d, 15);
 		c.rotate(-alpha);
 	}
 }
