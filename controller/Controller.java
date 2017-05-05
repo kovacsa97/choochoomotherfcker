@@ -7,6 +7,7 @@ import boardelements.Switch;
 import boardelements.Tunnel;
 import boardelements.TunnelOpportunity;
 import trainelements.Train;
+import view.View;
 import visuals.DynamicVisual;
 import visuals.StaticVisual;
 
@@ -16,6 +17,7 @@ public class Controller {
 	private ArrayList<Train> allTrain;
 	private ArrayList<StaticVisual> staticVisuals;
 	private ArrayList<DynamicVisual> dynamicVisuals;
+	private View myView;
 	
 	public Controller(String filename, Board b, ArrayList<Train> t ){
 		board = b;
@@ -58,7 +60,6 @@ public class Controller {
 	}
 	
 	public void parse(){
-		
+
 	}
-	
 }
