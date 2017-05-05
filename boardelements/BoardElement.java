@@ -102,6 +102,22 @@ public class BoardElement {
 	}
 	
 	/**
+	 * Getter a következõ pályaelem lekéréséhez
+	 * @return next: következõ pályaelem
+	 */
+	public BoardElement getNextElement(){
+		return next;
+	}
+	
+	/**
+	 * Getter az elõzõ pályaelem lekéréséhez
+	 * @return prev: elõzõ pályaelem
+	 */
+	public BoardElement getPrevElement() {
+		return prev;
+	}
+
+	/**
 	 * Beallitja az ot koveto es megelozo palyaelemet
 	 * @param p: elozo palyaelem
 	 * @param n: kovetkezo palyaelem

@@ -10,5 +10,4 @@ public class EntryPointVisual extends StaticVisual{
 		// TODO Auto-generated method stub
 		
 	}
-
 }
