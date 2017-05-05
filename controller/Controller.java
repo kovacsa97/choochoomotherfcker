@@ -1,13 +1,16 @@
 package controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 import board.Board;
 import boardelements.BoardElement;
@@ -79,7 +82,7 @@ public class Controller {
 		return null;
 	}
 	
-	public void parse(String filename){
+	public void parse(String filename) throws SAXException, IOException, ParserConfigurationException{
 		File inputFile = new File(filename);
         DocumentBuilderFactory dbFactory 
            = DocumentBuilderFactory.newInstance();
@@ -92,7 +95,6 @@ public class Controller {
         Node map = doc.getElementsByTagName("map").item(0);
         for(Node element = map.getFirstChild(); element != null; element = element.getNextSibling()){
         	if (element.getNodeType() == Node.ELEMENT_NODE) {
-        		BoardElement b = null;
         		String id = element.getAttributes().getNamedItem("id").getNodeValue();
         		if(element.getNodeName().equals("rail")){
         			
@@ -115,9 +117,6 @@ public class Controller {
 				else if(element.getNodeName().equals("tunnel")){						
 					
 				}
-        		if(b == null)
-        			throw new Exception("Invalid BoardElement");
-    			
         	}
         }
 	}
