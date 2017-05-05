@@ -11,9 +11,6 @@ public class StationVisual extends StaticVisual{
 	}
 
 	public void draw(GraphicsContext c) {
-		int width = endPos.x - startPos.x;
-		int height = width;
-		c.setFill(Color.GREEN);
-		c.fillRect(this.startPos.x + width/2, startPos.y, width, height);
+		
 	}
 }
