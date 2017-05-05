@@ -17,8 +17,14 @@ public class RailVisual extends StaticVisual{
 		int a = x2 - x1;
 		int b = y2 - y1;
 		
+		//pi*fok/180
 		int d = (int)Math.sqrt(a*a+b*b);
-		c.rotate(90);
+
+		double cosa = b/d;
+		double alpha = Math.acos(cosa);
+		
+		c.rotate(alpha);
 		c.fillRect(x1, y1, d, 30);
+		c.rotate(-alpha);
 	}
 }

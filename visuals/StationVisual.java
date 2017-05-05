@@ -16,5 +16,4 @@ public class StationVisual extends StaticVisual{
 		c.setFill(Color.GREEN);
 		c.fillRect(this.startPos.x + width/2, startPos.y, width, height);
 	}
-
 }
