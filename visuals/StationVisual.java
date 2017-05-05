@@ -17,7 +17,6 @@ public class StationVisual extends StaticVisual{
 		int y2 = this.endPos.y;
 		int width = endPos.x - startPos.x;
 		int height = width;
-		System.out.println(width + " " + height);
 		c.setFill(Color.GREEN);
 		c.fillRect(this.startPos.x + width/2, startPos.y, width, height);
 	}
