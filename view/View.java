@@ -2,6 +2,7 @@ package view;
 
 import java.util.ArrayList;
 
+import javafx.scene.canvas.GraphicsContext;
 import visuals.DynamicVisual;
 import visuals.StaticVisual;
 
@@ -12,11 +13,11 @@ public class View {
 		
 	}
 	
-	public void initBoard(ArrayList<StaticVisual> list){
+	public void initBoard(GraphicsContext c, ArrayList<StaticVisual> list){
 		
 	}
 	
-	public void update(ArrayList<DynamicVisual> list){
+	public void update(GraphicsContext c, ArrayList<DynamicVisual> list){
 		
 	}
 }
