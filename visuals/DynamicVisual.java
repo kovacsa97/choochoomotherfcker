@@ -4,8 +4,8 @@ import javafx.scene.canvas.GraphicsContext;
 
 public abstract class DynamicVisual {
 	
-	private Point startPos;
-	private Point endPos;
+	protected Point startPos;
+	protected Point endPos;
 	private String id;
 	
 	public abstract void draw(GraphicsContext c);
