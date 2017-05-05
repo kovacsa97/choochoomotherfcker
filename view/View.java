@@ -8,16 +8,17 @@ import visuals.StaticVisual;
 
 public class View {
 	private ArrayList<StaticVisual> staticVisuals;
+	GraphicsContext c;
 	
-	public View(){
+	public View(GraphicsContext c){
+		this.c = c;
+	}
+	
+	public void initBoard(ArrayList<StaticVisual> list){
 		
 	}
 	
-	public void initBoard(GraphicsContext c, ArrayList<StaticVisual> list){
-		
-	}
-	
-	public void update(GraphicsContext c, ArrayList<DynamicVisual> list){
+	public void update(ArrayList<DynamicVisual> list){
 		
 	}
 }
