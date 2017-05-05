@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class TrainVisual extends DynamicVisual {
 	private ArrayList<Point> myPoints;
 	
-	public TrainVisual(ArrayList<Point> l){
+	public TrainVisual(Point sp, Point ep, String id, ArrayList<Point> l){
+		super(sp, ep, id);
 		myPoints = l;
 	}
 	

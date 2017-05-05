@@ -3,7 +3,8 @@ package visuals;
 public class SwitchVisual extends DynamicVisual {
 	private Point otherEnd;
 	
-	public SwitchVisual(Point oe){
+	public SwitchVisual(Point sp, Point ep, Point oe, String id){
+		super(sp, ep, id);
 		otherEnd = oe;
 	}
 

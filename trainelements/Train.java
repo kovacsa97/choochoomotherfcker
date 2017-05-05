@@ -13,13 +13,12 @@ import update.Updateable;
 /**
  * A vonatot reprezentalo osztaly
  */
-
-
 public class Train implements Updateable {
 	/**
 	 * A vonathoz tartozo wagonok listaja
 	 */
 	private List<Wagon> myWagons;
+
 	/**
 	 * A vonathoz tartozo mozdony
 	 */
@@ -149,5 +148,23 @@ public class Train implements Updateable {
 	 */
 	public void setDrivingForce(int drivingForce){
 		this.myLocomotive.setEnginePower(drivingForce);
+	}
+	
+	
+	/**
+	 * Getter a vagonok visszaadásához
+	 * @return myWagons: vagonok listája
+	 */
+	public List<Wagon> getMyWagons() {
+		return myWagons;
+	}
+	
+	
+	/**
+	 * Getter a mozdony visszaadásához
+	 * @return myLocomotive: a vonat mozdonya
+	 */
+	public Locomotive getMyLocomotive() {
+		return myLocomotive;
 	}
 }

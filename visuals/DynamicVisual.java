@@ -7,6 +7,11 @@ public abstract class DynamicVisual {
 	private String id;
 	
 	public abstract void draw();
+	public DynamicVisual(Point sp, Point ep, String id){
+		startPos = sp;
+		endPos = ep;
+		this.id = id;
+	}
 	public void setPoints(Point sp, Point ep){
 		startPos = sp;
 		endPos = ep;
