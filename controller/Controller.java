@@ -1,8 +1,20 @@
 package controller;
 
+import java.io.File;
 import java.util.ArrayList;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
 import board.Board;
+import boardelements.BoardElement;
+import boardelements.CrossingRail;
+import boardelements.EntryPoint;
+import boardelements.Rail;
+import boardelements.Station;
 import boardelements.Switch;
 import boardelements.Tunnel;
 import boardelements.TunnelOpportunity;
@@ -63,7 +75,50 @@ public class Controller {
 		// TODO dynamic elements -> DynamicVisual		
 	}
 	
-	public void parse(){
-		
+	public TreeView updateInfo(){
+		return null;
+	}
+	
+	public void parse(String filename){
+		File inputFile = new File(filename);
+        DocumentBuilderFactory dbFactory 
+           = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(inputFile);
+        doc.getDocumentElement().normalize();
+        
+        ///Parsing Map
+        
+        Node map = doc.getElementsByTagName("map").item(0);
+        for(Node element = map.getFirstChild(); element != null; element = element.getNextSibling()){
+        	if (element.getNodeType() == Node.ELEMENT_NODE) {
+        		BoardElement b = null;
+        		String id = element.getAttributes().getNamedItem("id").getNodeValue();
+        		if(element.getNodeName().equals("rail")){
+        			
+        		}
+        		else if(element.getNodeName().equals("tunnelopp")){
+        			
+        		}
+        		else if(element.getNodeName().equals("station")){
+        			
+        		}
+				else if(element.getNodeName().equals("switch")){
+					
+				}
+				else if(element.getNodeName().equals("crossingrail")){
+					
+				}
+				else if(element.getNodeName().equals("entrypoint")){
+					
+				}
+				else if(element.getNodeName().equals("tunnel")){						
+					
+				}
+        		if(b == null)
+        			throw new Exception("Invalid BoardElement");
+    			
+        	}
+        }
 	}
 }

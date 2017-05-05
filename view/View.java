@@ -29,12 +29,16 @@ public class View {
 	}
 	
 	public void update(ArrayList<DynamicVisual> list){
+		GraphicsContext boardContext=boardCanvas.getGraphicsContext2D();
+		
+		boardContext.clearRect(0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
+		
 		for (StaticVisual staticVisual : staticVisuals) {
-			staticVisual.draw(boardCanvas.getGraphicsContext2D());
+			staticVisual.draw(boardContext);
 		}
 		
 		for (DynamicVisual dynamicVisual : list) {
-			dynamicVisual.draw(boardCanvas.getGraphicsContext2D());
+			dynamicVisual.draw(boardContext);
 		}
 
 	}

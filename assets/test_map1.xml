@@ -9,7 +9,7 @@
 	<switch id="s01" inId="to02" currentOutId="r02" otherOutId="r03" /> 
 	<tunnelopp id="to02" inId="s01" outId="t01" /> 
 	<tunnelopp id="to01" inId="st01" outId="t01" /> 
-	<station id="st01" prevId="cr02" nextId="to01" color="1" newPassengerCount="50" newPassengerProbability="1"/>
-	<tunnel id="t01" defInId="to01" defOutId="to02"/> 
+	<station id="st01" prevId="cr02" nextId="to01" color="1" newPassengerCount="50" newPassengerProbability="1" />
+	<tunnel id="t01" defInId="to01" defOutId="to02" /> 
 </map>
 </data>
