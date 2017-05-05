@@ -4,9 +4,9 @@ import javafx.scene.canvas.GraphicsContext;
 
 public abstract class StaticVisual {
 	
-	private Point startPos;
-	private Point endPos;
-	private String id;
+	protected Point startPos;
+	protected Point endPos;
+	protected String id;
 	
 	public StaticVisual(Point sp, Point ep, String id){
 		startPos = sp;
