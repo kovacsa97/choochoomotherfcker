@@ -28,20 +28,22 @@ import javafx.scene.control.TreeView;
 import trainelements.Train;
 import view.View;
 import visuals.DynamicVisual;
-import visuals.StaticVisual;
+import visuals.RailVisual;
+import visuals.*;
 
 public class Controller {	
 	private String fileToParse;
 	private Board board;
 	private ArrayList<Train> allTrain;
-	private ArrayList<StaticVisual> staticVisuals;
-	private ArrayList<DynamicVisual> dynamicVisuals;
+	private ArrayList<StaticVisual> staticVisuals = new ArrayList<>();
+	private ArrayList<DynamicVisual> dynamicVisuals = new ArrayList<>();
 	private View myView;
 	
-	public Controller(String filename, Board b, ArrayList<Train> t ){
+	public Controller(String filename, Board b, ArrayList<Train> t, View v ){
 		board = b;
 		allTrain = t;
 		fileToParse = filename;
+		myView = v;
 	}
 	
 	public boolean executeSwitch(String id){
@@ -71,7 +73,19 @@ public class Controller {
 	}
 	
 	public void displayBoard(Board b){
-		// TODO Board -> StaticVisual
+		try {
+			parse(fileToParse);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		myView.initBoard(staticVisuals);
 	}
 	
 	public void DisplayChange(){
@@ -96,26 +110,29 @@ public class Controller {
         for(Node element = map.getFirstChild(); element != null; element = element.getNextSibling()){
         	if (element.getNodeType() == Node.ELEMENT_NODE) {
         		String id = element.getAttributes().getNamedItem("id").getNodeValue();
+        		Point sp = new Point(Integer.parseInt(element.getAttributes().getNamedItem("spx").getNodeValue()), Integer.parseInt(element.getAttributes().getNamedItem("spy").getNodeValue()));
+        		Point ep = new Point(Integer.parseInt(element.getAttributes().getNamedItem("epx").getNodeValue()), Integer.parseInt(element.getAttributes().getNamedItem("epy").getNodeValue()));
         		if(element.getNodeName().equals("rail")){
-        			
+        			staticVisuals.add(new RailVisual(sp, ep, id));
         		}
         		else if(element.getNodeName().equals("tunnelopp")){
         			
         		}
         		else if(element.getNodeName().equals("station")){
-        			
+        			staticVisuals.add(new StationVisual(sp, ep, id));
         		}
 				else if(element.getNodeName().equals("switch")){
-					
+					Point oe = new Point(Integer.parseInt(element.getAttributes().getNamedItem("oex").getNodeValue()), Integer.parseInt(element.getAttributes().getNamedItem("oey").getNodeValue()));
+					dynamicVisuals.add(new SwitchVisual(sp, ep, oe, id));
 				}
 				else if(element.getNodeName().equals("crossingrail")){
-					
+					staticVisuals.add(new RailVisual(sp, ep, id));
 				}
 				else if(element.getNodeName().equals("entrypoint")){
-					
+					staticVisuals.add(new EntryPointVisual(sp, ep, id));
 				}
 				else if(element.getNodeName().equals("tunnel")){						
-					
+					dynamicVisuals.add(new TunnelVisual(sp, ep, id));
 				}
         	}
         }
