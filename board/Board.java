@@ -187,4 +187,16 @@ public class Board {
 		if (switchList.get(id)!=null)
 			switchList.get(id).changeDir();
 	}
+	
+	public HashMap<String, Switch> getSwitchList(){
+		return switchList;
+	}
+	
+	public HashMap<String, TunnelOpportunity> getTunnelOpportunityList(){
+		return tunnelOpportunityList;
+	}
+	
+	public Tunnel getTunnel(){
+		return tunnel;
+	}
 }
