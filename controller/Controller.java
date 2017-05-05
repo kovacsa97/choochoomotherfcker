@@ -15,13 +15,7 @@ import view.View;
 import visuals.DynamicVisual;
 import visuals.StaticVisual;
 
-public class Controller {
-	@FXML
-	TreeView<String> tvElements;
-	
-	@FXML
-	Canvas boardCanvas;
-	
+public class Controller {	
 	private String fileToParse;
 	private Board board;
 	private ArrayList<Train> allTrain;
@@ -62,14 +56,14 @@ public class Controller {
 	}
 	
 	public void displayBoard(Board b){
-		
+		// TODO Board -> StaticVisual
 	}
 	
 	public void DisplayChange(){
-		tvElements.setRoot(new TreeItem<String>("it works"));
+		// TODO dynamic elements -> DynamicVisual		
 	}
 	
 	public void parse(){
-
+		
 	}
 }
