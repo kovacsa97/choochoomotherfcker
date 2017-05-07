@@ -11,8 +11,15 @@ public class TunnelOpportunityVisual extends DynamicVisual{
 
 	@Override
 	public void draw(GraphicsContext c) {
-		c.setFill(Color.BLUE);
-	    c.fillOval(startPos.x-5, startPos.y-5, 20, 20);
+		
+		if(!isActive){
+			c.setFill(Color.BLUE);
+			c.fillOval(startPos.x-5, startPos.y-5, 20, 20);
+		}
+		else{
+			c.setFill(Color.GOLD);
+			c.fillOval(startPos.x-5, startPos.y-5, 20, 20);
+		}
 	}
 	
 
