@@ -68,11 +68,7 @@ public class View {
 	public void changeSwitch() {
 		System.out.println("Switch changed");
 	}
-	
-	
-	
-	
-		
+			
 	/**
 	 * beallitja az aktiv vezerles tipusat
 	 * @param ct az aktiv vezerles tipusa

@@ -28,6 +28,7 @@ import javafx.scene.control.TreeView;
 import trainelements.Train;
 import trainelements.Wagon;
 import view.View;
+import view.View.ControlType;
 import visuals.DynamicVisual;
 import visuals.RailVisual;
 import visuals.*;
@@ -142,12 +143,14 @@ public class Controller {
 		if (selectedItem.getParent().getValue()=="Trains")
 			for(Train t : allTrain)
 				if (t.getId()==selectedItem.getValue()) {
+					myView.setControlType(ControlType.Train);
 					selectedTrain=t;
 					return;
 				}
 		if (selectedItem.getParent().getParent().getValue()=="Trains")
 			for (Train t : allTrain)
 				if (t.getId()==selectedItem.getParent().getValue()) {
+					myView.setControlType(ControlType.Train);
 					selectedTrain=t;
 					return;
 				}
