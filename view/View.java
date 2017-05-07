@@ -62,6 +62,15 @@ public class View {
 		System.out.println("Driving force decreased");
 	}
 	
+	/**
+	 * kezeli a valto valtasat
+	 */
+	public void changeSwitch() {
+		System.out.println("Switch changed");
+	}
+	
+	
+	
 	
 		
 	/**
