@@ -2,6 +2,7 @@ package visuals;
 
 import java.util.ArrayList;
 
+import board.Board;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Affine;
@@ -21,7 +22,12 @@ public class TrainVisual extends DynamicVisual {
 		myPoints = l;
 		this.colors = colors;
 	}
-
+	
+	@Override
+	public void update(Board board, ArrayList<Train> trains){
+		
+	}
+	
 	@Override
 	public void draw(GraphicsContext c) {
 		

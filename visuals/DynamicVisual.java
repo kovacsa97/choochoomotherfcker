@@ -1,6 +1,10 @@
 package visuals;
 
+import java.util.ArrayList;
+
+import board.Board;
 import javafx.scene.canvas.GraphicsContext;
+import trainelements.Train;
 
 public abstract class DynamicVisual {
 	
@@ -21,5 +25,12 @@ public abstract class DynamicVisual {
 	}
 	public void setActivation(boolean b){
 		isActive = b;
+	}
+	
+	public void update(Board board, ArrayList<Train> trains){
+		System.out.println("ABSTRACT BASE CLASS!!!");
+	}
+	public String getId() {
+		return id;
 	}
 }
