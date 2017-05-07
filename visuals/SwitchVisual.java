@@ -19,39 +19,24 @@ public class SwitchVisual extends DynamicVisual {
 
 	@Override
 	public void draw(GraphicsContext c) {
-		/*Polygon p = new Polygon();
-		p.getPoints().addAll(new Double[]{ (double) 100, (double) 100, (double) 200, (double) 200, (double) 200, (double) 230, (double) 100, (double) 130});
-		p.getTransforms().add(new Rotate(70, 0, 0));
-		p.getLocalToSceneTransform();
-		
-		
-		double x[] = new double[4];
-		double y[] = new double[4];
-		for(int i = 0; i < 8; i++){
-			if(i%2 == 0)
-				x[i/2] = p.getPoints().get(i);
-			else
-				y[(i-1)/2] = p.getPoints().get(i);
-		}
-		for(int i = 0; i < 4; i++){
-			System.out.println(x[i] + " " + y[i]);
-		}
-		c.fillPolygon(x, y, 4);*/
-		
+					
 		int x1 = this.startPos.x;
 		int y1 = this.startPos.y;
 		int x2 = this.endPos.x;
 		int y2 = this.endPos.y;
+		
+		if (endPos.x-startPos.x<0){
+			 x1 = this.endPos.x;
+			 y1 = this.endPos.y;
+			 x2 = this.startPos.x;
+			 y2 = this.startPos.y;
+		}
 		
 		int a = x2 - x1;
 		int b = y2 - y1;
 		
 		boolean isNegative = false;
 		
-		if (a<0){
-			a*=-1;
-			isNegative = true;
-		}
 		if (b<0){
 			b*=-1;
 			isNegative = true;
@@ -73,19 +58,24 @@ public class SwitchVisual extends DynamicVisual {
 		c.setFill(Color.GRAY);
 	    c.fillRect(x1, y1, d, 10);
 	    c.restore();
+	    
+	    if (endPos.x-startPos.x<0){
+			 x1 = this.otherEnd.x;
+			 y1 = this.otherEnd.y;
+			 x2 = this.startPos.x;
+			 y2 = this.startPos.y;
+		}
+	    
+	    else{
+	    	x2 = this.otherEnd.x;
+			y2 = this.otherEnd.y;
+	    }
 
-		x2 = this.otherEnd.x;
-		y2 = this.otherEnd.y;
-		
 		a = x2 - x1;
 		b = y2 - y1;
 		
 		isNegative = false;
 		
-		if (a<0){
-			a*=-1;
-			isNegative = true;
-		}
 		if (b<0){
 			b*=-1;
 			isNegative = true;
