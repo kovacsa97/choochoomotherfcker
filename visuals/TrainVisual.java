@@ -26,6 +26,7 @@ public class TrainVisual extends DynamicVisual {
 	public void draw(GraphicsContext c) {
 		
 		int counter = 0;
+		System.out.println(colors.size());
 		
 		for(int i=0; i<myPoints.size(); i+=2){
 			int x1 = this.myPoints.get(i).x;
@@ -58,21 +59,39 @@ public class TrainVisual extends DynamicVisual {
 				alpha = Math.asin(sina) * 57;
 			}
 			
-			switch (colors.get(counter)){
-			case BLACK: c.setFill(Color.BLACK);
-			case RED: c.setFill(Color.RED);
-			case BLUE: c.setFill(Color.BLUE);
-			case PINK: c.setFill(Color.PINK);
-			case YELLOW: c.setFill(Color.YELLOW);
-			case GREEN: c.setFill(Color.GREEN);
-			case GRAY: c.setFill(Color.LIGHTGRAY);
+			if (isActive && counter == 0){
+				c.save();
+			    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
+			    c.setFill(Color.GOLD);
+			    c.fillOval(x1, y1, d, 12);
+			    c.restore();
+			    counter++;
 			}
+			else{
 			
-			c.save();
-		    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
-		    c.fillOval(x1, y1, d, 12);
-		    c.restore();
-		    counter++;
+				switch (colors.get(counter)){
+				case BLACK:  if (!isActive) c.setFill(Color.BLACK);
+							break;
+				case RED: c.setFill(Color.RED);
+							break;
+				case BLUE: c.setFill(Color.BLUE);
+							break;
+				case PINK: c.setFill(Color.PINK);
+							break;
+				case YELLOW: c.setFill(Color.YELLOW);
+							break;
+				case GREEN: c.setFill(Color.GREEN);
+							break;
+				case GRAY: c.setFill(Color.LIGHTGRAY);
+							break;
+				}
+				
+				c.save();
+			    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
+			    c.fillOval(x1, y1, d, 12);
+			    c.restore();
+			    counter++;
+			}
 		}
 	}
 }

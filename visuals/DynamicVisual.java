@@ -7,6 +7,7 @@ public abstract class DynamicVisual {
 	protected Point startPos;
 	protected Point endPos;
 	private String id;
+	protected boolean isActive = false;
 	
 	public abstract void draw(GraphicsContext c);
 	public DynamicVisual(Point sp, Point ep, String id){
@@ -17,5 +18,8 @@ public abstract class DynamicVisual {
 	public void setPoints(Point sp, Point ep){
 		startPos = sp;
 		endPos = ep;
+	}
+	public void setActivation(boolean b){
+		isActive = b;
 	}
 }
