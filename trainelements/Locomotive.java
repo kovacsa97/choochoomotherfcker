@@ -41,6 +41,14 @@ public class Locomotive {
 	}
 	
 	/**
+	 * a motorero lekerdezeset teszi lehetove
+	 * @return jelenlegi motorero
+	 */
+	public int getEnginePower() {
+		return enginePower;
+	}
+	
+	/**
 	 * kiszamolja a megtett tavolsagot adott ido alatt
 	 * @return megtett tavolsag adott ido alatt
 	 */

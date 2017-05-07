@@ -30,13 +30,16 @@ public class Main extends Application {
 		ArrayList<DynamicVisual> dl=new ArrayList<DynamicVisual>();
 		dl.add(new SwitchVisual(new Point(100,130), new Point(130,100), new Point(130,160), "TheUltimateSwitch"));
 		w.update(dl);
+		
+		c.updateInfo();
 	}
 	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		c=new Controller(null, null, null);
+		
 		w=new View();
+		c=new Controller(null, null, null,w);
 		FXMLLoader l=new FXMLLoader(getClass().getResource("choochoo_ui.fxml"));
 		l.setController(w);
 		primaryStage.setScene(new Scene((Parent)l.load()));
