@@ -35,6 +35,10 @@ public class StationVisual extends StaticVisual{
 		
 		boolean isNegative = false;
 		boolean otherSide = false;
+		
+		if(a<0){
+			otherSide = true;
+		}
 
 		if (b<0){
 			b*=-1;
