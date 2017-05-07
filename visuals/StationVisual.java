@@ -74,7 +74,7 @@ public class StationVisual extends StaticVisual{
 	    if (!otherSide)
 	    	c.fillRect(x1+10, y1-30, d-20, 30);
 	    else
-	    	c.fillRect(x1+10, y1+30, d-20, 30);
+	    	c.fillRect(x1+10, y1+10, d-20, 30);
 	    c.restore();
 	}
 }

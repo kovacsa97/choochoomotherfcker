@@ -18,15 +18,18 @@ public class TunnelVisual extends DynamicVisual {
 		int x2 = this.endPos.x;
 		int y2 = this.endPos.y;
 		
+		if (endPos.x-startPos.x<0){
+			 x1 = this.endPos.x;
+			 y1 = this.endPos.y;
+			 x2 = this.startPos.x;
+			 y2 = this.startPos.y;
+		}
+		
 		int a = x2 - x1;
 		int b = y2 - y1;
 		
 		boolean isNegative = false;
 		
-		if (a<0){
-			a*=-1;
-			isNegative = true;
-		}
 		if (b<0){
 			b*=-1;
 			isNegative = true;
