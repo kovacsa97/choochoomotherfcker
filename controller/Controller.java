@@ -177,7 +177,7 @@ public class Controller {
         			dynamicVisuals.add(new TunnelOpportunityVisual(sp, ep, id));
         		}
         		else if(element.getNodeName().equals("station")){
-        			staticVisuals.add(new StationVisual(sp, ep, id));
+        			staticVisuals.add(new StationVisual(sp, ep, id, color.Color.PINK));
         		}
 				else if(element.getNodeName().equals("switch")){
 					Point oe = new Point(Integer.parseInt(element.getAttributes().getNamedItem("oex").getNodeValue()), Integer.parseInt(element.getAttributes().getNamedItem("oey").getNodeValue()));
