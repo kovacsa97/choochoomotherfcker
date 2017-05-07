@@ -8,7 +8,7 @@
 	<crossingrail id="cr02" spx="110" spy="120" epx="140" epy="80" /> 
 	<switch id="s01" spx="200" spy="40" epx="184" epy="70" oex="174" oey="53" /> 
 	<tunnelopp id="to02" spx="200" spy="40" epx="0" epy="0"/> 
-	<tunnelopp id="to01" spx="160" spy="120" epx="0" epy="0" /> 
-	<station id="st01" spx="160" spy="120" epx="110" epy="120" />
-	<tunnel id="t01" spx="200" spy="40" epx="160" epy="120" /> 
+	<tunnelopp id="to01" spx="190" spy="120" epx="0" epy="0" /> 
+	<station id="st01" spx="190" spy="120" epx="110" epy="120" />
+	<tunnel id="t01" spx="203" spy="40" epx="190" epy="120" /> 
 </map>
