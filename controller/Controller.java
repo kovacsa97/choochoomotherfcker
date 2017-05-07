@@ -137,6 +137,8 @@ public class Controller {
 	 * @param selectedItem a kivalasztott elem
 	 */
 	public void selectTreeItem(TreeItem<String> selectedItem) {
+		if (selectedItem.getParent().getValue()=="root")
+			return;
 		if (selectedItem.getParent().getValue()=="Trains")
 			for(Train t : allTrain)
 				if (t.getId()==selectedItem.getValue()) {
