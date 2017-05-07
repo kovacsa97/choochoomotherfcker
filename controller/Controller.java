@@ -27,6 +27,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import trainelements.Train;
 import trainelements.Wagon;
+import update.Timer;
 import view.View;
 import view.View.ControlType;
 import visuals.*;
@@ -85,6 +86,10 @@ public class Controller {
 			e.printStackTrace();
 		}
 		myView.initBoard(staticVisuals);
+		Timer t = new Timer();
+		t.setController(this);
+		board.setAllTimers(t);
+		t.start();
 	}
 	
 	public void displayChange(){

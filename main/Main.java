@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import parser.ChooChooParser;
 import update.Timer;
 import view.View;
 import visuals.*;
@@ -29,17 +30,10 @@ public class Main extends Application {
 	
 	
 	public void test() {
-//		ArrayList<StaticVisual> l=new ArrayList<StaticVisual>();
-//		//l.add(new StationVisual(new Point(10,200), new Point(70,200), "fuck_u"));
-//		w.initBoard(l);
-//		
-//		ArrayList<DynamicVisual> dl=new ArrayList<DynamicVisual>();
-//		dl.add(new TunnelOpportunityVisual(new Point(40,200), new Point(700,150), "TheUltimateSwitch"));
-//		w.update(dl);
+		c.setBoard(new ChooChooParser().parse("assets/test_map1.xml"));
+		c.displayBoard("assets/map_1_visual.xml");
 		
-			c.displayBoard("assets/map_1_visual.xml");
-			c.displayChange();
-			//c.updateInfo();
+		//c.updateInfo();
 	}
 	
 	
@@ -53,9 +47,11 @@ public class Main extends Application {
 		l.setController(w);
 		primaryStage.setScene(new Scene((Parent)l.load()));
 		primaryStage.show();
-		w.openHandler();
 		
-		//test();
+		
+		//w.openHandler();
+		
+		test();
 	}
 	
 	public static void main(String[] args) {

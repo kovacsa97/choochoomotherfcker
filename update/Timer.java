@@ -39,6 +39,7 @@ public class Timer {
 				for (int i=0; i<size; i++){
 					toUpdate.get(i).update();
 				}
+				System.out.println("display change!");
 				myController.displayChange();
 				Thread.sleep(300);
 			}
