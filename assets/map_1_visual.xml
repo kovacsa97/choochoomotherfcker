@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map> 
-	<entrypoint id="e01" spx="0" spy="10" epx="10" epy="10" />
-	<rail id="r01" spx="10" spy="10" epx="20" epy="10" /> 
-	<rail id="r02" spx="30" spy="10" epx="40" epy="10"/> 
-	<rail id="r03" spx="50" spy="10" epx="60" epy="10"/>  
-	<crossingrail id="cr01" spx="20" spy="10" epx="30" epy="10" /> 
-	<crossingrail id="cr02" spx="50" spy="40" epx="60" epy="10" /> 
-	<switch id="s01" spx="40" spy="10" epx="50" epy="10" oex="30" oey="40" /> 
-	<tunnelopp id="to02" spx="0" spy="10" epx="10" epy="10"/> 
-	<tunnelopp id="to01" spx="0" spy="10" epx="10" epy="10" /> 
-	<station id="st01" spx="0" spy="10" epx="10" epy="10" />
-	<tunnel id="t01" spx="0" spy="10" epx="10" epy="10" /> 
+	<entrypoint id="e01" spx="40" spy="100" epx="70" epy="100" />
+	<rail id="r01" spx="70" spy="100" epx="100" epy="100" /> 
+	<rail id="r02" spx="160" spy="100" epx="120" epy="100"/> 
+	<rail id="r03" spx="137" spy="83" epx="90" epy="133"/>  
+	<crossingrail id="cr01" spx="97" spy="100" epx="150" epy="100" /> 
+	<crossingrail id="cr02" spx="110" spy="120" epx="140" epy="80" /> 
+	<switch id="s01" spx="70" spy="160" epx="100" epy="150" oex="90" oey="133" /> 
+	<tunnelopp id="to02" spx="0" spy="8" epx="0" epy="0"/> 
+	<tunnelopp id="to01" spx="0" spy="8" epx="0" epy="0" /> 
+	<station id="st01" spx="0" spy="0" epx="0" epy="0" />
+	<tunnel id="t01" spx="0" spy="0" epx="0" epy="0" /> 
 </map>
