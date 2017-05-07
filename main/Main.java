@@ -46,7 +46,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
 		w=new View();
-		c=new Controller(null, null, null,w);
+		c=new Controller(w);
 		FXMLLoader l=new FXMLLoader(getClass().getResource("choochoo_ui.fxml"));
 		l.setController(w);
 		primaryStage.setScene(new Scene((Parent)l.load()));

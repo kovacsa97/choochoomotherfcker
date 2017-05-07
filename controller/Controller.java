@@ -41,10 +41,7 @@ public class Controller {
 	
 	private Train selectedTrain=null;
 	
-	public Controller(String filename, Board b, ArrayList<Train> arrayList, View v ){
-		board = b;
-		allTrain = arrayList;
-		fileToParse = filename;
+	public Controller( View v ){
 		myView = v;
 	}
 	
