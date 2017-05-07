@@ -1,12 +1,16 @@
 package view;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import controller.Controller;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -105,6 +109,33 @@ public class View {
 	 * Palya betoltesenel egyszer inicializalando elemek listaja
 	 */
 	private ArrayList<StaticVisual> staticVisuals;
+	
+	/**
+	 * kezeli a kilepes menuelemet
+	 */
+	public void exitHandler() {
+		Platform.exit();
+		System.exit(0);
+	}
+	
+	/**
+	 * kezeli a palyamegnyitas menuelemet
+	 */
+	public void openHandler() {
+		List<String> choices = new ArrayList<>();
+		
+
+		ChoiceDialog<String> dialog = new ChoiceDialog<>("b", choices);
+		dialog.setTitle("Map selection");
+		dialog.setHeaderText("Select from the available maps");
+		dialog.setContentText("Selected map:");
+
+		// Traditional way to get the response value.
+		Optional<String> result = dialog.showAndWait();
+		if (result.isPresent()){
+		    System.out.println("Your choice: " + result.get());
+		}
+	}
 	
 	public View(){
 	}
