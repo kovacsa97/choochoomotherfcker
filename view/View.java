@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
+import parser.ChooChooParser;
 import visuals.DynamicVisual;
 import visuals.StaticVisual;
 
@@ -136,7 +137,10 @@ public class View {
 
 		Optional<String> result = dialog.showAndWait();
 		
-		// TODO betöltés
+		// TODO betï¿½ltï¿½s
+		
+		myController.setBoard(new ChooChooParser().parse(result + ".xml"));
+		myController.displayBoard(result + "_visual.xml");
 	}
 	
 	public View(){

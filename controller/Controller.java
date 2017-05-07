@@ -192,4 +192,8 @@ public class Controller {
         	}
         }
 	}
+	
+	public void setBoard(Board b){
+		board = b;
+	}
 }
