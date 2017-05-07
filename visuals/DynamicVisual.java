@@ -27,7 +27,7 @@ public abstract class DynamicVisual {
 		isActive = b;
 	}
 	
-	public void update(Board board, ArrayList<Train> trains){
+	public void update(Board board, ArrayList<Train> trains) {
 		System.out.println("ABSTRACT BASE CLASS!!!");
 	}
 	public String getId() {
