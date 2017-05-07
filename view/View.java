@@ -64,5 +64,6 @@ public class View {
 	 */
 	public void updateTreeView(TreeItem<String> i) {
 		tvElements.setRoot(i);
+		tvElements.setShowRoot(false);
 	}
 }
