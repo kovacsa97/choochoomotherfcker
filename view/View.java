@@ -6,6 +6,8 @@ import controller.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
@@ -27,6 +29,8 @@ public class View {
 	
 	@FXML 
 	AnchorPane trainControlPane;
+	@FXML
+	Label lDrivingForceValue;
 	
 	@FXML 
 	AnchorPane switchControlPane;
@@ -43,6 +47,22 @@ public class View {
 		Switch,
 		None
 	};
+	
+	/**
+	 * kezeli a + gombot
+	 */
+	public void increaseDrivingForce() {
+		System.out.println("Driving force increased");
+	}
+	
+	/**
+	 * kezeli a - gombot
+	 */
+	public void decreaseDrivingForce() {
+		System.out.println("Driving force decreased");
+	}
+	
+	
 		
 	/**
 	 * beallitja az aktiv vezerles tipusat

@@ -54,9 +54,9 @@
                               </AnchorPane>
                             <AnchorPane fx:id="trainControlPane" prefHeight="103.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Button layoutX="244.0" layoutY="42.0" mnemonicParsing="false" text="+" AnchorPane.bottomAnchor="36.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="42.0" />
-                                    <Button layoutX="14.0" layoutY="42.0" mnemonicParsing="false" text="-" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="42.0" />
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="40.0" prefHeight="30.0" prefWidth="89.0" text="10000" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0">
+                                    <Button layoutX="244.0" layoutY="42.0" mnemonicParsing="false" onAction="#increaseDrivingForce" text="+" AnchorPane.bottomAnchor="36.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="42.0" />
+                                    <Button layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#decreaseDrivingForce" text="-" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="42.0" />
+                                    <Label fx:id="lDrivingForceValue" alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="40.0" prefHeight="30.0" prefWidth="89.0" text="10000" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
