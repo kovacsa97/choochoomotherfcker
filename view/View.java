@@ -1,5 +1,6 @@
 package view;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -123,18 +124,19 @@ public class View {
 	 */
 	public void openHandler() {
 		List<String> choices = new ArrayList<>();
-		
+		for (final File map : new File("maps").listFiles()) {
+			String[] names = map.getName().replaceFirst("[.][^.]+$", "").split("_");
+			if (!choices.contains(names[0])) choices.add(names[0]);
+		}
 
-		ChoiceDialog<String> dialog = new ChoiceDialog<>("b", choices);
+		ChoiceDialog<String> dialog = new ChoiceDialog<>(choices.get(0), choices);
 		dialog.setTitle("Map selection");
 		dialog.setHeaderText("Select from the available maps");
 		dialog.setContentText("Selected map:");
 
-		// Traditional way to get the response value.
 		Optional<String> result = dialog.showAndWait();
-		if (result.isPresent()){
-		    System.out.println("Your choice: " + result.get());
-		}
+		
+		// TODO betöltés
 	}
 	
 	public View(){
