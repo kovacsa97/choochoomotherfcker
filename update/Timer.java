@@ -39,6 +39,7 @@ public class Timer {
 				for (int i=0; i<size; i++){
 					toUpdate.get(i).update();
 				}
+				myController.displayChange();
 				Thread.sleep(300);
 			}
 		} catch (EndGameException e){
@@ -56,5 +57,9 @@ public class Timer {
 	 */
 	public void stop(){
 		game = false;
+	}
+	
+	public void setController(Controller c){
+		myController = c;
 	}
 }

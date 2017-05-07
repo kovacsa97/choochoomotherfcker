@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import update.Timer;
 import view.View;
 import visuals.*;
 //import visuals.Point;
@@ -47,12 +48,14 @@ public class Main extends Application {
 		
 		w=new View();
 		c=new Controller(w);
+		w.setController(c);
 		FXMLLoader l=new FXMLLoader(getClass().getResource("choochoo_ui.fxml"));
 		l.setController(w);
 		primaryStage.setScene(new Scene((Parent)l.load()));
 		primaryStage.show();
+		w.openHandler();
 		
-		test();
+		//test();
 	}
 	
 	public static void main(String[] args) {

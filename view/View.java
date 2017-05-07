@@ -137,10 +137,9 @@ public class View {
 
 		Optional<String> result = dialog.showAndWait();
 		
-		// TODO bet�lt�s
+		myController.setBoard(new ChooChooParser().parse("maps/" + result.get() + ".xml"));
+		myController.displayBoard("maps/" + result.get() + "_visual.xml");
 		
-		myController.setBoard(new ChooChooParser().parse(result + ".xml"));
-		myController.displayBoard(result + "_visual.xml");
 	}
 	
 	public View(){
