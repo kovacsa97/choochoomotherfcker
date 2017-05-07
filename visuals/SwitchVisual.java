@@ -53,9 +53,15 @@ public class SwitchVisual extends DynamicVisual {
 			alpha = Math.asin(sina) * 57;
 		}
 		
+		if(isActive){
+			c.setFill(Color.DARKGOLDENROD);
+		}
+		else{
+		    c.setFill(Color.GRAY);
+		}
+		
 		c.save();
 		c.transform(new Affine(new Rotate(alpha, x1, y1+5)));	    
-		c.setFill(Color.GRAY);
 	    c.fillRect(x1, y1, d, 10);
 	    c.restore();
 	    
@@ -90,9 +96,15 @@ public class SwitchVisual extends DynamicVisual {
 			alpha = Math.asin(sina) * 57;
 		}
 		
+		if(isActive){
+		    c.setFill(Color.GOLD);
+		}
+		else{
+		    c.setFill(Color.GRAY);
+		}
+				
 		c.save();
 		c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
-	    c.setFill(Color.GRAY);
 	    c.fillRect(x1, y1, d, 10);
 	    c.restore();
 	}
