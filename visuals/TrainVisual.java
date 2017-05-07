@@ -34,6 +34,13 @@ public class TrainVisual extends DynamicVisual {
 			int x2 = this.myPoints.get(i+1).x;
 			int y2 = this.myPoints.get(i+1).y;
 			
+			if (endPos.x-startPos.x<0){
+				x1 = this.myPoints.get(i+1).x;
+				y1 = this.myPoints.get(i+1).y;
+				x2 = this.myPoints.get(i).x;
+				y2 = this.myPoints.get(i).y;
+			}
+			
 			int a = x2 - x1;
 			int b = y2 - y1;
 			
