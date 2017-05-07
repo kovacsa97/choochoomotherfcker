@@ -17,6 +17,10 @@ public class StationVisual extends StaticVisual{
 	}
 
 	public void draw(GraphicsContext c) {
+		
+		boolean otherSide = false;
+		boolean isNegative = false;
+
 		int x1 = this.startPos.x;
 		int y1 = this.startPos.y;
 		int x2 = this.endPos.x;
@@ -27,19 +31,12 @@ public class StationVisual extends StaticVisual{
 			 y1 = this.endPos.y;
 			 x2 = this.startPos.x;
 			 y2 = this.startPos.y;
+			 otherSide = true;
 		}
 		
 		int a = x2 - x1;
 		int b = y2 - y1;
 		
-		
-		boolean isNegative = false;
-		boolean otherSide = false;
-		
-		if(a<0){
-			otherSide = true;
-		}
-
 		if (b<0){
 			b*=-1;
 			isNegative = true;
