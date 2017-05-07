@@ -1,0 +1,6 @@
+<data>
+<map> 
+	<entrypoint id="e01" nextid="r01" defWaitTime="100" timerId="0" />
+	<rail id="r01" prevId="e01" nextId="cr01" /> 
+</map>
+</data>
