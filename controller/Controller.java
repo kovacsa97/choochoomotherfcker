@@ -76,7 +76,7 @@ public class Controller {
 		return true;
 	}
 	
-	public void displayBoard(Board b){
+	public void displayBoard(String fileToParse){
 		try {
 			parse(fileToParse);
 		} catch (SAXException e) {
@@ -92,8 +92,8 @@ public class Controller {
 		myView.initBoard(staticVisuals);
 	}
 	
-	public void DisplayChange(){
-		// TODO dynamic elements -> DynamicVisual		
+	public void displayChange(){
+		myView.update(dynamicVisuals);
 	}
 	
 	/**
