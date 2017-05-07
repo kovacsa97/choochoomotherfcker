@@ -2,11 +2,11 @@
 <map> 
 	<entrypoint id="e01" spx="40" spy="100" epx="70" epy="100" />
 	<rail id="r01" spx="70" spy="100" epx="100" epy="100" /> 
-	<rail id="r02" spx="160" spy="100" epx="120" epy="100"/> 
-	<rail id="r03" spx="137" spy="83" epx="90" epy="133"/>  
+	<rail id="r02" spx="147" spy="100" epx="187" epy="67"/> 
+	<rail id="r03" spx="137" spy="83" epx="177" epy="50"/>  
 	<crossingrail id="cr01" spx="97" spy="100" epx="150" epy="100" /> 
 	<crossingrail id="cr02" spx="110" spy="120" epx="140" epy="80" /> 
-	<switch id="s01" spx="70" spy="160" epx="100" epy="150" oex="90" oey="133" /> 
+	<switch id="s01" spx="150" spy="10" epx="150" epy="10" oex="150" oey="10" /> 
 	<tunnelopp id="to02" spx="0" spy="8" epx="0" epy="0"/> 
 	<tunnelopp id="to01" spx="0" spy="8" epx="0" epy="0" /> 
 	<station id="st01" spx="0" spy="0" epx="0" epy="0" />
