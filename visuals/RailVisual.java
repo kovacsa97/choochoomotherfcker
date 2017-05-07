@@ -37,7 +37,7 @@ public class RailVisual extends StaticVisual{
 
 		double sina = (double) b / (double)d;
 		double alpha;
-		if (!isNegative){
+		if (isNegative){
 			alpha = Math.asin(sina) * -57;
 		}
 		else{
