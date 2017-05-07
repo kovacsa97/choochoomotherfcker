@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map> 
+	<entrypoint id="e01" spx="40" spy="100" epx="70" epy="100" />
+	<rail id="r01" spx="70" spy="100" epx="100" epy="100" /> 
+</map>
