@@ -9,10 +9,11 @@ import javafx.scene.transform.Rotate;
 
 public class StationVisual extends StaticVisual{
 	
-	
+	color.Color myColor;
 
-	public StationVisual(Point sp, Point ep, String id) {
+	public StationVisual(Point sp, Point ep, String id, color.Color c) {
 		super(sp, ep, id);
+		this.myColor = c;
 	}
 
 	public void draw(GraphicsContext c) {
@@ -26,10 +27,11 @@ public class StationVisual extends StaticVisual{
 		
 		
 		boolean isNegative = false;
+		boolean otherSide = false;
 		
 		if (a<0){
 			a*=-1;
-			isNegative = true;
+			otherSide = true;
 		}
 		if (b<0){
 			b*=-1;
@@ -51,8 +53,24 @@ public class StationVisual extends StaticVisual{
 	    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
 	    c.setFill(Color.GRAY);
 	    c.fillRect(x1, y1, d, 10);
-	    c.setFill(Color.RED);
-	    c.fillRect(x1+10, y1-30, d-20, 30);
+	    switch (myColor){
+
+		case RED: c.setFill(Color.RED);
+					break;
+		case BLUE: c.setFill(Color.BLUE);
+					break;
+		case PINK: c.setFill(Color.PINK);
+					break;
+		case YELLOW: c.setFill(Color.YELLOW);
+					break;
+		case GREEN: c.setFill(Color.GREEN);
+					break;
+		}
+	    
+	    if (!otherSide)
+	    	c.fillRect(x1+10, y1-30, d-20, 30);
+	    else
+	    	c.fillRect(x1+10, y1+30, d-20, 30);
 	    c.restore();
 	}
 }
