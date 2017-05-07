@@ -22,15 +22,32 @@ public class RailVisual extends StaticVisual{
 		int a = x2 - x1;
 		int b = y2 - y1;
 		
+		boolean isNegative = false;
+		
+		if (a<0){
+			a*=-1;
+			isNegative = true;
+		}
+		if (b<0){
+			b*=-1;
+			isNegative = true;
+		}
+		
 		int d = (int)Math.sqrt(a*a+b*b);
 
-		double cosa = b/d;
-		double alpha = Math.acos(cosa);
+		double sina = (double) b / (double)d;
+		double alpha;
+		if (isNegative){
+			alpha = Math.asin(sina) * -57;
+		}
+		else{
+			alpha = Math.asin(sina) * 57;
+		}
 		
 		c.save();
-	    c.transform(new Affine(new Rotate(alpha*57, x1, y1)));
+	    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
 	    c.setFill(Color.GRAY);
-	    c.fillRect(x1, y1, d, 15);
+	    c.fillRect(x1, y1, d, 10);
 	    c.restore();
 	}
 }

@@ -17,14 +17,31 @@ public class EntryPointVisual extends StaticVisual{
 		int b = this.endPos.y - this.startPos.y;
 		
 		int d = (int)Math.sqrt(a*a+b*b);
-
-		double cosa = b/d;
-		double alpha = Math.acos(cosa);
+		
+		boolean isNegative = false;
+		
+		if (a<0){
+			a*=-1;
+			isNegative = true;
+		}
+		if (b<0){
+			b*=-1;
+			isNegative = true;
+		}
+		
+		double sina = (double) b / (double)d;
+		double alpha;
+		if (isNegative){
+			alpha = Math.asin(sina) * -57;
+		}
+		else{
+			alpha = Math.asin(sina) * 57;
+		}
 				
 		c.save();
-	    c.transform(new Affine(new Rotate(alpha*57, this.startPos.x + d/2, this.startPos.y)));
+	    c.transform(new Affine(new Rotate(alpha, this.startPos.x, this.startPos.y+ d/2)));
 	    c.setFill(Color.GREEN);
-		c.fillRect(this.startPos.x + d/2, this.startPos.y, d, d);
+		c.fillRect(this.startPos.x, this.startPos.y-d/2, d, d);
 	    c.restore();
 	}
 }

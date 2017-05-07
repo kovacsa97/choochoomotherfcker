@@ -26,6 +26,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import trainelements.Train;
+import trainelements.Wagon;
 import view.View;
 import visuals.DynamicVisual;
 import visuals.RailVisual;
@@ -39,9 +40,11 @@ public class Controller {
 	private ArrayList<DynamicVisual> dynamicVisuals = new ArrayList<>();
 	private View myView;
 	
-	public Controller(String filename, Board b, ArrayList<Train> t, View v ){
+	private Train selectedTrain=null;
+	
+	public Controller(String filename, Board b, ArrayList<Train> arrayList, View v ){
 		board = b;
-		allTrain = t;
+		allTrain = arrayList;
 		fileToParse = filename;
 		myView = v;
 	}
@@ -92,8 +95,62 @@ public class Controller {
 		// TODO dynamic elements -> DynamicVisual		
 	}
 	
-	public TreeView updateInfo(){
-		return null;
+	/**
+	 * Frissiti a view informacios treeviewjet a megfelelo elemekkel
+	 */
+	public void updateInfo(){
+		TreeItem<String> root=new TreeItem<String>("root");
+		
+		// Train lista
+		TreeItem<String> trainroot=new TreeItem<String>("Trains");
+		for (Train item : allTrain){
+			TreeItem<String> trainbase=new TreeItem<String>(item.getId());
+			trainbase.getChildren().add(new TreeItem<String>("Locomotive (Driving power: "+item.getMyLocomotive().getEnginePower()+")"));
+			for (Wagon w : item.getMyWagons())
+				trainbase.getChildren().add(new TreeItem<String>("Wagon (Number of passengers: "+w.getNumberOfPassengers()+")"));
+			trainroot.getChildren().add(trainbase);
+			}
+		root.getChildren().add(trainroot);
+		
+		// Rail lista
+		TreeItem<String> railroot=new TreeItem<String>("Rails");
+		root.getChildren().add(railroot);
+		
+		// Rail lista
+		TreeItem<String> stationroot=new TreeItem<String>("Stations");
+		root.getChildren().add(stationroot);
+				
+		// Rail lista
+		TreeItem<String> toroot=new TreeItem<String>("Tunnel opportunities");
+		root.getChildren().add(toroot);
+				
+		// Rail lista
+		TreeItem<String> switchroot=new TreeItem<String>("Switches");
+		root.getChildren().add(switchroot);
+		
+		myView.updateTreeView(root);
+	}
+	
+	
+	/**
+	 * kezeli az uj elem kivalasztasat az informacios listabol
+	 * @param selectedItem a kivalasztott elem
+	 */
+	public void selectTreeItem(TreeItem<String> selectedItem) {
+		if (selectedItem.getParent().getValue()=="root")
+			return;
+		if (selectedItem.getParent().getValue()=="Trains")
+			for(Train t : allTrain)
+				if (t.getId()==selectedItem.getValue()) {
+					selectedTrain=t;
+					return;
+				}
+		if (selectedItem.getParent().getParent().getValue()=="Trains")
+			for (Train t : allTrain)
+				if (t.getId()==selectedItem.getParent().getValue()) {
+					selectedTrain=t;
+					return;
+				}
 	}
 	
 	public void parse(String filename) throws SAXException, IOException, ParserConfigurationException{
