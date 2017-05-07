@@ -40,6 +40,8 @@ public class Controller {
 	private ArrayList<DynamicVisual> dynamicVisuals = new ArrayList<>();
 	private View myView;
 	
+	private Train selectedTrain=null;
+	
 	public Controller(String filename, Board b, ArrayList<Train> arrayList, View v ){
 		board = b;
 		allTrain = arrayList;
@@ -97,7 +99,7 @@ public class Controller {
 	 * Frissiti a view informacios treeviewjet a megfelelo elemekkel
 	 */
 	public void updateInfo(){
-		TreeItem<String> root=new TreeItem<String>();
+		TreeItem<String> root=new TreeItem<String>("root");
 		
 		// Train lista
 		TreeItem<String> trainroot=new TreeItem<String>("Trains");
@@ -127,6 +129,26 @@ public class Controller {
 		root.getChildren().add(switchroot);
 		
 		myView.updateTreeView(root);
+	}
+	
+	
+	/**
+	 * kezeli az uj elem kivalasztasat az informacios listabol
+	 * @param selectedItem a kivalasztott elem
+	 */
+	public void selectTreeItem(TreeItem<String> selectedItem) {
+		if (selectedItem.getParent().getValue()=="Trains")
+			for(Train t : allTrain)
+				if (t.getId()==selectedItem.getValue()) {
+					selectedTrain=t;
+					return;
+				}
+		if (selectedItem.getParent().getParent().getValue()=="Trains")
+			for (Train t : allTrain)
+				if (t.getId()==selectedItem.getParent().getValue()) {
+					selectedTrain=t;
+					return;
+				}
 	}
 	
 	public void parse(String filename) throws SAXException, IOException, ParserConfigurationException{
