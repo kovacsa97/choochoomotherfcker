@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map> 
+	<entrypoint id="e01" spx="0" spy="10" epx="10" epy="10" />
+	<rail id="r01" spx="10" spy="10" epx="20" epy="10" /> 
+	<rail id="r02" spx="30" spy="10" epx="40" epy="10"/> 
+	<rail id="r03" spx="50" spy="10" epx="60" epy="10"/>  
+	<crossingrail id="cr01" spx="20" spy="10" epx="30" epy="10" /> 
+	<crossingrail id="cr02" spx="50" spy="40" epx="60" epy="10" /> 
+	<switch id="s01" spx="40" spy="10" epx="50" epy="10" oex="30" oey="40" /> 
+	<tunnelopp id="to02" spx="0" spy="10" epx="10" epy="10"/> 
+	<tunnelopp id="to01" spx="0" spy="10" epx="10" epy="10" /> 
+	<station id="st01" spx="0" spy="10" epx="10" epy="10" />
+	<tunnel id="t01" spx="0" spy="10" epx="10" epy="10" /> 
+</map>
