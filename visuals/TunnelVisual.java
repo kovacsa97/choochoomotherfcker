@@ -13,8 +13,11 @@ import trainelements.Train;
 
 public class TunnelVisual extends DynamicVisual {
 
+	private boolean visible;
+	
 	public TunnelVisual(Point sp, Point ep, String id) {
 		super(sp, ep, id);
+		visible = true;
 	}
 	
 	@Override
@@ -26,6 +29,8 @@ public class TunnelVisual extends DynamicVisual {
 	
 	@Override
 	public void draw(GraphicsContext c) {
+		if(!visible)
+			return;
 		int x1 = this.startPos.x;
 		int y1 = this.startPos.y;
 		int x2 = this.endPos.x;
@@ -64,6 +69,10 @@ public class TunnelVisual extends DynamicVisual {
 	    c.setFill(Color.BROWN);
 	    c.fillRect(x1, y1, d, 20);
 	    c.restore();
+	}
+	
+	public void setVisible(boolean b){
+		visible = b;
 	}
 
 }

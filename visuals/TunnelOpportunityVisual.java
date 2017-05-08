@@ -39,5 +39,8 @@ public class TunnelOpportunityVisual extends DynamicVisual{
 		
 	}
 	
+	public Point getPoint(){
+		return startPos;
+	}
 
 }

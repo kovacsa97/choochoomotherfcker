@@ -61,8 +61,49 @@ public class Controller {
 		TunnelOpportunity to1 = board.getTunnelOpportunityList().get(id1);
 		TunnelOpportunity to2 = board.getTunnelOpportunityList().get(id2);
 		Tunnel t = board.getTunnel();
-		t.setEnds(to1, to2);
+		if(t == null){
+			board.buildTunnel(to1, to2);
+			t = board.getTunnel();
+			t.setId("tunnel");
+		}
+		
+		TunnelVisual tv = null;
+		Point sp = null;
+		Point ep = null;
+		
+		for(DynamicVisual dv : dynamicVisuals){
+			if(dv.getId().equals("tunnel")){
+				tv = (TunnelVisual)dv;
+			}
+			if(dv.getId().equals(to1.getId())){
+				sp = ((TunnelOpportunityVisual)dv).getPoint();
+			}
+			if(dv.getId().equals(to2.getId())){
+				ep = ((TunnelOpportunityVisual)dv).getPoint();
+			}
+		}
+		
+		if(tv == null){
+			tv = new TunnelVisual(sp, ep, "tunnel");
+			dynamicVisuals.add(tv);
+		}else {
+			tv.setPoints(sp, ep);
+		}
+		tv.setVisible(true);
 		return true;
+	}
+	
+	public void destroyTunnel(){
+		board.destroyTunnel();
+		TunnelVisual tv = null;
+		for(DynamicVisual d : dynamicVisuals){
+			if(d.getId().equals("tunnel")){
+				tv = (TunnelVisual)d;
+			}
+		}
+		if(tv != null){
+			tv.setVisible(false);
+		}
 	}
 	
 	public boolean executeSetDrivingForce(int df){
