@@ -236,7 +236,7 @@ public class View {
 	 * kezeli a tunnel rombolo fuggvenyt
 	 */
 	public void bDestroyTunnelHandler() {
-		System.out.println("destroy tunnel pressed");
+		myController.destroyTunnel();
 	}
 	
 	/**
