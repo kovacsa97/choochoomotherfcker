@@ -78,13 +78,13 @@ public class TrainVisual extends DynamicVisual {
 			}
 		}
 		
-		if(myPoints.size() <= currenttrain.getMyWagons().size() +2){
+		if(myPoints.size() < currenttrain.getMyWagons().size() + 2){
 			myPoints.add(new Point(initPos.x, initPos.y));
 		}
 		
-		for(int i = 0; i < myPoints.size() -1; i++){
-			myPoints.get(i).x = myPoints.get(i + 1).x;
-			myPoints.get(i).y = myPoints.get(i + 1).y;
+		for(int i = myPoints.size() - 1; i > 0 ; i--){
+			myPoints.get(i).x = myPoints.get(i - 1).x;
+			myPoints.get(i).y = myPoints.get(i - 1).y;
 		}
 		
 		BoardElement be= currenttrain.getBeFIFO().get(currenttrain.getBeFIFO().size() - 1);
@@ -96,19 +96,19 @@ public class TrainVisual extends DynamicVisual {
 		if(currenttrain.getStartPos().getCurrentBE().getLength() != 0){
 			double progress=(double)currenttrain.getStartPos().getPos()/currenttrain.getStartPos().getCurrentBE().getLength();
 			if(!be.getNextElement().isOccupied()){
-				myPoints.get(myPoints.size() -1).x = new Double(end.x * progress + start.x * (1 - progress)).intValue();
-				myPoints.get(myPoints.size() -1).y = new Double(end.y * progress + start.y * (1 - progress)).intValue();
+				myPoints.get(0).x = new Double(end.x * progress + start.x * (1 - progress)).intValue();
+				myPoints.get(0).y = new Double(end.y * progress + start.y * (1 - progress)).intValue();
 			}else if (!be.getPrevElement().isOccupied()){
-				myPoints.get(myPoints.size() -1).x = new Double(start.x * progress + end.x * (1 - progress)).intValue();
-				myPoints.get(myPoints.size() -1).y = new Double(start.y * progress + end.y * (1 - progress)).intValue();
+				myPoints.get(0).x = new Double(start.x * progress + end.x * (1 - progress)).intValue();
+				myPoints.get(0).y = new Double(start.y * progress + end.y * (1 - progress)).intValue();
 			}
 		}else{
 			if(!be.getNextElement().isOccupied()){
-				myPoints.get(myPoints.size() -1).x = c.getEndpoints(be.getNextElement())[1].x;
-				myPoints.get(myPoints.size() -1).y = c.getEndpoints(be.getNextElement())[1].y;
+				myPoints.get(0).x = c.getEndpoints(be.getNextElement())[0].x;
+				myPoints.get(0).y = c.getEndpoints(be.getNextElement())[0].y;
 			}else if (!be.getPrevElement().isOccupied()){
-				myPoints.get(myPoints.size() -1).x = c.getEndpoints(be.getNextElement())[0].x;
-				myPoints.get(myPoints.size() -1).y = c.getEndpoints(be.getNextElement())[0].y;
+				myPoints.get(0).x = c.getEndpoints(be.getNextElement())[1].x;
+				myPoints.get(0).y = c.getEndpoints(be.getNextElement())[1].y;
 			}
 		}
 	}
@@ -119,33 +119,57 @@ public class TrainVisual extends DynamicVisual {
 	@Override
 	public void draw(GraphicsContext c) {
 		
-		int counter = 0;
+		if(myPoints.size() < 2)
+			return;
 		
-			if (isActive && counter == 0){
-			    c.setStroke(Color.GOLD);
-			}
-			else{
-			
-			c.setLineWidth(10);
-			for (int j = 1; j < myPoints.size()-1; j++) {
-				switch (colors.get(myPoints.size()-j-2)){
-				case BLACK:  if (!isActive) c.setStroke(Color.BLACK);
-							break;
-				case RED: c.setStroke(Color.RED);
-							break;
-				case BLUE: c.setStroke(Color.BLUE);
-							break;
-				case PINK: c.setStroke(Color.PINK);
-							break;
-				case YELLOW: c.setStroke(Color.YELLOW);
-							break;
-				case GREEN: c.setStroke(Color.GREEN);
-							break;
-				case GRAY: c.setStroke(Color.LIGHTGRAY);
-							break;
-				}
-			    c.strokeLine(myPoints.get(j-1).x, myPoints.get(j-1).y, myPoints.get(j).x, myPoints.get(j).y);
-			}
+		if(colors.size() < myPoints.size() - 2){
+			System.out.println("not enough colours");
+			return;
 		}
+		
+		if(colors.size() == 0){
+			System.out.println("fuck you");
+		}
+		
+		System.out.println(colors.size());
+		System.out.println(myPoints.size());
+		System.out.println(currenttrain.getMyWagons().size());
+		c.setLineWidth(10);
+		for (int j =  myPoints.size() - 1; j > 1 ; j--) {
+			switch (colors.get(j - 1)){
+			case RED:
+				c.setStroke(Color.RED);
+				break;
+				
+			case BLUE:
+				c.setStroke(Color.BLUE);
+				break;
+				
+			case PINK:
+				c.setStroke(Color.PINK);
+				break;
+				
+			case YELLOW:
+				c.setStroke(Color.YELLOW);
+				break;
+				
+			case GREEN: 
+				c.setStroke(Color.GREEN);
+				break;
+				
+			case GRAY:
+				c.setStroke(Color.LIGHTGRAY);
+				break;
+			default:
+				System.out.println("invalid color");
+			}
+		    c.strokeLine(myPoints.get(j).x, myPoints.get(j).y, myPoints.get(j - 1).x, myPoints.get(j - 1).y);
+		}
+		if(isActive)
+			c.setStroke(Color.GOLD);
+		else{
+			c.setStroke(Color.BLACK);
+		}
+		c.strokeLine(myPoints.get(0).x, myPoints.get(0).y, myPoints.get(1).x, myPoints.get(1).y);
 	}
 }

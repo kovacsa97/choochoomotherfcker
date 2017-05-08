@@ -5,7 +5,7 @@
 	<station id="st01" prevId="r01" nextId="s01" color="1" newPassengerCount="10" newPassengerProbability="0.2"/>
 	<switch id="s01" inId="st01" currentOutId="r02" otherOutId="r03" />
 	<rail id="r02" prevId="s01" nextId="r04" /> 
-	<rail id="r03" prevId="st01" nextId="to01" />
+	<rail id="r03" prevId="s01" nextId="to01" />
 	<tunnelopp id="to01" inId="r03" outId="null" />
 	<rail id="r04" prevId="r02" nextId="r05" />
 	<rail id="r05" prevId="r04" nextId="st02" />
