@@ -3,6 +3,7 @@ package trainelements;
 import java.util.ArrayList;
 import java.util.List;
 
+import boardelements.BoardElement;
 import boardelements.EntryPoint;
 import color.Color;
 import main.EndGameException;
@@ -166,5 +167,9 @@ public class Train implements Updateable {
 	 */
 	public Locomotive getMyLocomotive() {
 		return myLocomotive;
+	}
+	
+	public ArrayList<BoardElement> getBeFIFO(){
+		return startPos.getBeFIFO();
 	}
 }
