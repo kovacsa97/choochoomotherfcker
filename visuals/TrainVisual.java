@@ -3,6 +3,7 @@ package visuals;
 import java.util.ArrayList;
 
 import board.Board;
+import controller.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Affine;
@@ -24,7 +25,7 @@ public class TrainVisual extends DynamicVisual {
 	}
 	
 	@Override
-	public void update(Board board, ArrayList<Train> trains){
+	public void update(Board board, ArrayList<Train> trains, Controller c){
 		Train currenttr = null;
 		for(Train t : trains){
 			if(t.getId().equals(super.getId()))
@@ -42,9 +43,9 @@ public class TrainVisual extends DynamicVisual {
 		ArrayList<Point> l = new ArrayList<>();
 		l.add(new Point(0,0));
 		l.add(new Point(10,10));
-		ArrayList<color.Color> c = new ArrayList<>();
-		c.add(color.Color.YELLOW);
-		c.add(color.Color.GREEN);
+		ArrayList<color.Color> colorl = new ArrayList<>();
+		colorl.add(color.Color.YELLOW);
+		colorl.add(color.Color.GREEN);
 		
 	}
 	
