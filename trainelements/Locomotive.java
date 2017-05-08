@@ -59,14 +59,11 @@ public class Locomotive {
 		
 		int exercusion = (int)(v0*0.5 + a / 2 * 0.5 * 0.5);
 		if (exercusion<0) {
-			System.out.println(0);
 			return 0;
 		}
 		if (exercusion>20){
-			System.out.println(20);
 			return 20;
 		}
-		System.out.println(exercusion);
 		return exercusion;
 	}
 	

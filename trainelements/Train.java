@@ -172,4 +172,14 @@ public class Train implements Updateable {
 	public ArrayList<BoardElement> getBeFIFO(){
 		return startPos.getBeFIFO();
 	}
+
+	public StartPos getStartPos() {
+		return startPos;
+	}
+
+	public EndPos getEndPos() {
+		return endPos;
+	}
+	
+	
 }
