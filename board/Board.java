@@ -1,25 +1,27 @@
 package board;
 
 import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
-import boardelements.*;
+import boardelements.BoardElement;
+import boardelements.EntryPoint;
+import boardelements.Rail;
+import boardelements.Station;
+import boardelements.Switch;
+import boardelements.Tunnel;
+import boardelements.TunnelOpportunity;
 import main.EndGameException;
 import update.Timer;
 
 /**
  * A palya elemeinek tarolasaert felelos. Rajta keresztul valosul meg az alagutak kezelese. 
- * Ki tudja szamitani a jatekos pontjait az állomasok segitsegevel.
+ * Ki tudja szamitani a jatekos pontjait az allomasok segitsegevel.
  */
 public class Board {
 	
 	/**
-	 * Station-oket tartalmazó lista
+	 * Station-oket tartalmaza lista
 	 */
 	private HashMap<String,Station> stationList;
 	/**
@@ -69,7 +71,6 @@ public class Board {
 		stationList = sl;
 		tunnelOpportunityList = to;
 		switchList = sw;
-		stationList = sl;
 		tunnel = t;
 		
 		toStringList=new HashMap<String, HashMap<String, ? extends BoardElement>>();
@@ -81,19 +82,19 @@ public class Board {
 	}
 	
 	/**
-	 * a jatekos pontjait szamolja meg, és ter vissza vele
+	 * a jatekos pontjait szamolja meg, es ter vissza vele
 	 * @return point a pontszam, amit az osszes allomasbol gyujt ossze
 	 */
 	public int calculatePoints(){
 		int point = 0;
-		for (int i=0; i<stationList.size(); i++){
-			point+=stationList.get(i).getAllPoints();
+		for(Station s : stationList.values()){
+			point+=s.getAllPoints();
 		}
 		return point;
 	}
 	
 	/**
-	 * Felepit egy alagutat a parameterkent kapott ket bejárat kozott.
+	 * Felepit egy alagutat a parameterkent kapott ket bejarat kozott.
 	 * @param t1 az elso tunnelopportunity
 	 * @param t2 a masodik tunnelopportunity
 	 */
@@ -103,7 +104,7 @@ public class Board {
 	}
 	
 	/**
-	 * Felepit egy alagutat a parameterkent kapott ket bejáratID kozott.
+	 * Felepit egy alagutat a parameterkent kapott ket bejaratID kozott.
 	 * @param t1id az elso tunnelopportunity
 	 * @param t2id a masodik tunnelopportunity
 	 */

@@ -1,1 +1,1 @@
-"%JAVA_HOME%\bin\javac" board\*.java boardelements\*.java color\*.java main\*.java parser\*.java position\*.java test\*.java trainelements\*.java update\*.java
+"%JAVA_HOME%\bin\javac" board\*.java boardelements\*.java color\*.java controller\*.java main\*.java parser\*.java position\*.java test\*.java trainelements\*.java update\*.java view\*.java visuals\*.java
