@@ -9,6 +9,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
@@ -89,7 +90,7 @@ public class Controller {
 		Timer t = new Timer();
 		t.setController(this);
 		board.setAllTimers(t);
-		t.start();
+		//t.start();
 	}
 	
 	public void displayChange(){
@@ -179,7 +180,7 @@ public class Controller {
         			dynamicVisuals.add(new TunnelOpportunityVisual(sp, ep, id));
         		}
         		else if(element.getNodeName().equals("station")){
-        			staticVisuals.add(new StationVisual(sp, ep, id, color.Color.PINK));
+        			staticVisuals.add(new StationVisual(sp, ep, id, board.getStationList().get(id).getColor()));
         		}
 				else if(element.getNodeName().equals("switch")){
 					Point oe = new Point(Integer.parseInt(element.getAttributes().getNamedItem("oex").getNodeValue()), Integer.parseInt(element.getAttributes().getNamedItem("oey").getNodeValue()));

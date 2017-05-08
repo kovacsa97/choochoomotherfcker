@@ -196,6 +196,10 @@ public class Board {
 		return tunnelOpportunityList;
 	}
 	
+	public HashMap<String, Station> getStationList(){
+		return stationList;
+	}
+	
 	public Tunnel getTunnel(){
 		return tunnel;
 	}

@@ -117,4 +117,8 @@ public class Station extends BoardElement{
 	public void setNewPassengerProbability(double val){
 		newPassengerProbability = val;
 	}
+	
+	public Color getColor(){
+		return color;
+	}
 }
