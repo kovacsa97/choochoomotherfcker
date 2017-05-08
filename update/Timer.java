@@ -35,6 +35,7 @@ public class Timer {
 		game = true;
 		try{
 			while (game){
+				//System.out.println("x");
 				int size = toUpdate.size();
 				for (int i=0; i<size; i++){
 					toUpdate.get(i).update();

@@ -89,10 +89,14 @@ public class Controller {
 			e.printStackTrace();
 		}
 		myView.initBoard(staticVisuals);
+		
 		Timer t = new Timer();
 		t.setController(this);
-		board.setAllTimers(t);
-		//t.start();
+		ArrayList<Train> list = new ArrayList<Train>();
+		for (int i=1;i<t.getList().size(); i++)
+			list.add((Train) t.getList().get(i));
+		this.setTrains(list);
+		t.start();
 	}
 	
 	public void displayChange(){

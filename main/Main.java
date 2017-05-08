@@ -29,7 +29,6 @@ import visuals.*;
 public class Main extends Application {
 	private Controller c;
 	private View w;
-	private Timer t;
 	
 	public void test() {
 		
@@ -38,7 +37,6 @@ public class Main extends Application {
 		c.displayBoard("maps/map1_visual.xml");
 		c.displayChange();
 		c.updateInfo();
-		//t.start();
 	}
 	
 	
@@ -48,15 +46,7 @@ public class Main extends Application {
 		w=new View();
 		c=new Controller(w);
 		w.setController(c);
-		
-		////////////////////
-		t = new Timer();
-		t.setController(c);
-		ArrayList<Train> list = new ArrayList<Train>();
-		for (int i=1;i<t.getList().size(); i++)
-			list.add((Train) t.getList().get(i));
-		c.setTrains(list);
-		///////////////////
+
 		
 
 		FXMLLoader l=new FXMLLoader(getClass().getResource("choochoo_ui.fxml"));
