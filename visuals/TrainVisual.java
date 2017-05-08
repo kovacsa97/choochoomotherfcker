@@ -19,7 +19,7 @@ public class TrainVisual extends DynamicVisual {
 	/**
 	 * a vonat kirajzolt pontjainak listaja
 	 */
-	private ArrayList<Point> myPoints;
+	private ArrayList<Point> myPoints = new ArrayList<>();
 	/**
 	 * a vonat vagonjainak szinenek listaja
 	 */
@@ -27,9 +27,10 @@ public class TrainVisual extends DynamicVisual {
 	
 	Train currenttrain = null;
 	
-	public TrainVisual(String id, ArrayList<Point> l, ArrayList<color.Color> c){
+	private Point initPos;
+	
+	public TrainVisual(String id, ArrayList<color.Color> c){
 		super(null, null, id);
-		myPoints = l;
 		colors = c;
 	}
 	
@@ -48,6 +49,22 @@ public class TrainVisual extends DynamicVisual {
 	 */
 	@Override
 	public void update(Board board, ArrayList<Train> trains, Controller c){
+		if(myPoints.size() == 0){
+			String searchFor = board.getEntryPoint().getNextElement().getId();
+			StaticVisual sv = null;
+			for(StaticVisual s : c.getStaticVisuals()){
+				if(s.getId().equals(searchFor)){
+					sv = s;
+					break;
+				}
+			}
+			if(sv == null){
+				System.out.println("no static visual found for entryPoint.nextElement (from train visual)");
+			}
+			initPos = sv.startPos;
+			myPoints.add(new Point(initPos.x, initPos.y));
+		}
+
 		for(Train t : trains){
 			if(t.getId().equals(super.getId()))
 				currenttrain = t;
@@ -61,31 +78,39 @@ public class TrainVisual extends DynamicVisual {
 			}
 		}
 		
-		System.out.println(currenttrain.getId() + " " + currenttrain.getStartPos().getCurrentBE().getId() + " " + currenttrain.getEndPos().getCurrentBE().getId());
+		if(myPoints.size() <= currenttrain.getMyWagons().size() +2){
+			myPoints.add(new Point(initPos.x, initPos.y));
+		}
 		
-		myPoints.clear();
-
+		for(int i = 0; i < myPoints.size() -1; i++){
+			myPoints.get(i).x = myPoints.get(i + 1).x;
+			myPoints.get(i).y = myPoints.get(i + 1).y;
+		}
 		
-		double weightstart=currenttrain.getStartPos().getPos()/20.0;
-		double weightend=currenttrain.getEndPos().getPos()/20.0;
-		double weightdelta=1;
-		int j=0;
-		for (int i=0;i<=currenttrain.getMyWagons().size()+2;i++) {
-			BoardElement be=currenttrain.getBeFIFO().get(currenttrain.getMyWagons().size()-1-j);
-			Point[] points=c.getEndpoints(be);
-			Point start=points[0];
-			Point end=points[1];
+		BoardElement be= currenttrain.getBeFIFO().get(currenttrain.getBeFIFO().size() - 1);
+		
+		Point[] points=c.getEndpoints(be);		
+		Point start=points[0];
+		Point end=points[1];
 			
-			myPoints.add(new Point((int)(end.x*weightend+start.x*(1-weightend)), (int)(end.y*weightend+start.y*(1-weightend))));
-			weightend-=weightdelta;
-			while(weightend>1) {
-				weightend+=1;
-				j++;
-				if (j==currenttrain.getBeFIFO().size())
-				return;
+		if(currenttrain.getStartPos().getCurrentBE().getLength() != 0){
+			double progress=(double)currenttrain.getStartPos().getPos()/currenttrain.getStartPos().getCurrentBE().getLength();
+			if(!be.getNextElement().isOccupied()){
+				myPoints.get(myPoints.size() -1).x = new Double(end.x * progress + start.x * (1 - progress)).intValue();
+				myPoints.get(myPoints.size() -1).y = new Double(end.y * progress + start.y * (1 - progress)).intValue();
+			}else if (!be.getPrevElement().isOccupied()){
+				myPoints.get(myPoints.size() -1).x = new Double(start.x * progress + end.x * (1 - progress)).intValue();
+				myPoints.get(myPoints.size() -1).y = new Double(start.y * progress + end.y * (1 - progress)).intValue();
 			}
-		
-	}
+		}else{
+			if(!be.getNextElement().isOccupied()){
+				myPoints.get(myPoints.size() -1).x = c.getEndpoints(be.getNextElement())[1].x;
+				myPoints.get(myPoints.size() -1).y = c.getEndpoints(be.getNextElement())[1].y;
+			}else if (!be.getPrevElement().isOccupied()){
+				myPoints.get(myPoints.size() -1).x = c.getEndpoints(be.getNextElement())[0].x;
+				myPoints.get(myPoints.size() -1).y = c.getEndpoints(be.getNextElement())[0].y;
+			}
+		}
 	}
 	
 	/* (non-Javadoc)

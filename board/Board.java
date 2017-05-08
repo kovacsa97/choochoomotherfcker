@@ -215,4 +215,8 @@ public class Board {
 	public Tunnel getTunnel(){
 		return tunnel;
 	}
+	
+	public EntryPoint getEntryPoint(){
+		return entryPointList.get("e01");
+	}
 }

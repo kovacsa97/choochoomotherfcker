@@ -219,7 +219,6 @@ public class EntryPoint extends BoardElement implements Updateable{
 		
 		if (time <= 0 && !getNextElement().isOccupied()){
 			createTrainRandom();
-			System.out.println("train created");
 			resetTimer();
 		}
 		else

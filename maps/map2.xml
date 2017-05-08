@@ -1,9 +1,9 @@
 <data>
 <map> 
 	<entrypoint id="e01" nextid="r01" defWaitTime="100" timerId="0" />
-	<rail id="r01" prevId="e01" nextId="r02" />
+	<rail id="r01" prevId="e01" nextId="st01" />
 	<station id="st01" prevId="r01" nextId="s01" color="1" newPassengerCount="10" newPassengerProbability="0.2"/>
-	<switch id="s01" inId="st01" currentOutId="r02" otherOutId="to02" />
+	<switch id="s01" inId="st01" currentOutId="r02" otherOutId="r03" />
 	<rail id="r02" prevId="s01" nextId="r04" /> 
 	<rail id="r03" prevId="st01" nextId="to01" />
 	<tunnelopp id="to01" inId="r03" outId="null" />

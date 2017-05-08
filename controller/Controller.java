@@ -161,29 +161,8 @@ public class Controller {
 				for (int i =0; i<t.getMyWagons().size(); i++){
 					colorList.add(t.getMyWagons().get(i).getColor());
 				}
-
-				Point p = new Point(70,100);
-
-				for (int i=0; i<=size; i++){
-					if (i == 0){
-						l.add(p);
-					}
-					
-					else if (i==size-1){
-						l.add(p);
-					}
-					
-					else{
-						l.add(p);
-						l.add(p);
-					}
-					p = new Point(p.x-10, p.y);
-
-				}
 				
-				System.out.println(l.size() + "!!!!!!!!");
-				
-				TrainVisual tv = new TrainVisual(t.getId(), l, colorList);
+				TrainVisual tv = new TrainVisual(t.getId(), colorList);
 				dynamicVisuals.add(tv);
 				if(tunvis != null){
 					dynamicVisuals.remove(tunvis);
