@@ -109,15 +109,21 @@ public class Controller {
 			}
 			if (!exists){
 				ArrayList<Point> l = new ArrayList<Point>();
-				l.add(new Point(20,20));
-				l.add(new Point(10,20));
-				TrainVisual tv = new TrainVisual(new Point(0,0), new Point(0,0), t.getId(), l);
+				l.add(new Point(200,200));
+				l.add(new Point(10,200));
+				ArrayList<color.Color> colorList = new ArrayList<>();
+				colorList.add(color.Color.BLUE);
+				colorList.add(color.Color.BLUE);
+				colorList.add(color.Color.BLUE);
+				colorList.add(color.Color.BLUE);
+				colorList.add(color.Color.BLUE);
+				colorList.add(color.Color.BLUE);
+				colorList.add(color.Color.BLUE);
+				TrainVisual tv = new TrainVisual(t.getId(), l, colorList);
 				dynamicVisuals.add(tv);
 				updateInfo();
 			}
 		}
-		
-		
 		
 		for(DynamicVisual dv : dynamicVisuals){
 			dv.update(board, allTrain, this);

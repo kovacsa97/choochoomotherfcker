@@ -14,9 +14,10 @@ public class TrainVisual extends DynamicVisual {
 	private ArrayList<Point> myPoints;
 	private ArrayList<color.Color> colors = new ArrayList<>();
 	
-	public TrainVisual(Point sp, Point ep, String id, ArrayList<Point> l){
-		super(sp, ep, id);
+	public TrainVisual(String id, ArrayList<Point> l, ArrayList<color.Color> c){
+		super(null, null, id);
 		myPoints = l;
+		colors = c;
 	}
 	
 	public void addPoints(ArrayList<Point> l, ArrayList<color.Color> colors){
@@ -61,7 +62,7 @@ public class TrainVisual extends DynamicVisual {
 			int x2 = this.myPoints.get(i+1).x;
 			int y2 = this.myPoints.get(i+1).y;
 			
-			if (endPos.x-startPos.x<0){
+			if (myPoints.get(i + 1).x-myPoints.get(i).x<0){
 				x1 = this.myPoints.get(i+1).x;
 				y1 = this.myPoints.get(i+1).y;
 				x2 = this.myPoints.get(i).x;
@@ -73,10 +74,6 @@ public class TrainVisual extends DynamicVisual {
 			
 			boolean isNegative = false;
 			
-			if (a<0){
-				a*=-1;
-				isNegative = true;
-			}
 			if (b<0){
 				b*=-1;
 				isNegative = true;
