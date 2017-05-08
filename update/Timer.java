@@ -41,6 +41,7 @@ public class Timer {
 					toUpdate.get(i).update();
 				}
 				myController.displayChange();
+				myController.updateInfo();
 				Thread.sleep(300);
 			}
 		} catch (EndGameException e){
