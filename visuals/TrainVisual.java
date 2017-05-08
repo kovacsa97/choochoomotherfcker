@@ -50,7 +50,6 @@ public class TrainVisual extends DynamicVisual {
 	public void draw(GraphicsContext c) {
 		
 		int counter = 0;
-		System.out.println(colors.size());
 		
 		for(int i=0; i<myPoints.size(); i+=2){
 			int x1 = this.myPoints.get(i).x;
