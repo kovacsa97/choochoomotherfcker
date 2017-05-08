@@ -52,7 +52,7 @@ public class Train implements Updateable {
 			myWagons = new ArrayList<Wagon>(); 
 		}
 		startPos = new StartPos(ep, this);
-		endPos = new EndPos(ep, startPos, 0);
+		endPos = new EndPos(ep, startPos, ep.getLength()-(wagons.size()+1)*20);
 		id = "";
 	}
 	

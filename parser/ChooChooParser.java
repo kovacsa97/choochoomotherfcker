@@ -89,7 +89,7 @@ public class ChooChooParser {
 						rails.put(id, new CrossingRail(20));
 					}
 					else if(element.getNodeName().equals("entrypoint")){
-						entrypoint = new EntryPoint(Integer.parseInt(element.getAttributes().getNamedItem("defWaitTime").getNodeValue()), 20);
+						entrypoint = new EntryPoint(Integer.parseInt(element.getAttributes().getNamedItem("defWaitTime").getNodeValue()), 200);
 						entrypoint.setId(id);
 						b = entrypoint;
 					}

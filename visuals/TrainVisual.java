@@ -145,7 +145,7 @@ public class TrainVisual extends DynamicVisual {
 		
 		int counter = 0;
 		
-		for(int i=0; i<myPoints.size(); i+=2){
+		for(int i=0; i<myPoints.size()-1; i+=2){
 			int x1 = this.myPoints.get(i).x;
 			int y1 = this.myPoints.get(i).y;
 			int x2 = this.myPoints.get(i+1).x;
