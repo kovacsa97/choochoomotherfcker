@@ -19,8 +19,8 @@ public class TestingTimer extends Timer {
 	/* Ures stop() fuggveny
 	 * 
 	 */
-	@Override
-	public void stop(){}
+	//@Override
+	//public void stop(){}
 	
 	/**
 	 * A parameterkent kapott step-szer fogja elvegezni az update-et.

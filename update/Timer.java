@@ -14,7 +14,7 @@ import main.EndGameException;
  * 
  *
  */
-public class Timer {
+public class Timer extends Thread{
 	
 	private boolean game = false;
 	private Controller myController;
@@ -31,6 +31,7 @@ public class Timer {
 	/**
 	 * Elinditja a Timer-t
 	 */
+	@Override
 	public void start(){
 		game = true;
 		try{
@@ -47,7 +48,7 @@ public class Timer {
 		} catch (EndGameException e){
 			if (e.getMessage() == "Game Over"){
 				System.out.println(e.getStackTrace() + " GAME OVER");
-				stop();
+				stopMe();
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -57,7 +58,7 @@ public class Timer {
 	/**
 	 * Megallitja a Timer-t
 	 */
-	public void stop(){
+	public void stopMe(){
 		game = false;
 	}
 	

@@ -90,7 +90,8 @@ public class Controller {
 		for (int i=1;i<t.getList().size(); i++)
 			list.add((Train) t.getList().get(i));
 		this.setTrains(list);
-		//t.start();
+		Thread thtimer = new Thread(t);
+		thtimer.start();
 	}
 	
 	public void displayChange(){
