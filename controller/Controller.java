@@ -351,6 +351,12 @@ public class Controller {
         }
 	}
 	
+	public void clear() {
+		staticVisuals=new ArrayList<StaticVisual>();
+		dynamicVisuals=new ArrayList<DynamicVisual>();
+		allTrain=new ArrayList<Train>();
+	}
+	
 	public void setBoard(Board b){
 		board = b;
 	}

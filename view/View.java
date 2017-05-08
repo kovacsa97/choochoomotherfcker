@@ -169,6 +169,7 @@ public class View {
 
 		Optional<String> result = dialog.showAndWait();
 		
+		myController.clear();
 		myController.setBoard(new ChooChooParser().parse("maps/" + result.get() + ".xml"));
 		myController.displayBoard("maps/" + result.get() + "_visual.xml");
 		myController.updateInfo();

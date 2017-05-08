@@ -21,9 +21,9 @@ import trainelements.Train;
  * 
  *
  */
-public class Timer extends Thread{
+public class Timer extends Thread {
 	
-	private boolean game = false;
+	private volatile boolean game = false;
 	private Controller myController;
 	protected List<Updateable> toUpdate = new ArrayList<Updateable>();
 	
