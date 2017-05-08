@@ -247,7 +247,7 @@ public class Controller {
 	public void selectTreeItem(TreeItem<String> selectedItem) {
 		myView.setControlType(ControlType.None);
 
-		if (selectedItem.getParent().getValue().equals("root")){
+		if (selectedItem==null || selectedItem.getParent().getValue().equals("root")){
 			return;
 		}
 		if (selectedItem.getParent().getValue().equals("Trains")){
