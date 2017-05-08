@@ -87,6 +87,7 @@ public class Controller {
 		
 		Timer t = new Timer();
 		t.setController(this);
+		board.setAllTimers(t);
 		ArrayList<Train> list = new ArrayList<Train>();
 		for (int i=1;i<t.getList().size(); i++)
 			list.add((Train) t.getList().get(i));
@@ -95,7 +96,9 @@ public class Controller {
 		thtimer.start();
 	}
 	
-	public void displayChange(){
+	public void displayChange(ArrayList<Train> list){
+		this.setTrains(list);
+		System.out.println(allTrain.size());
 		for(DynamicVisual dv : dynamicVisuals){
 			dv.update(board, allTrain);
 		}

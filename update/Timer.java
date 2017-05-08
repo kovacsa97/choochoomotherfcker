@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import controller.Controller;
 import javafx.application.Platform;
 import main.EndGameException;
+import trainelements.Train;
 
 
 /**
@@ -42,8 +43,16 @@ public class Timer extends Thread{
 				for (int i=0; i<size; i++){
 					toUpdate.get(i).update();
 				}
+				
+				ArrayList<Train> list = new ArrayList<Train>();
+				
+				for (int i=1; i<toUpdate.size(); i++){
+					list.add((Train) toUpdate.get(i));
+				}
+				
+				
 				Platform.runLater(()->{
-					myController.displayChange();
+					myController.displayChange(list);
 					});
 				
 				Thread.sleep(300);
