@@ -100,6 +100,9 @@ public class Controller {
 	}
 	
 	public void displayChange(){
+		for(DynamicVisual dv : dynamicVisuals){
+			dv.update(board, allTrain);
+		}
 		myView.update(dynamicVisuals);
 	}
 	
