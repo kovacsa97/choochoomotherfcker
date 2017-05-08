@@ -100,6 +100,7 @@ public class Controller {
 		this.setTrains(list);
 		boolean exists = false;
 		for (Train t : allTrain){
+			exists = false;
 			for(DynamicVisual d : dynamicVisuals){
 				if(d.getId().equals(t.getId())){
 					exists = true;
@@ -111,6 +112,8 @@ public class Controller {
 				l.add(new Point(20,20));
 				l.add(new Point(10,20));
 				TrainVisual tv = new TrainVisual(new Point(0,0), new Point(0,0), t.getId(), l);
+				dynamicVisuals.add(tv);
+				updateInfo();
 			}
 		}
 		
@@ -126,6 +129,7 @@ public class Controller {
 	 * Frissiti a view informacios treeviewjet a megfelelo elemekkel
 	 */
 	public void updateInfo(){
+		System.out.println("FASZOM");
 		TreeItem<String> root=new TreeItem<String>("root");
 		
 		// Train lista
