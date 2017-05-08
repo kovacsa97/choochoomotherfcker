@@ -18,6 +18,14 @@ public abstract class Position {
 	 */
 	protected BoardElement CurrentBE;
 	
+	public int getPos() {
+		return pos;
+	}
+
+	public BoardElement getCurrentBE() {
+		return CurrentBE;
+	}
+
 	/**
 	 * letrehoz egy poziciot a vonatnak
 	 * @param cbe: (current board element) a letrehozas helye

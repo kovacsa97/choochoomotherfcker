@@ -27,12 +27,12 @@ public class TrainVisual extends DynamicVisual {
 	
 	@Override
 	public void update(Board board, ArrayList<Train> trains, Controller c){
-		Train currenttr = null;
+		Train currenttrain = null;
 		for(Train t : trains){
 			if(t.getId().equals(super.getId()))
-				currenttr = t;
+				currenttrain = t;
 		}
-		if(currenttr == null){
+		if(currenttrain == null){
 			try {
 				throw new Exception("BAJ van TrainVisual.update Nincs ilyen vonat");
 			} catch (Exception e) {
@@ -40,16 +40,15 @@ public class TrainVisual extends DynamicVisual {
 				e.printStackTrace();
 			}
 		}
-		currenttr.getBeFIFO().get(0).getId();
-		//algoritmus
-		
-		for(Point p : myPoints){
-			p.x++;
+		int length = 0;
+		for (int i=0; i<currenttrain.getBeFIFO().size(); i++){
+			length+=currenttrain.getBeFIFO().get(i).getLength();
 		}
-		/*myPoints.clear();
-		//hozzaad
-		myPoints.add(new Point(0,0));
-		myPoints.add(new Point(10,10));*/
+		
+		int elementLength = length / (currenttrain.getMyWagons().size()+1);
+		int exercusion = currenttrain.getMyLocomotive().getExcursion();
+		//System.out.println("weight: " + currenttrain.getMyLocomotive().getWeight());
+		
 		
 	}
 	
