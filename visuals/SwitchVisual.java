@@ -18,7 +18,7 @@ import sun.java2d.loops.FillParallelogram;
 
 public class SwitchVisual extends DynamicVisual {
 	private Point otherEnd;
-	private BoardElement lastNext = new BoardElement(0);
+	private boolean nextActive;
 	
 	public SwitchVisual(Point sp, Point ep, Point oe, String id){
 		super(sp, ep, id);
@@ -41,7 +41,8 @@ public class SwitchVisual extends DynamicVisual {
 				e.printStackTrace();
 			}
 		}
-		if(!currentsw.getNextElement().equals(lastNext)){
+		if(currentsw.getNextActive() != nextActive){
+			nextActive = !nextActive;
 			Point tmp = otherEnd;
 			otherEnd = super.endPos;
 			setPoints(super.startPos, tmp);

@@ -17,6 +17,10 @@ public class Switch extends BoardElement{
 	 * A vonat iranyat hatarozza meg a ket kijarat kozul.
 	 */
 	private boolean nextActive;
+	
+	public boolean getNextActive(){
+		return nextActive;
+	}
 
 	/**
 	 * Konstruktor, length hosszal letrehoz egy valtot
