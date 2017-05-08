@@ -53,9 +53,21 @@ public class Locomotive {
 	 * @return megtett tavolsag adott ido alatt
 	 */
 	public int getExcursion(){
+
 		double a = enginePower / weight - FRICTION*weight*10;	
-		double v0 = a*0.002;									
-		return (int) (v0*0.02 + a / 2 * 0.002 * 0.002);			
+		double v0 = a*0.5;
+		
+		int exercusion = (int)(v0*0.5 + a / 2 * 0.5 * 0.5);
+		if (exercusion<0) {
+			System.out.println(0);
+			return 0;
+		}
+		if (exercusion>20){
+			System.out.println(20);
+			return 20;
+		}
+		System.out.println(exercusion);
+		return exercusion;
 	}
 	
 	/**
@@ -74,6 +86,10 @@ public class Locomotive {
 		StringBuilder ret = new StringBuilder("locomotive");
 		ret.append(" " + (enginePower));
 		return ret.toString();
+	}
+	
+	public int getWeight(){
+		return weight;
 	}
 	
 }
