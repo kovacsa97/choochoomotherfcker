@@ -96,6 +96,11 @@ public class View {
 			switchControlPane.setVisible(false);
 			toControlPane.setVisible(false);
 			trainControlPane.setVisible(true);
+			
+			
+			
+			
+			
 			break;
 		case TunnelOpp:
 			switchControlPane.setVisible(false);
@@ -195,6 +200,10 @@ public class View {
         	myController.selectTreeItem(newValue));
 		
 		setControlType(ControlType.None);
+	}
+	
+	public void setEnginePowerValue(int v) {
+		lDrivingForceValue.setText(Integer.toString(v));
 	}
 	
 	/**
