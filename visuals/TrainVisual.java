@@ -10,8 +10,18 @@ import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
 import trainelements.Train;
 
+/**
+ * a train (vonat) rajzolasaert felelos osztaly
+ *
+ */
 public class TrainVisual extends DynamicVisual {
+	/**
+	 * a vonat kirajzolt pontjainak listaja
+	 */
 	private ArrayList<Point> myPoints;
+	/**
+	 * a vonat vagonjainak szinenek listaja
+	 */
 	private ArrayList<color.Color> colors = new ArrayList<>();
 	
 	public TrainVisual(String id, ArrayList<Point> l, ArrayList<color.Color> c){
@@ -20,11 +30,19 @@ public class TrainVisual extends DynamicVisual {
 		colors = c;
 	}
 	
+	/**
+	 * a vonat folyamatos megjelenesehez az EntryPont elhagyasakor a pontokat egymas utan adjuk a pontok listajahoz
+	 * @param l az ujonnan megjeleno pontok
+	 * @param colors az uj vagon szine
+	 */
 	public void addPoints(ArrayList<Point> l, ArrayList<color.Color> colors){
 		myPoints = l;
 		this.colors = colors;
 	}
 	
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#update(board.Board, java.util.ArrayList, controller.Controller)
+	 */
 	@Override
 	public void update(Board board, ArrayList<Train> trains, Controller c){
 		Train currenttr = null;
@@ -53,6 +71,9 @@ public class TrainVisual extends DynamicVisual {
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#draw(javafx.scene.canvas.GraphicsContext)
+	 */
 	@Override
 	public void draw(GraphicsContext c) {
 		

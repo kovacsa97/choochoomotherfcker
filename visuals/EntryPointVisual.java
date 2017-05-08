@@ -5,12 +5,19 @@ import javafx.scene.paint.Color;
 import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
 
+/**
+ * Az EntryPoint megjeleniteseert felelos osztaly
+ *
+ */
 public class EntryPointVisual extends StaticVisual{
 
 	public EntryPointVisual(Point sp, Point ep, String id) {
 		super(sp, ep, id);
 	}
 
+	/* (non-Javadoc)
+	 * @see visuals.StaticVisual#draw(javafx.scene.canvas.GraphicsContext)
+	 */
 	public void draw(GraphicsContext c) {	
 		
 		int a = this.endPos.x - this.startPos.x;

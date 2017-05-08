@@ -8,23 +8,28 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import trainelements.Train;
 
+/**
+ * a TunnelOpportunity (alagut epitesipont) rajzolasaert felelos osztaly
+ *
+ */
 public class TunnelOpportunityVisual extends DynamicVisual{
 
 	public TunnelOpportunityVisual(Point sp, Point ep, String id) {
 		super(sp, ep, id);
 	}
 	
-	boolean open = false;
 	
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#update(board.Board, java.util.ArrayList, controller.Controller)
+	 * az absztrakt ososztaly fuggvenyet feluldefinialjuk, hogy ne az hivodjon
+	 */
 	@Override
 	public void update(Board board, ArrayList<Train> trains, Controller c){
-		if(board.getTunnelOpportunityList().get(super.getId()).isOccupied()){ //to be used later
-			open = false;
-		}
-		else
-			open = true;
 	}
 	
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#draw(javafx.scene.canvas.GraphicsContext)
+	 */
 	@Override
 	public void draw(GraphicsContext c) {
 		

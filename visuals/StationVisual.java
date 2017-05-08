@@ -1,14 +1,19 @@
 package visuals;
 
-import boardelements.Station;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
 
+/**
+ * a Station (vasutallomas) kirajzolasaert felelos osztaly
+ *
+ */
 public class StationVisual extends StaticVisual{
 	
+	/**
+	 * az allomas szine
+	 */
 	color.Color myColor;
 
 	public StationVisual(Point sp, Point ep, String id, color.Color c) {
@@ -16,6 +21,9 @@ public class StationVisual extends StaticVisual{
 		this.myColor = c;
 	}
 
+	/* (non-Javadoc)
+	 * @see visuals.StaticVisual#draw(javafx.scene.canvas.GraphicsContext)
+	 */
 	public void draw(GraphicsContext c) {
 		
 		boolean otherSide = false;
