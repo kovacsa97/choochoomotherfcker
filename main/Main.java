@@ -19,6 +19,7 @@ import parser.ChooChooParser;
 import trainelements.Train;
 import update.Timer;
 import view.View;
+import view.View.ControlType;
 import visuals.*;
 //import visuals.Point;
 //import visuals.StaticVisual;
@@ -51,15 +52,12 @@ public class Main extends Application {
 
 		FXMLLoader l=new FXMLLoader(getClass().getResource("choochoo_ui.fxml"));
 		l.setController(w);
+		
+		
 		primaryStage.setScene(new Scene((Parent)l.load()));
+		w.setControlType(ControlType.None);
 		primaryStage.show();
-		
-		//Thread.sleep(10000);
-		
-		
-		//w.openHandler();
-		
-		test();
+
 	}
 	
 	public static void main(String[] args) {
