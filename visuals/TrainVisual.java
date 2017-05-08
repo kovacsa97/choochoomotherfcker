@@ -25,7 +25,20 @@ public class TrainVisual extends DynamicVisual {
 	
 	@Override
 	public void update(Board board, ArrayList<Train> trains){
-		
+		Train currenttr = null;
+		for(Train t : trains){
+			if(t.getId().equals(super.getId()))
+				currenttr = t;
+		}
+		if(currenttr == null){
+			try {
+				throw new Exception("BAJ van TrainVisual.update Nincs ilyen vonat");
+			} catch (Exception e) {
+				// Ez igy eleg bena, de igy a hiba legalabb nyomonkovetheto
+				e.printStackTrace();
+			}
+		}
+		//currenttr.
 	}
 	
 	@Override
