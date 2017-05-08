@@ -179,7 +179,7 @@ public class View {
 	public void GameOverHandler(int score) {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Game over");
-		alert.setHeaderText("According to our information one of your trains has encountered an unexpeced obstacle.");
+		alert.setHeaderText("According to our information one of your trains has encountered an unexpected obstacle.");
 		alert.setContentText("Your final score is "+score);
 
 		alert.showAndWait();
