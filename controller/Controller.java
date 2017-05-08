@@ -187,6 +187,7 @@ public class Controller {
 				if (t.getId().equals(selectedItem.getValue())) {
 					myView.setControlType(ControlType.Train);
 					selectedTrain=t;
+					myView.setEnginePowerValue(t.getMyLocomotive().getEnginePower());
 					for (DynamicVisual d : dynamicVisuals){
 						 d.setActivation(false);
 					 }
