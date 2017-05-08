@@ -41,14 +41,14 @@
                            <children>
                               <AnchorPane fx:id="toControlPane" prefHeight="103.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Building tunnel" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="14.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Building tunnel" AnchorPane.topAnchor="14.0" />
                                     <Button layoutX="124.0" layoutY="40.0" mnemonicParsing="false" text="Build" />
                                     <Button layoutX="117.0" layoutY="69.0" mnemonicParsing="false" text="Destroy" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane fx:id="switchControlPane" prefHeight="103.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Switch" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="14.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Switch" AnchorPane.topAnchor="14.0" />
                                     <Button layoutX="114.0" layoutY="36.0" mnemonicParsing="false" onAction="#changeSwitch" text="Change" />
                                  </children>
                               </AnchorPane>
@@ -61,7 +61,7 @@
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Engine power" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="14.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Engine power" AnchorPane.topAnchor="14.0" />
                                  </children>
                               </AnchorPane>
                            </children>

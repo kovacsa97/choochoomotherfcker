@@ -125,6 +125,7 @@ public class View {
 	public void exitHandler() {
 		Platform.exit();
 		System.exit(0);
+		Runtime.getRuntime().halt(0);
 	}
 	
 	/**
