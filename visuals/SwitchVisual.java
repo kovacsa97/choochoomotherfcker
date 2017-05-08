@@ -37,7 +37,7 @@ public class SwitchVisual extends DynamicVisual {
 			try {
 				throw new Exception("BAJ VAN SwitchVisual.update: Nem letezo switch...");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
+				// Ez igy eleg bena, de igy a hiba legalabb nyomonkovetheto
 				e.printStackTrace();
 			}
 		}
