@@ -40,12 +40,10 @@ public class TrainVisual extends DynamicVisual {
 			}
 		}
 		currenttr.getBeFIFO().get(0).getId();
-		ArrayList<Point> l = new ArrayList<>();
-		l.add(new Point(0,0));
-		l.add(new Point(10,10));
-		ArrayList<color.Color> colorl = new ArrayList<>();
-		colorl.add(color.Color.YELLOW);
-		colorl.add(color.Color.GREEN);
+		myPoints.add(new Point(0,0));
+		myPoints.add(new Point(10,10));
+		colors.add(color.Color.YELLOW);
+		colors.add(color.Color.GREEN);
 		
 	}
 	
