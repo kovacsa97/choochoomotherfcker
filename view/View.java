@@ -176,7 +176,6 @@ public class View {
         	myController.selectTreeItem(newValue));
 		
 		setControlType(ControlType.None);
-		System.out.println("FCKK");
 	}
 	
 	/**

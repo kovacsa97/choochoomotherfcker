@@ -24,6 +24,7 @@ import boardelements.Station;
 import boardelements.Switch;
 import boardelements.Tunnel;
 import boardelements.TunnelOpportunity;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.TreeItem;

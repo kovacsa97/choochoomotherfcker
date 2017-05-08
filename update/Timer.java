@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import controller.Controller;
+import javafx.application.Platform;
 import main.EndGameException;
 
 
@@ -41,8 +42,10 @@ public class Timer extends Thread{
 				for (int i=0; i<size; i++){
 					toUpdate.get(i).update();
 				}
-				myController.displayChange();
-				myController.updateInfo();
+				Platform.runLater(()->{
+					myController.displayChange();
+					});
+				
 				Thread.sleep(300);
 			}
 		} catch (EndGameException e){
@@ -53,6 +56,11 @@ public class Timer extends Thread{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@Override
+	public void run() {
+		start();
 	}
 	
 	/**
