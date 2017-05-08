@@ -3,22 +3,27 @@ package visuals;
 import java.util.ArrayList;
 import java.util.Map.Entry;
 
-import trainelements.Train;
 import board.Board;
-import boardelements.BoardElement;
 import boardelements.Switch;
 import controller.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
-import javafx.util.Builder;
-import sun.java2d.loops.FillParallelogram;
+import trainelements.Train;
 
+/**
+ * a Switch (valto) kirajzolasaert felelos osztaly
+ *
+ */
 public class SwitchVisual extends DynamicVisual {
+	/**
+	 * a switch epp nem aktiv vegpontja
+	 */
 	private Point otherEnd;
+	/**
+	 * a switch allasanak megvaltozasat figyelo valtozo
+	 */
 	private boolean nextActive;
 	
 	public SwitchVisual(Point sp, Point ep, Point oe, String id){
@@ -26,6 +31,9 @@ public class SwitchVisual extends DynamicVisual {
 		otherEnd = oe;
 	}
 	
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#update(board.Board, java.util.ArrayList, controller.Controller)
+	 */
 	@Override
 	public void update(Board board, ArrayList<Train> trains, Controller c){
 		Switch currentsw = null;
@@ -50,6 +58,9 @@ public class SwitchVisual extends DynamicVisual {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#draw(javafx.scene.canvas.GraphicsContext)
+	 */
 	@Override
 	public void draw(GraphicsContext c) {
 					

@@ -2,17 +2,22 @@ package visuals;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
-import sun.java2d.loops.FillRect;
 
+/**
+ * sin kirajyolasaert felelos osytaly
+ *
+ */
 public class RailVisual extends StaticVisual{
 
 	public RailVisual(Point sp, Point ep, String id) {
 		super(sp, ep, id);
 	}
 
+	/* (non-Javadoc)
+	 * @see visuals.StaticVisual#draw(javafx.scene.canvas.GraphicsContext)
+	 */
 	public void draw(GraphicsContext c) {
 		int x1 = this.startPos.x;
 		int y1 = this.startPos.y;

@@ -8,7 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import trainelements.Train;
 
 /**
- * Dinamikus megjelenítok absztrakt ososztálya
+ * Dinamikus megjelenitok absztrakt ososztalya
  *
  */
 public abstract class DynamicVisual {

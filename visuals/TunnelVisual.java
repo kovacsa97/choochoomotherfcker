@@ -11,8 +11,15 @@ import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
 import trainelements.Train;
 
+/**
+ * a Tunnel (alagut) rajzolasaert felelos osztaly
+ *
+ */
 public class TunnelVisual extends DynamicVisual {
 
+	/**
+	 * a tunnelbol igy a visualjabol is egy lehet, ezert nem toroljuk, csak nem rjzoljuk ki
+	 */
 	private boolean visible;
 	
 	public TunnelVisual(Point sp, Point ep, String id) {
@@ -20,6 +27,9 @@ public class TunnelVisual extends DynamicVisual {
 		visible = true;
 	}
 	
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#update(board.Board, java.util.ArrayList, controller.Controller)
+	 */
 	@Override
 	public void update(Board board, ArrayList<Train> trains, Controller c){
 		Tunnel t = board.getTunnel();
@@ -27,6 +37,9 @@ public class TunnelVisual extends DynamicVisual {
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see visuals.DynamicVisual#draw(javafx.scene.canvas.GraphicsContext)
+	 */
 	@Override
 	public void draw(GraphicsContext c) {
 		if(!visible)

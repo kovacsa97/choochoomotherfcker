@@ -1,5 +1,9 @@
 package visuals;
 
+/**
+ * a javafx Canvas-on a kirajzola koordinatai
+ *
+ */
 public class Point {
 	public Point(int _x, int _y) {
 		x=_x;
