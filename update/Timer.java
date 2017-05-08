@@ -62,4 +62,8 @@ public class Timer {
 	public void setController(Controller c){
 		myController = c;
 	}
+	
+	public List<Updateable> getList(){
+		return this.toUpdate;
+	}
 }

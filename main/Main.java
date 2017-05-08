@@ -8,6 +8,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import board.Board;
 import controller.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import parser.ChooChooParser;
+import trainelements.Train;
 import update.Timer;
 import view.View;
 import visuals.*;
@@ -27,14 +29,16 @@ import visuals.*;
 public class Main extends Application {
 	private Controller c;
 	private View w;
-	
+	private Timer t;
 	
 	public void test() {
-		c.setBoard(new ChooChooParser().parse("assets/test_map1.xml"));
-		c.displayBoard("assets/map_1_visual.xml");
-		c.displayChange();
 		
-		//c.updateInfo();
+		Board b = new ChooChooParser().parse("maps/map1.xml");
+		c.setBoard(b);
+		c.displayBoard("maps/map1_visual.xml");
+		c.displayChange();
+		c.updateInfo();
+		//t.start();
 	}
 	
 	
@@ -44,6 +48,17 @@ public class Main extends Application {
 		w=new View();
 		c=new Controller(w);
 		w.setController(c);
+		
+		////////////////////
+		t = new Timer();
+		t.setController(c);
+		ArrayList<Train> list = new ArrayList<Train>();
+		for (int i=1;i<t.getList().size(); i++)
+			list.add((Train) t.getList().get(i));
+		c.setTrains(list);
+		///////////////////
+		
+
 		FXMLLoader l=new FXMLLoader(getClass().getResource("choochoo_ui.fxml"));
 		l.setController(w);
 		primaryStage.setScene(new Scene((Parent)l.load()));

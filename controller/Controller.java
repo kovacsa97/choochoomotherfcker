@@ -3,6 +3,8 @@ package controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -105,6 +107,7 @@ public class Controller {
 		
 		// Train lista
 		TreeItem<String> trainroot=new TreeItem<String>("Trains");
+
 		for (Train item : allTrain){
 			TreeItem<String> trainbase=new TreeItem<String>(item.getId());
 			trainbase.getChildren().add(new TreeItem<String>("Locomotive (Driving power: "+item.getMyLocomotive().getEnginePower()+")"));
@@ -114,20 +117,23 @@ public class Controller {
 			}
 		root.getChildren().add(trainroot);
 		
-		// Rail lista
-		TreeItem<String> railroot=new TreeItem<String>("Rails");
-		root.getChildren().add(railroot);
-		
-		// Rail lista
-		TreeItem<String> stationroot=new TreeItem<String>("Stations");
-		root.getChildren().add(stationroot);
 				
-		// Rail lista
+		// TunnelOpportunity lista
 		TreeItem<String> toroot=new TreeItem<String>("Tunnel opportunities");
+		for (Entry<String, TunnelOpportunity> entry : board.getTunnelOpportunityList().entrySet()) {
+			TunnelOpportunity to = entry.getValue();
+			TreeItem<String> todata=new TreeItem<String>(to.getId());
+			toroot.getChildren().add(todata);
+		}
 		root.getChildren().add(toroot);
 				
-		// Rail lista
+		// Switch lista
 		TreeItem<String> switchroot=new TreeItem<String>("Switches");
+		for (Entry<String, Switch> entry : board.getSwitchList().entrySet()) {
+			Switch s = entry.getValue();
+			TreeItem<String> switchdata=new TreeItem<String>(s.getId());
+			switchroot.getChildren().add(switchdata);
+		}
 		root.getChildren().add(switchroot);
 		
 		myView.updateTreeView(root);
@@ -201,5 +207,9 @@ public class Controller {
 	
 	public void setBoard(Board b){
 		board = b;
+	}
+	
+	public void setTrains(ArrayList<Train> l ){
+		allTrain = l;
 	}
 }
