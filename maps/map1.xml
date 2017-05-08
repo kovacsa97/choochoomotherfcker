@@ -16,7 +16,7 @@
 	<tunnelopp id="to03" inId="null" outId="r06"/>
 	<rail id="r06" prevId="to03" nextId="r07"/>
 	<rail id="r07" prevId="r06" nextId="st03"/>
-	<station id="st03" prevId="r07" nextId="r08" color="3" newPassengerCount="12" newPassengerProbability="0.2"/>
+	<station id="st03" prevId="r07" nextId="r09" color="3" newPassengerCount="12" newPassengerProbability="0.2"/>
 	<rail id="r09" prevId="st03" nextId="s02"/>
 	<switch id="s02" inId="r09" currentOutId="r10" otherOutId="r13" /> 
 	<rail id="r10" prevId="s02" nextId="st04"/>
