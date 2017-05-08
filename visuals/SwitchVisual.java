@@ -7,6 +7,7 @@ import trainelements.Train;
 import board.Board;
 import boardelements.BoardElement;
 import boardelements.Switch;
+import controller.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
@@ -26,7 +27,7 @@ public class SwitchVisual extends DynamicVisual {
 	}
 	
 	@Override
-	public void update(Board board, ArrayList<Train> trains){
+	public void update(Board board, ArrayList<Train> trains, Controller c){
 		Switch currentsw = null;
 		for(Entry<String, Switch> s : board.getSwitchList().entrySet()){
 			if(s.getKey().equals(super.getId())){

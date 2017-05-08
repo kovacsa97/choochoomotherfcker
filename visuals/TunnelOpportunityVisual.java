@@ -3,6 +3,7 @@ package visuals;
 import java.util.ArrayList;
 
 import board.Board;
+import controller.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import trainelements.Train;
@@ -16,8 +17,8 @@ public class TunnelOpportunityVisual extends DynamicVisual{
 	boolean open = false;
 	
 	@Override
-	public void update(Board board, ArrayList<Train> trains){
-		if(board.getTunnelOpportunityList().get(super.getId()).isOccupied()){
+	public void update(Board board, ArrayList<Train> trains, Controller c){
+		if(board.getTunnelOpportunityList().get(super.getId()).isOccupied()){ //to be used later
 			open = false;
 		}
 		else

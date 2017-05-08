@@ -3,6 +3,7 @@ package visuals;
 import java.util.ArrayList;
 
 import board.Board;
+import controller.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import trainelements.Train;
 
@@ -27,7 +28,7 @@ public abstract class DynamicVisual {
 		isActive = b;
 	}
 	
-	public void update(Board board, ArrayList<Train> trains) {
+	public void update(Board board, ArrayList<Train> trains, Controller c) {
 		System.out.println("ABSTRACT BASE CLASS!!!");
 	}
 	public String getId() {

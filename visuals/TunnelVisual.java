@@ -1,16 +1,29 @@
 package visuals;
 
+import java.util.ArrayList;
+
+import board.Board;
+import boardelements.Tunnel;
+import controller.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
+import trainelements.Train;
 
 public class TunnelVisual extends DynamicVisual {
 
 	public TunnelVisual(Point sp, Point ep, String id) {
 		super(sp, ep, id);
 	}
-
+	
+	@Override
+	public void update(Board board, ArrayList<Train> trains, Controller c){
+		Tunnel t = board.getTunnel();
+		t.getNextElement().getId();
+		
+	}
+	
 	@Override
 	public void draw(GraphicsContext c) {
 		int x1 = this.startPos.x;

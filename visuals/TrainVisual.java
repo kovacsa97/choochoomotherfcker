@@ -3,6 +3,7 @@ package visuals;
 import java.util.ArrayList;
 
 import board.Board;
+import controller.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Affine;
@@ -11,7 +12,7 @@ import trainelements.Train;
 
 public class TrainVisual extends DynamicVisual {
 	private ArrayList<Point> myPoints;
-	private ArrayList<color.Color> colors;
+	private ArrayList<color.Color> colors = new ArrayList<>();
 	
 	public TrainVisual(Point sp, Point ep, String id, ArrayList<Point> l){
 		super(sp, ep, id);
@@ -24,7 +25,7 @@ public class TrainVisual extends DynamicVisual {
 	}
 	
 	@Override
-	public void update(Board board, ArrayList<Train> trains){
+	public void update(Board board, ArrayList<Train> trains, Controller c){
 		Train currenttr = null;
 		for(Train t : trains){
 			if(t.getId().equals(super.getId()))
@@ -39,20 +40,16 @@ public class TrainVisual extends DynamicVisual {
 			}
 		}
 		currenttr.getBeFIFO().get(0).getId();
-		ArrayList<Point> l = new ArrayList<>();
-		l.add(new Point(0,0));
-		l.add(new Point(10,10));
-		ArrayList<color.Color> c = new ArrayList<>();
-		c.add(color.Color.YELLOW);
-		c.add(color.Color.GREEN);
-		
+		myPoints.add(new Point(0,0));
+		myPoints.add(new Point(10,10));
+		colors.add(color.Color.YELLOW);
+		colors.add(color.Color.GREEN);
 	}
 	
 	@Override
 	public void draw(GraphicsContext c) {
 		
 		int counter = 0;
-		System.out.println(colors.size());
 		
 		for(int i=0; i<myPoints.size(); i+=2){
 			int x1 = this.myPoints.get(i).x;

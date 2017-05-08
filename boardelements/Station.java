@@ -62,7 +62,7 @@ public class Station extends BoardElement{
 	public void enter(Train t) {
 		locked = true;
 		int out=t.getPassengers(color);
-		System.out.println("takeoff "+id+" "+out);
+		//System.out.println("takeoff "+id+" "+out);
 		point += out;
 		if ((randomness && newPassengerProbability>Math.random()) || (!randomness && enablePassengers)){
 			t.passengerGetOn(this.color, this.newPassengerCount);
