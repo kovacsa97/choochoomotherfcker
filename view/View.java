@@ -146,6 +146,7 @@ public class View {
 		
 		myController.setBoard(new ChooChooParser().parse("maps/" + result.get() + ".xml"));
 		myController.displayBoard("maps/" + result.get() + "_visual.xml");
+		myController.updateInfo();
 		
 	}
 	
