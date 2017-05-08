@@ -362,4 +362,14 @@ public class Controller {
 	public void setTrains(ArrayList<Train> l ){
 		allTrain = l;
 	}
+
+	public ArrayList<StaticVisual> getStaticVisuals() {
+		return staticVisuals;
+	}
+
+	public ArrayList<DynamicVisual> getDynamicVisuals() {
+		return dynamicVisuals;
+	}
+	
+	
 }

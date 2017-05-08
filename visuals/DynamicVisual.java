@@ -73,4 +73,12 @@ public abstract class DynamicVisual {
 	public String getId() {
 		return id;
 	}
+	public Point getStartPos() {
+		return startPos;
+	}
+	public Point getEndPos() {
+		return endPos;
+	}
+	
+	
 }

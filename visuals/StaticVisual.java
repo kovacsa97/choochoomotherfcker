@@ -27,6 +27,24 @@ public abstract class StaticVisual {
 		this.id = id;
 	}
 	
+	
+	
+	public String getId() {
+		return id;
+	}
+
+	public Point getStartPos() {
+		return startPos;
+	}
+
+
+
+	public Point getEndPos() {
+		return endPos;
+	}
+
+
+
 	/**
 	 * @param c a javaFX GraphicsContext-je, erre rajzolunk
 	 */

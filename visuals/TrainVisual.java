@@ -63,12 +63,105 @@ public class TrainVisual extends DynamicVisual {
 			length+=currenttrain.getBeFIFO().get(i).getLength();
 		}
 		
-		int elementLength = length / (currenttrain.getMyWagons().size()+1);
-		int exercusion = currenttrain.getMyLocomotive().getExcursion();
+		String startPosId = currenttrain.getStartPos().getCurrentBE().getId();
+		String endPosId = currenttrain.getEndPos().getCurrentBE().getId();
 		
-		//System.out.println("weight: " + currenttrain.getMyLocomotive().getWeight());
+		boolean dinamicsp = false;
+		boolean dinamicep = false;
+		
+		DynamicVisual sp = null;
+		DynamicVisual ep = null;
+		StaticVisual sp2 = null;
+		StaticVisual ep2 = null;
+		
+		for (DynamicVisual dv: c.getDynamicVisuals()){
+			if(dv.getId().equals(startPosId)){
+				sp = dv;
+				dinamicsp = true;
+				break;
+			}
+		}
+		
+		if(sp == null){
+			for (StaticVisual sv: c.getStaticVisuals()){
+				if(sv.getId().equals(startPosId)){
+					sp2 = sv;
+					break;
+				}
+			}
+		}
+		
+		for (DynamicVisual dv: c.getDynamicVisuals()){
+			if(dv.getId().equals(endPosId)){
+				dinamicsp = true;
+				ep = dv;
+				break;
+			}
+		}
+		
+		if(ep == null){
+			for (StaticVisual sv: c.getStaticVisuals()){
+				if(sv.getId().equals(endPosId)){
+					ep2 = sv;
+					break;
+				}
+			}
+		}
+		
+		int posInStartpos = currenttrain.getStartPos().getPos();
+		int posInEndpos = currenttrain.getEndPos().getPos();
+		
+		int x1, x2, y1, y2;
+		int xstartpos, ystartpos, xendpos, yendpos;
+		int scalesp, scaleep;
+		
+		if(sp != null){
+			x1 = sp.getStartPos().x;
+			y1 = sp.getStartPos().y;
+		}
+		else{
+			x1 = sp2.getStartPos().x;
+			y1 = sp2.getStartPos().y;
+		}
+		
+		if(ep != null){
+			x2 = ep.getStartPos().x;
+			y2 = ep.getStartPos().y;
+		}
+		else{
+			x2 = ep2.getStartPos().x;
+			y2 = ep2.getStartPos().y;
+		}
+		
+		scalesp = posInStartpos / currenttrain.getBeFIFO().get(0).getLength();
+		scaleep = posInEndpos / currenttrain.getBeFIFO().get(currenttrain.getBeFIFO().size()-1).getLength();
+		
+		xstartpos = (int) Math.abs(x1-20)*scalesp;
+		ystartpos = (int) Math.abs(y1-20)*scalesp;
+		xendpos = (int) Math.abs(x2-20)*scaleep;
+		yendpos = (int) Math.abs(y2-20)*scaleep;
+		
+		int elementlength =(int) Math.sqrt((xstartpos-xendpos)*(xstartpos-xendpos)+(ystartpos-yendpos)*(ystartpos-yendpos));
+		
+		myPoints.clear();
 		
 		
+		for(int i=0; i<(currenttrain.getMyWagons().size()+1);i++){
+			if (i==0){
+				myPoints.add(new Point(xstartpos, ystartpos));
+			}
+			else if(i==currenttrain.getMyWagons().size()){
+				myPoints.add(new Point(xstartpos, ystartpos));
+			}
+			else{
+				myPoints.add(new Point(xstartpos, ystartpos));
+				myPoints.add(new Point(xstartpos, ystartpos));
+			}
+			System.out.println(i + " point added");
+			xstartpos += elementlength;
+			ystartpos += elementlength;
+		}
+
 	}
 	
 	/* (non-Javadoc)
