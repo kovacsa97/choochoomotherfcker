@@ -12,7 +12,7 @@ import trainelements.Train;
 
 public class TrainVisual extends DynamicVisual {
 	private ArrayList<Point> myPoints;
-	private ArrayList<color.Color> colors;
+	private ArrayList<color.Color> colors = new ArrayList<>();
 	
 	public TrainVisual(Point sp, Point ep, String id, ArrayList<Point> l){
 		super(sp, ep, id);
@@ -44,7 +44,6 @@ public class TrainVisual extends DynamicVisual {
 		myPoints.add(new Point(10,10));
 		colors.add(color.Color.YELLOW);
 		colors.add(color.Color.GREEN);
-		
 	}
 	
 	@Override
