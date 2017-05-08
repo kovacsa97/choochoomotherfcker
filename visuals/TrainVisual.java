@@ -43,11 +43,13 @@ public class TrainVisual extends DynamicVisual {
 		currenttr.getBeFIFO().get(0).getId();
 		//algoritmus
 		
-		//
-		myPoints.clear();
+		for(Point p : myPoints){
+			p.x++;
+		}
+		/*myPoints.clear();
 		//hozzaad
 		myPoints.add(new Point(0,0));
-		myPoints.add(new Point(10,10));
+		myPoints.add(new Point(10,10));*/
 		
 	}
 	

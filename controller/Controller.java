@@ -109,16 +109,23 @@ public class Controller {
 			}
 			if (!exists){
 				ArrayList<Point> l = new ArrayList<Point>();
-				l.add(new Point(200,200));
-				l.add(new Point(10,200));
+				int size = t.getMyWagons().size() + 1;
+				
 				ArrayList<color.Color> colorList = new ArrayList<>();
-				colorList.add(color.Color.BLUE);
-				colorList.add(color.Color.BLUE);
-				colorList.add(color.Color.BLUE);
-				colorList.add(color.Color.BLUE);
-				colorList.add(color.Color.BLUE);
-				colorList.add(color.Color.BLUE);
-				colorList.add(color.Color.BLUE);
+				colorList.add(color.Color.BLACK);
+				for (int i =0; i<t.getMyWagons().size(); i++){
+					colorList.add(t.getMyWagons().get(i).getColor());
+				}
+
+				Point p = new Point(40,100);
+
+				for (int i=0; i<size*2; i++){
+					p =new Point(40-i*5,100);
+					l.add(p);
+
+				}
+				System.out.println(l.size());
+				
 				TrainVisual tv = new TrainVisual(t.getId(), l, colorList);
 				dynamicVisuals.add(tv);
 				updateInfo();
