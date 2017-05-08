@@ -12,6 +12,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -43,6 +44,9 @@ public class View {
 	
 	@FXML 
 	AnchorPane toControlPane;
+	
+	@FXML
+	ComboBox<String> cbTunnelOpps;
 	
 	/**
 	 * az aktiv vezerles tipusat reprezentalja
@@ -97,6 +101,19 @@ public class View {
 			switchControlPane.setVisible(false);
 			toControlPane.setVisible(true);
 			trainControlPane.setVisible(false);
+			
+			
+			cbTunnelOpps.getItems().clear();
+			
+			for(TreeItem<String> item : tvElements.getRoot().getChildren())
+				if (item.getValue()=="Tunnel opportunities")
+					for(TreeItem<String> subitem:item.getChildren())
+						if (tvElements.getSelectionModel().getSelectedItem() != subitem)
+							cbTunnelOpps.getItems().add(subitem.getValue());
+			if (!cbTunnelOpps.getItems().isEmpty())
+				cbTunnelOpps.getSelectionModel().select(cbTunnelOpps.getItems().get(0));
+			
+			
 			break;
 		case Switch:
 			switchControlPane.setVisible(true);
@@ -204,6 +221,21 @@ public class View {
 	 */
 	public void updateTreeView(TreeItem<String> i) {
 		tvElements.setRoot(i);
-		tvElements.setShowRoot(false);
+	}
+	
+	/**
+	 * kezeli a tunnel rombolo fuggvenyt
+	 */
+	public void bDestroyTunnelHandler() {
+		System.out.println("destroy tunnel pressed");
+	}
+	
+	/**
+	 * kezeli a tunnel epito fuggvenyt
+	 */
+	public void bTunnelBuildHandler() {
+		myController.executeTunnel(
+				cbTunnelOpps.getSelectionModel().getSelectedItem(), 
+				tvElements.getSelectionModel().getSelectedItem().getValue());
 	}
 }

@@ -34,18 +34,11 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
-                              <TreeView fx:id="tvElements" layoutX="-5.0" prefHeight="269.0" prefWidth="360.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <TreeView fx:id="tvElements" layoutX="-5.0" prefHeight="269.0" prefWidth="360.0" showRoot="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <AnchorPane fx:id="toControlPane" prefHeight="103.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Building tunnel" AnchorPane.topAnchor="14.0" />
-                                    <Button layoutX="124.0" layoutY="40.0" mnemonicParsing="false" text="Build" />
-                                    <Button layoutX="117.0" layoutY="69.0" mnemonicParsing="false" text="Destroy" />
-                                 </children>
-                              </AnchorPane>
                               <AnchorPane fx:id="switchControlPane" prefHeight="103.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Switch" AnchorPane.topAnchor="14.0" />
@@ -62,6 +55,14 @@
                                        </font>
                                     </Label>
                                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Engine power" AnchorPane.topAnchor="14.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="toControlPane" prefHeight="103.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ComboBox fx:id="cbTunnelOpps" layoutX="52.0" layoutY="39.0" prefHeight="25.0" prefWidth="90.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="131.0" text="Building tunnel" AnchorPane.topAnchor="14.0" />
+                                    <Button layoutX="146.0" layoutY="39.0" mnemonicParsing="false" onAction="#bTunnelBuildHandler" text="Build" />
+                                    <Button layoutX="117.0" layoutY="69.0" mnemonicParsing="false" onAction="#bDestroyTunnelHandler" text="Destroy" />
                                  </children>
                               </AnchorPane>
                            </children>
