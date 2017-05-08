@@ -4,8 +4,9 @@
 	<rail id="r01" prevId="e01" nextId="r02" />
 	<rail id="r02" prevId="r01" nextId="st01" />
 	<station id="st01" prevId="r02" nextId="s01" color="1" newPassengerCount="10" newPassengerProbability="0.2"/>
-	<switch id="s01" inId="st01" currentOutId="r03" otherOutId="to02" /> 
-	<rail id="r03" prevId="s01" nextId="r04" />
+	<switch id="s01" inId="st01" currentOutId="r33" otherOutId="to02" />
+	<rail id="r33" prevId="s01" nextId="r03" /> 
+	<rail id="r03" prevId="r33" nextId="r04" />
 	<rail id="r04" prevId="r03" nextId="r05" />
 	<rail id="r05" prevId="r04" nextId="st02" />
 	<station id="st02" prevId="r05" nextId="to01" color="2" newPassengerCount="5" newPassengerProbability="0.4"/>
@@ -35,11 +36,6 @@
 	<rail id="r17" prevId="r16" nextId="st05"/>
 	<station id="st05" prevId="r17" nextId="to07" color="5" newPassengerCount="7" newPassengerProbability="0.5"/>
 	<tunnelopp id="to07" inId="st05" outId="null"/>
-	
-	
-	
-	
-	
 	
 </map>
 </data>

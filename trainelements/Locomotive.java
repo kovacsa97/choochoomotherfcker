@@ -53,18 +53,7 @@ public class Locomotive {
 	 * @return megtett tavolsag adott ido alatt
 	 */
 	public int getExcursion(){
-
-		double a = enginePower / weight - FRICTION*weight*10;	
-		double v0 = a*0.5;
-		
-		int exercusion = (int)(v0*0.5 + a / 2 * 0.5 * 0.5);
-		if (exercusion<0) {
-			return 0;
-		}
-		if (exercusion>20){
-			return 20;
-		}
-		return exercusion;
+		return 5;
 	}
 	
 	/**

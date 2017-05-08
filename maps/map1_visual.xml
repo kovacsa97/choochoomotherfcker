@@ -4,7 +4,8 @@
 	<rail id="r01" spx="70" spy="100" epx="100" epy="100" /> 
 	<rail id="r02" spx="100" spy="100" epx="130" epy="100" /> 
 	<station id="st01" spx="130" spy="100" epx="190" epy="100" /> 
-	<switch id="s01" spx="190" spy="100" epx="220" epy="80" oex="220" oey="120"/>   
+	<switch id="s01" spx="190" spy="100" epx="220" epy="80" oex="220" oey="120"/>
+	<rail id="r33" spx="190" spy="100" epx="222" epy="80" /> 
 	<rail id="r03" spx="218" spy="80" epx="240" epy="80" /> 
 	<rail id="r04" spx="240" spy="80" epx="270" epy="80" /> 
 	<rail id="r05" spx="265" spy="80" epx="265" epy="110" /> 
