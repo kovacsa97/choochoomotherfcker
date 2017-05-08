@@ -58,21 +58,28 @@ public class View {
 	 * kezeli a + gombot
 	 */
 	public void increaseDrivingForce() {
-		System.out.println("Driving force increased");
+		
+		Integer df = Integer.parseInt(lDrivingForceValue.getText());
+		df+=1000;
+		lDrivingForceValue.setText(df.toString());
+		myController.executeSetDrivingForce(df);
 	}
 	
 	/**
 	 * kezeli a - gombot
 	 */
 	public void decreaseDrivingForce() {
-		System.out.println("Driving force decreased");
+		Integer df = Integer.parseInt(lDrivingForceValue.getText());
+		df-=1000;
+		lDrivingForceValue.setText(df.toString());
+		myController.executeSetDrivingForce(df);
 	}
 	
 	/**
 	 * kezeli a valto valtasat
 	 */
 	public void changeSwitch() {
-		System.out.println("Switch changed");
+		myController.executeSwitch();
 	}
 			
 	/**

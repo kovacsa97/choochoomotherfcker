@@ -51,9 +51,8 @@ public class Controller {
 		myView = v;
 	}
 	
-	public boolean executeSwitch(String id){
-		Switch s = board.getSwitchList().get(id);
-		s.changeDir();
+	public boolean executeSwitch(){
+		selectedSwitch.changeDir();
 		return true;
 	}
 	
@@ -65,15 +64,8 @@ public class Controller {
 		return true;
 	}
 	
-	public boolean executeSetDrivingForce(String id, int df){
-		Train train = null;
-		for (Train t : allTrain){
-			if (t.getId().equals(id)){
-				train = t;
-				break;
-			}
-		}
-		train.setDrivingForce(df);
+	public boolean executeSetDrivingForce(int df){
+		selectedTrain.setDrivingForce(df);
 		return true;
 	}
 	
