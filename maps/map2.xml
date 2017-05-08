@@ -1,0 +1,44 @@
+<data>
+<map> 
+	<entrypoint id="e01" nextid="r01" defWaitTime="100" timerId="0" />
+	<rail id="r01" prevId="e01" nextId="r02" />
+	<station id="st01" prevId="r01" nextId="s01" color="1" newPassengerCount="10" newPassengerProbability="0.2"/>
+	<switch id="s01" inId="st01" currentOutId="r02" otherOutId="to02" />
+	<rail id="r02" prevId="s01" nextId="r04" /> 
+	<rail id="r03" prevId="st01" nextId="to01" />
+	<tunnelopp id="to01" inId="r03" outId="null" />
+	<rail id="r04" prevId="r02" nextId="r05" />
+	<rail id="r05" prevId="r04" nextId="st02" />
+	<station id="st02" prevId="r05" nextId="to02" color="2" newPassengerCount="5" newPassengerProbability="0.4"/>
+	<tunnelopp id="to02" inId="st02" outId="null" />
+	
+	<tunnelopp id="to11" inId="null" outId="r11"/>
+	<rail id="r11" prevId="to11" nextId="r12"/>
+	<rail id="r12" prevId="r11" nextId="st11"/>
+	<station id="st11" prevId="r12" nextId="r13" color="3" newPassengerCount="12" newPassengerProbability="0.2"/>
+	<rail id="r13" prevId="st11" nextId="r14"/>
+	<rail id="r14" prevId="r13" nextId="s11"/>
+	<switch id="s11" inId="r14" currentOutId="r15" otherOutId="r16" /> 
+	<rail id="r15" prevId="s11" nextId="r18"/>
+	<rail id="r16" prevId="s11" nextId="r17"/>
+	<rail id="r17" prevId="r16" nextId="cr11"/>
+	<rail id="r18" prevId="r15" nextId="r19"/>
+	<rail id="r19" prevId="r18" nextId="cr12"/>
+	<crossingrail id="cr11" prevId="r17" nextId="to12" otherRailId="cr12" /> 
+	<crossingrail id="cr12" prevId="r19" nextId="st15" otherRailId="cr11" /> 
+	<tunnelopp id="to12" inId="cr11" outId="null"/>
+	<station id="st12" prevId="r12" nextId="to13" color="4" newPassengerCount="3" newPassengerProbability="0.8"/>
+	<tunnelopp id="to13" inId="st12" outId="null"/>
+	
+	<tunnelopp id="to21" inId="null" outId="r21"/>
+	<rail id="r21" prevId="to21" nextId="r22"/>
+	<rail id="r22" prevId="to21" nextId="r23"/>
+	<rail id="r23" prevId="to22" nextId="r24"/>
+	<rail id="r24" prevId="to23" nextId="r25"/>
+	<station id="st21" prevId="r24" nextId="to25" color="5" newPassengerCount="7" newPassengerProbability="0.5"/>
+	<rail id="r25" prevId="to24" nextId="r26"/>
+	<rail id="r26" prevId="to25" nextId="r27"/>
+	<rail id="r27" prevId="to26" nextId="to22"/>
+	<tunnelopp id="to22" inId="r27" outId="null"/>
+</map>
+</data>
