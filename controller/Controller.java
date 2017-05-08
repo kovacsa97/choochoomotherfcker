@@ -236,6 +236,14 @@ public class Controller {
 		}
 		root.getChildren().add(switchroot);
 		
+		TreeItem<String> stationroot=new TreeItem<String>("Stations");
+		for (Entry<String,Station> entry:board.getStationList().entrySet()) {
+			Station s=entry.getValue();
+			TreeItem<String> stationdata=new TreeItem<String>(s.getId() + " " + s.getAllPoints());
+			stationroot.getChildren().add(stationdata);
+		}
+		root.getChildren().add(stationroot);
+		
 		myView.updateTreeView(root);
 	}
 	
@@ -395,6 +403,33 @@ public class Controller {
 
 	public ArrayList<DynamicVisual> getDynamicVisuals() {
 		return dynamicVisuals;
+	}
+	
+	public Point[] getEndpoints(BoardElement be) {
+		Point[] points=new Point[2];
+		boolean found=false;
+		
+		for (DynamicVisual dv: dynamicVisuals){
+			if(dv.getId().equals(be.getId())){
+				points[0]=dv.getStartPos();
+				points[1]=dv.getEndPos();
+				found=true;
+				break;
+			}
+		}
+		
+		if(!found){
+			for (StaticVisual sv: staticVisuals){
+				if(sv.getId().equals(be.getId())){
+					points[0]=sv.getStartPos();
+					points[1]=sv.getEndPos();
+					break;
+				}
+			}
+		}
+		
+		
+		return points;
 	}
 	
 	
