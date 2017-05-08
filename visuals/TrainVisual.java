@@ -47,6 +47,7 @@ public class TrainVisual extends DynamicVisual {
 		
 		int elementLength = length / (currenttrain.getMyWagons().size()+1);
 		int exercusion = currenttrain.getMyLocomotive().getExcursion();
+		
 		//System.out.println("weight: " + currenttrain.getMyLocomotive().getWeight());
 		
 		
