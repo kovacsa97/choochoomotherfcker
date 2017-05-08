@@ -140,9 +140,13 @@ public class Controller {
 	public void displayChange(ArrayList<Train> list){
 		this.setTrains(list);
 		boolean exists = false;
+		TunnelVisual tunvis = null;
 		for (Train t : allTrain){
 			exists = false;
 			for(DynamicVisual d : dynamicVisuals){
+				if(d.getId().equals("tunnel")){
+					tunvis = (TunnelVisual)d;
+				}
 				if(d.getId().equals(t.getId())){
 					exists = true;
 					break;
@@ -169,6 +173,10 @@ public class Controller {
 				
 				TrainVisual tv = new TrainVisual(t.getId(), l, colorList);
 				dynamicVisuals.add(tv);
+				if(tunvis != null){
+					dynamicVisuals.remove(tunvis);
+					dynamicVisuals.add(tunvis);
+				}
 				updateInfo();
 			}
 		}
