@@ -33,11 +33,6 @@ public class Main extends Application {
 	
 	public void test() {
 		
-		Board b = new ChooChooParser().parse("maps/map1.xml");
-		c.setBoard(b);
-		c.displayBoard("maps/map1_visual.xml");
-		c.displayChange();
-		c.updateInfo();
 	}
 	
 	
