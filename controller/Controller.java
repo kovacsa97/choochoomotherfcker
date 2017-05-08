@@ -98,9 +98,26 @@ public class Controller {
 	
 	public void displayChange(ArrayList<Train> list){
 		this.setTrains(list);
-		System.out.println(allTrain.size());
+		boolean exists = false;
+		for (Train t : allTrain){
+			for(DynamicVisual d : dynamicVisuals){
+				if(d.getId().equals(t.getId())){
+					exists = true;
+					break;
+				}
+			}
+			if (!exists){
+				ArrayList<Point> l = new ArrayList<Point>();
+				l.add(new Point(20,20));
+				l.add(new Point(10,20));
+				TrainVisual tv = new TrainVisual(new Point(0,0), new Point(0,0), t.getId(), l);
+			}
+		}
+		
+		
+		
 		for(DynamicVisual dv : dynamicVisuals){
-			dv.update(board, allTrain);
+			dv.update(board, allTrain, this);
 		}
 		myView.update(dynamicVisuals);
 	}
