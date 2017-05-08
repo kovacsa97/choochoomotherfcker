@@ -32,6 +32,7 @@ public class Main extends Application {
 	public void test() {
 		c.setBoard(new ChooChooParser().parse("assets/test_map1.xml"));
 		c.displayBoard("assets/map_1_visual.xml");
+		c.displayChange();
 		
 		//c.updateInfo();
 	}
@@ -47,6 +48,8 @@ public class Main extends Application {
 		l.setController(w);
 		primaryStage.setScene(new Scene((Parent)l.load()));
 		primaryStage.show();
+		
+		//Thread.sleep(10000);
 		
 		
 		//w.openHandler();
