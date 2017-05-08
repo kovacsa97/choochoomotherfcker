@@ -129,7 +129,6 @@ public class Controller {
 	 * Frissiti a view informacios treeviewjet a megfelelo elemekkel
 	 */
 	public void updateInfo(){
-		System.out.println("FASZOM");
 		TreeItem<String> root=new TreeItem<String>("root");
 		
 		// Train lista
