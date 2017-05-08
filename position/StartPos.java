@@ -15,7 +15,7 @@ public class StartPos extends Position {
 	/**
 	 * vonat altal lefoglalt palyaelemeket tartalmazza
 	 */
-	private List<BoardElement> BEfifo;
+	private ArrayList<BoardElement> BEfifo;
 	
 	/**
 	 * vonat referenciaja amelyikhez tartozik
@@ -64,5 +64,9 @@ public class StartPos extends Position {
 	public BoardElement popBack(){
 		BEfifo.remove(0);
 		return BEfifo.get(0);
+	}
+
+	public ArrayList<BoardElement> getBeFIFO() {
+		return BEfifo;
 	}
 }
