@@ -21,6 +21,7 @@ import update.Updateable;
  */
 public class EntryPoint extends BoardElement implements Updateable{
 	
+	private int randomID = 0;
 	/**
 	 * A belepesi pont szamlaloja, ha eleri a 0 erteket uj vonatot kuld a palyara
 	 */
@@ -168,6 +169,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 		Locomotive loc = new Locomotive(LOCOMOTIVEPOWER, 10);
 		loc.setWeight(wagonList.size()*WAGONWEIGHT);
 		Train train = new Train(createWagonList(), loc, this);
+		train.setId("train" + new Integer(randomID++).toString());
 		timer.registerElement(train);
 	}
 	
