@@ -10,12 +10,14 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import parser.ChooChooParser;
 import visuals.DynamicVisual;
@@ -64,7 +66,7 @@ public class View {
 	public void increaseDrivingForce() {
 		
 		Integer df = Integer.parseInt(lDrivingForceValue.getText());
-		df+=1000;
+		df+=100;
 		lDrivingForceValue.setText(df.toString());
 		myController.executeSetDrivingForce(df);
 	}
@@ -74,7 +76,7 @@ public class View {
 	 */
 	public void decreaseDrivingForce() {
 		Integer df = Integer.parseInt(lDrivingForceValue.getText());
-		df-=1000;
+		df-=100;
 		lDrivingForceValue.setText(df.toString());
 		myController.executeSetDrivingForce(df);
 	}
@@ -171,6 +173,15 @@ public class View {
 		myController.displayBoard("maps/" + result.get() + "_visual.xml");
 		myController.updateInfo();
 		
+	}
+	
+	public void GameOverHandler(int score) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Game over");
+		alert.setHeaderText("Two of your trains crashed.");
+		alert.setContentText("Your final score is "+score);
+
+		alert.showAndWait();
 	}
 	
 	public View(){

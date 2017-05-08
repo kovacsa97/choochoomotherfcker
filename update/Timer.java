@@ -64,12 +64,7 @@ public class Timer extends Thread{
 			}
 		} catch (EndGameException e){
 				Platform.runLater(()->{
-					Alert alert = new Alert(AlertType.ERROR);
-					alert.setTitle("Game over");
-					alert.setHeaderText("The game is over.");
-					alert.setContentText("Two of your trains crashed!");
-
-					alert.showAndWait();
+					myController.gameOver();
 				});
 				stopMe();
 		} catch (InterruptedException e) {

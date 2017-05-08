@@ -254,6 +254,8 @@ public class Controller {
 				if (t.getId()==selectedItem.getParent().getValue()) {
 					myView.setControlType(ControlType.Train);
 					selectedTrain=t;
+					myView.setEnginePowerValue(t.getMyLocomotive().getEnginePower());
+
 					for (DynamicVisual d : dynamicVisuals){
 						 d.setActivation(false);
 					 }
@@ -351,6 +353,10 @@ public class Controller {
 	
 	public void setBoard(Board b){
 		board = b;
+	}
+	
+	public void gameOver() {
+		myView.GameOverHandler(board.calculatePoints());
 	}
 	
 	public void setTrains(ArrayList<Train> l ){
