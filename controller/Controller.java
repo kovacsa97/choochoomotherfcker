@@ -44,6 +44,8 @@ public class Controller {
 	private View myView;
 	
 	private Train selectedTrain=null;
+	private Switch selectedSwitch = null;
+	private TunnelOpportunity selectedTo = null;
 	
 	public Controller( View v ){
 		myView = v;
@@ -96,7 +98,7 @@ public class Controller {
 		for (int i=1;i<t.getList().size(); i++)
 			list.add((Train) t.getList().get(i));
 		this.setTrains(list);
-		t.start();
+		//t.start();
 	}
 	
 	public void displayChange(){
@@ -149,22 +151,85 @@ public class Controller {
 	 * @param selectedItem a kivalasztott elem
 	 */
 	public void selectTreeItem(TreeItem<String> selectedItem) {
-		if (selectedItem.getParent().getValue()=="root")
+		System.out.println(selectedItem.getParent().getValue());
+
+		if (selectedItem.getParent().getValue().equals("root")){
 			return;
-		if (selectedItem.getParent().getValue()=="Trains")
+		}
+		if (selectedItem.getParent().getValue().equals("Trains")){
 			for(Train t : allTrain)
-				if (t.getId()==selectedItem.getValue()) {
+				if (t.getId().equals(selectedItem.getValue())) {
 					myView.setControlType(ControlType.Train);
 					selectedTrain=t;
+					for (DynamicVisual d : dynamicVisuals){
+						 d.setActivation(false);
+					 }
+					for (DynamicVisual d : dynamicVisuals){
+						if(d.getId().equals(selectedTrain.getId())){
+							d.setActivation(true);
+							break;
+						}
+					}
 					return;
 				}
-		if (selectedItem.getParent().getParent().getValue()=="Trains")
+		}
+		
+		if (selectedItem.getParent().getParent().getValue()=="Trains"){
 			for (Train t : allTrain)
 				if (t.getId()==selectedItem.getParent().getValue()) {
 					myView.setControlType(ControlType.Train);
 					selectedTrain=t;
+					for (DynamicVisual d : dynamicVisuals){
+						 d.setActivation(false);
+					 }
+					for (DynamicVisual d : dynamicVisuals){
+						if(d.getId().equals(selectedTrain.getId())){
+							d.setActivation(true);
+							break;
+						}
+					}
 					return;
 				}
+		}
+		
+		if(selectedItem.getParent().getValue().equals("Switches")){
+			for (Entry<String, Switch> entry : board.getSwitchList().entrySet()) {
+				 if (entry.getValue().getId().equals(selectedItem.getValue())){
+					 selectedSwitch = entry.getValue();
+					 myView.setControlType(ControlType.Switch);
+					 for (DynamicVisual d : dynamicVisuals){
+						 d.setActivation(false);
+					 }
+					 for (DynamicVisual d : dynamicVisuals){
+						 if (d.getId().equals(selectedSwitch.getId())){
+							d.setActivation(true);
+							break;
+						 }
+					 }
+					 return;
+				 }
+			}
+		}
+		
+		if(selectedItem.getParent().getValue().equals("Tunnel opportunities")){
+			for (Entry<String, TunnelOpportunity> entry : board.getTunnelOpportunityList().entrySet()) {
+				 if (entry.getValue().getId().equals(selectedItem.getValue())){
+					 selectedTo = entry.getValue();
+					 myView.setControlType(ControlType.TunnelOpp);
+					 for (DynamicVisual d : dynamicVisuals){
+						 d.setActivation(false);
+					 }
+					 for (DynamicVisual d : dynamicVisuals){
+						 if (d.getId().equals(selectedTo.getId())){
+							d.setActivation(true);
+							break;
+						 }
+					 }
+					 return;
+				 }
+			}
+		}
+		
 	}
 	
 	public void parse(String filename) throws SAXException, IOException, ParserConfigurationException{
