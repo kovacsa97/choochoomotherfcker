@@ -40,10 +40,14 @@ public class TrainVisual extends DynamicVisual {
 			}
 		}
 		currenttr.getBeFIFO().get(0).getId();
+		//algoritmus
+		
+		//
+		myPoints.clear();
+		//hozzaad
 		myPoints.add(new Point(0,0));
 		myPoints.add(new Point(10,10));
-		colors.add(color.Color.YELLOW);
-		colors.add(color.Color.GREEN);
+		
 	}
 	
 	@Override

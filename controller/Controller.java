@@ -172,7 +172,7 @@ public class Controller {
 	 * @param selectedItem a kivalasztott elem
 	 */
 	public void selectTreeItem(TreeItem<String> selectedItem) {
-		System.out.println(selectedItem.getParent().getValue());
+		myView.setControlType(ControlType.None);
 
 		if (selectedItem.getParent().getValue().equals("root")){
 			return;
