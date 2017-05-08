@@ -108,7 +108,7 @@ public class TrainVisual extends DynamicVisual {
 			b = true;
 		}
 		
-		System.out.println(currenttrain.getStartPos().getCurrentBE().getId());
+		System.out.println(currenttrain.getId() + " " + currenttrain.getStartPos().getCurrentBE().getId() + " " + currenttrain.getEndPos().getCurrentBE().getId());
 		
 		int xdist = Math.abs(x2-x1)/4;
 		int ydist = Math.abs(y2-y1-3)/4;
@@ -145,7 +145,7 @@ public class TrainVisual extends DynamicVisual {
 		
 		int counter = 0;
 		
-		for(int i=0; i<myPoints.size(); i+=2){
+		for(int i=0; i<myPoints.size()-1; i+=2){
 			int x1 = this.myPoints.get(i).x;
 			int y1 = this.myPoints.get(i).y;
 			int x2 = this.myPoints.get(i+1).x;
