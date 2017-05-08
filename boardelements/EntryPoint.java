@@ -38,7 +38,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	 * ettol fuggoen general a belepesi pont random parameterekkel vonatot, 
 	 * ha hamis, megadott ertekek alapjan teszi ezt.
 	 */
-	private boolean randomGeneration = false;
+	private boolean randomGeneration = true;
 	/**
 	 * trainModellek listaja
 	 */
