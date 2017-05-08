@@ -38,7 +38,8 @@ public class TrainVisual extends DynamicVisual {
 				e.printStackTrace();
 			}
 		}
-		//currenttr.
+		currenttr.getBeFIFO().get(0).getId();
+		
 	}
 	
 	@Override
