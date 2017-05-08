@@ -60,12 +60,12 @@ public class Controller {
 	public boolean executeTunnel(String id1, String id2){
 		TunnelOpportunity to1 = board.getTunnelOpportunityList().get(id1);
 		TunnelOpportunity to2 = board.getTunnelOpportunityList().get(id2);
-		Tunnel t = board.getTunnel();
-		if(t == null){
-			board.buildTunnel(to1, to2);
-			t = board.getTunnel();
-			t.setId("tunnel");
+		if(board.getTunnel() != null){
+			board.destroyTunnel();
 		}
+		board.buildTunnel(to1, to2);
+		Tunnel t = board.getTunnel();
+		t.setId("tunnel");
 		
 		TunnelVisual tv = null;
 		Point sp = null;
