@@ -101,8 +101,17 @@ public class Board {
 	public void buildTunnel(TunnelOpportunity t1, TunnelOpportunity t2) {
 		tunnel=new Tunnel(10);
 		tunnel.setEnds(t1, t2);
-		t1.setEnds(t1.getPrevElement(), tunnel);
-		t2.setEnds(t2.getPrevElement(), tunnel);
+		if(t1.getNextElement() == null){
+			t1.setEnds(t1.getPrevElement(), tunnel);			
+		}else if(t1.getPrevElement() == null){
+			t1.setEnds( tunnel,t1.getNextElement());
+		}
+		if(t2.getNextElement() == null){
+			t2.setEnds(t2.getPrevElement(), tunnel);			
+		}else if(t2.getPrevElement() == null){
+			t2.setEnds( tunnel,t2.getNextElement());
+		}
+		
 	}
 	
 	/**

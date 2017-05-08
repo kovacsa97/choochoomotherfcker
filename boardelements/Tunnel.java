@@ -18,8 +18,22 @@ public class Tunnel extends BoardElement {
 	 * Lerombol egy meglevo alagutat
 	 */
 	public void destroy(){
-		if (next!=null) next.lock();
-		if (prev!=null) prev.lock();
+		if (next!=null){ 
+			next.lock();
+			if(next.getPrevElement().getId().equals(id)){
+				next.setEnds(null, next.getNextElement());
+			}else if(next.getNextElement().getId().equals(id)){
+				next.setEnds(next.getPrevElement(), null);
+			}
+		}
+		if (prev!=null){
+			prev.lock();
+			if(prev.getPrevElement().getId().equals(id)){
+				prev.setEnds(null, prev.getNextElement());
+			}else if(prev.getNextElement().getId().equals(id)){
+				prev.setEnds(prev.getPrevElement(), null);
+			}
+		}
 	}
 	
 	/* (non-Javadoc)

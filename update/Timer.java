@@ -60,7 +60,7 @@ public class Timer extends Thread {
 					myController.displayChange(list);
 					});
 				
-				Thread.sleep(300);
+				Thread.sleep(1000);
 			}
 		} catch (EndGameException e){
 				Platform.runLater(()->{
