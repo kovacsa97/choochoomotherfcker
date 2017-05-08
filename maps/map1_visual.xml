@@ -3,15 +3,15 @@
 	<entrypoint id="e01" spx="40" spy="100" epx="70" epy="100" />
 	<rail id="r01" spx="70" spy="100" epx="100" epy="100" /> 
 	<rail id="r02" spx="100" spy="100" epx="130" epy="100" /> 
-	<station id="st01" spx="130" spy="100" epx="190" epy="100" /> 
-	<switch id="s01" spx="190" spy="100" epx="220" epy="80" oex="220" oey="120"/>
-	<rail id="r33" spx="190" spy="100" epx="222" epy="80" /> 
-	<rail id="r03" spx="218" spy="80" epx="240" epy="80" /> 
-	<rail id="r04" spx="240" spy="80" epx="270" epy="80" /> 
-	<rail id="r05" spx="265" spy="80" epx="265" epy="110" /> 
-	<station id="st02" spx="265" spy="110" epx="265" epy="170" /> 
-	<tunnelopp id="to01" spx="260" spy="170" epx="260" epy="170" /> 
-	<tunnelopp id="to02" spx="220" spy="120" epx="220" epy="120" /> 
+	<station id="st01" spx="130" spy="100" epx="160" epy="100" /> 
+	<switch id="s01" spx="160" spy="100" epx="180" epy="80" oex="180" oey="120"/>
+	<rail id="r33" spx="160" spy="100" epx="182" epy="82" /> 
+	<rail id="r03" spx="180" spy="80" epx="210" epy="80" /> 
+	<rail id="r04" spx="210" spy="80" epx="240" epy="80" /> 
+	<rail id="r05" spx="235" spy="80" epx="235" epy="110" /> 
+	<station id="st02" spx="235" spy="110" epx="235" epy="140" /> 
+	<tunnelopp id="to01" spx="235" spy="140" epx="235" epy="140" /> 
+	<tunnelopp id="to02" spx="180" spy="120" epx="235" epy="120" /> 
 	
 	<rail id="r06" spx="130" spy="160" epx="97" epy="160" /> 
 	<tunnelopp id="to03" spx="130" spy="160" epx="130" epy="160" /> 
