@@ -32,13 +32,13 @@
 	
 	<tunnelopp id="to21" inId="null" outId="r21"/>
 	<rail id="r21" prevId="to21" nextId="r22"/>
-	<rail id="r22" prevId="to21" nextId="r23"/>
-	<rail id="r23" prevId="to22" nextId="r24"/>
-	<rail id="r24" prevId="to23" nextId="r25"/>
-	<station id="st21" prevId="r24" nextId="to25" color="5" newPassengerCount="7" newPassengerProbability="0.5"/>
-	<rail id="r25" prevId="to24" nextId="r26"/>
-	<rail id="r26" prevId="to25" nextId="r27"/>
-	<rail id="r27" prevId="to26" nextId="to22"/>
+	<rail id="r22" prevId="r21" nextId="r23"/>
+	<rail id="r23" prevId="r22" nextId="r24"/>
+	<rail id="r24" prevId="r23" nextId="st21"/>
+	<station id="st21" prevId="r24" nextId="r25" color="5" newPassengerCount="7" newPassengerProbability="0.5"/>
+	<rail id="r25" prevId="st21" nextId="r26"/>
+	<rail id="r26" prevId="r25" nextId="r27"/>
+	<rail id="r27" prevId="r26" nextId="to22"/>
 	<tunnelopp id="to22" inId="r27" outId="null"/>
 </map>
 </data>

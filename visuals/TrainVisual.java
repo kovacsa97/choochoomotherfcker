@@ -93,20 +93,22 @@ public class TrainVisual extends DynamicVisual {
 		Point start=points[0];
 		Point end=points[1];
 			
+		
+		
 		if(currenttrain.getStartPos().getCurrentBE().getLength() != 0){
 			double progress=(double)currenttrain.getStartPos().getPos()/currenttrain.getStartPos().getCurrentBE().getLength();
-			if(!be.getNextElement().isOccupied()){
+			if(!currenttrain.getBeFIFO().contains(be.getNextElement())){
 				myPoints.get(0).x = new Double(end.x * progress + start.x * (1 - progress)).intValue();
 				myPoints.get(0).y = new Double(end.y * progress + start.y * (1 - progress)).intValue();
-			}else if (!be.getPrevElement().isOccupied()){
+			}else if (!currenttrain.getBeFIFO().contains(be.getPrevElement())){
 				myPoints.get(0).x = new Double(start.x * progress + end.x * (1 - progress)).intValue();
 				myPoints.get(0).y = new Double(start.y * progress + end.y * (1 - progress)).intValue();
 			}
 		}else{
-			if(!be.getNextElement().isOccupied()){
+			if(!currenttrain.getBeFIFO().contains(be.getNextElement())){
 				myPoints.get(0).x = c.getEndpoints(be.getNextElement())[0].x;
 				myPoints.get(0).y = c.getEndpoints(be.getNextElement())[0].y;
-			}else if (!be.getPrevElement().isOccupied()){
+			}else if (!currenttrain.getBeFIFO().contains(be.getPrevElement())){
 				myPoints.get(0).x = c.getEndpoints(be.getNextElement())[1].x;
 				myPoints.get(0).y = c.getEndpoints(be.getNextElement())[1].y;
 			}
