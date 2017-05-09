@@ -35,12 +35,12 @@ public class TunnelOpportunityVisual extends DynamicVisual{
 		
 		if(!isActive){
 			c.setFill(Color.BLUE);
-			c.fillOval(startPos.x-5, startPos.y-5, 20, 20);
 		}
 		else {
 			c.setFill(Color.GOLD);
-			c.fillOval(startPos.x-5, startPos.y-5, 20, 20);
+			
 		}
+		c.fillOval(startPos.x-7, startPos.y-7, 20, 20);
 		
 	}
 	

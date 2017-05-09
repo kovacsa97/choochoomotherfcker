@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map> 
-	<entrypoint id="e01" spx="40" spy="50" epx="70" epy="50" />
-	<rail id="r01" spx="70" spy="45" epx="110" epy="45" /> 
-	<station id="st01" spx="110" spy="45" epx="150" epy="45" /> 
-	<switch id="s01" spx="150" spy="45" epx="178" epy="17" oex="178" oey="73"/>
-	<rail id="r02" spx="150" spy="45" epx="178" epy="17" /> 
-	<rail id="r03" spx="150" spy="45" epx="178" epy="73" /> 
-	<tunnelopp id="to01" spx="178" spy="76" epx="178" epy="76" /> 
-	<rail id="r04" spx="175" spy="17" epx="215" epy="17" /> 
-	<rail id="r05" spx="212" spy="14" epx="212" epy="54" /> 
-	<station id="st02" spx="212" spy="54" epx="212" epy="94" /> 
-	<tunnelopp id="to02" spx="208" spy="99" epx="208" epy="99" /> 
+	<entrypoint id="e01" spx="40" spy="50" epx="80" epy="50" />
+	<rail id="r01" spx="80" spy="50" epx="120" epy="50" /> 
+	<station id="st01" spx="120" spy="50" epx="160" epy="50" /> 
+	<switch id="s01" spx="160" spy="50" epx="188" epy="22" oex="188" oey="78"/>
+	<rail id="r02" spx="160" spy="50" epx="188" epy="22" /> 
+	<rail id="r03" spx="160" spy="50" epx="188" epy="78" /> 
+	<tunnelopp id="to01" spx="188" spy="78" epx="188" epy="78" /> 
+	<rail id="r04" spx="188" spy="22" epx="228" epy="22" /> 
+	<rail id="r05" spx="228" spy="22" epx="228" epy="62" /> 
+	<station id="st02" spx="228" spy="62" epx="228" epy="102" /> 
+	<tunnelopp id="to02" spx="228" spy="102" epx="228" epy="102" /> 
 	
 	<tunnelopp id="to11" spx="130" spy="100" epx="130" epy="100" /> 
-	<rail id="r11" spx="127" spy="100" epx="87" epy="100" /> 
-	<rail id="r12" spx="90" spy="98" epx="62" epy="126"/>	
-	<station id="st11" spx="62" spy="123" epx="62" epy="163"/>
-	<rail id="r13" spx="62" spy="161" epx="90" epy="189"/>	
-	<rail id="r14" spx="87" spy="189" epx="126" epy="189"/>
-	<switch id="s11" spx="126" spy="189" epx="154" epy="161" oex="154" oey="217"/>
-	<rail id="r15" spx="126" spy="189" epx="154" epy="161"/>
-	<rail id="r16" spx="151" spy="161" epx="191" epy="161"/>
-	<rail id="r17" spx="188" spy="158" epx="208" epy="192"/>
-	<crossingrail id="cr11" spx="206" spy="190" epx="226" epy="224"/>
-	<station id="st12" spx="224" spy="223" epx="224" epy="263"/>
-	<tunnelopp id="to13" spx="221" spy="267" epx="221" epy="267" /> 
-	<rail id="r18" spx="126" spy="189" epx="154" epy="217"/>
-	<rail id="r19" spx="151" spy="217" epx="191" epy="217"/>
-	<crossingrail id="cr12" spx="189" spy="217" epx="223" epy="197"/>
-	<tunnelopp id="to12" spx="225" spy="194" epx="225" epy="194" /> 
+	<rail id="r11" spx="130" spy="100" epx="90" epy="100" /> 
+	<rail id="r12" spx="90" spy="100" epx="72" epy="118"/>	
+	<station id="st11" spx="72" spy="118" epx="72" epy="158"/>
+	<rail id="r13" spx="72" spy="158" epx="90" epy="186"/>	
+	<rail id="r14" spx="90" spy="186" epx="130" epy="186"/>
+	<switch id="s11" spx="130" spy="186" epx="158" epy="158" oex="158" oey="214"/>
+	<rail id="r15" spx="130" spy="186" epx="158" epy="158"/>
+	<rail id="r16" spx="158" spy="158" epx="198" epy="158"/>
+	<rail id="r17" spx="198" spy="158" epx="218" epy="192"/>
+	<crossingrail id="cr11" spx="218" spy="192" epx="228" epy="226"/>
+	<station id="st12" spx="228" spy="226" epx="228" epy="266"/>
+	<tunnelopp id="to13" spx="228" spy="266" epx="228" epy="268" /> 
+	<rail id="r18" spx="130" spy="186" epx="158" epy="214"/>
+	<rail id="r19" spx="158" spy="214" epx="198" epy="214"/>
+	<crossingrail id="cr12" spx="198" spy="214" epx="232" epy="194"/>
+	<tunnelopp id="to12" spx="232" spy="194" epx="232" epy="194" /> 
 	
 	<tunnelopp id="to21" spx="40" spy="300" epx="40" epy="300" /> 
-	<rail id="r21" spx="43" spy="300" epx="71" epy="272"/>
+	<rail id="r21" spx="40" spy="300" epx="68" epy="272"/>
 	<rail id="r22" spx="68" spy="272" epx="108" epy="272"/>
-	<rail id="r23" spx="105" spy="272" epx="133" epy="300"/>
-	<rail id="r24" spx="130" spy="300" epx="170" epy="300"/>
-	<station id="st21" spx="170" spy="300" epx="210" epy="300"/>
-	<rail id="r25" spx="207" spy="300" epx="235" epy="328"/>
-	<rail id="r26" spx="232" spy="328" epx="272" epy="328"/>
-	<rail id="r27" spx="269" spy="328" epx="297" epy="300"/>
-	<tunnelopp id="to22" spx="299" spy="297" epx="299" epy="300" /> 
+	<rail id="r23" spx="108" spy="272" epx="136" epy="300"/>
+	<rail id="r24" spx="136" spy="300" epx="176" epy="300"/>
+	<station id="st21" spx="176" spy="300" epx="216" epy="300"/>
+	<rail id="r25" spx="216" spy="300" epx="244" epy="328"/>
+	<rail id="r26" spx="244" spy="328" epx="284" epy="328"/>
+	<rail id="r27" spx="284" spy="328" epx="312" epy="300"/>
+	<tunnelopp id="to22" spx="312" spy="300" epx="312" epy="300" /> 
 
 </map>

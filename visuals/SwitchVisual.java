@@ -63,93 +63,43 @@ public class SwitchVisual extends DynamicVisual {
 	 */
 	@Override
 	public void draw(GraphicsContext c) {
-					
-		int x1 = this.startPos.x;
-		int y1 = this.startPos.y;
-		int x2 = this.endPos.x;
-		int y2 = this.endPos.y;
+		//calculate angle
+		double alpha = Math.atan2((double)(endPos.y - startPos.y), (double)(endPos.x - startPos.x));
 		
-		if (endPos.x-startPos.x<0){
-			 x1 = this.endPos.x;
-			 y1 = this.endPos.y;
-			 x2 = this.startPos.x;
-			 y2 = this.startPos.y;
-		}
+		//define drawing width
+		double width = 15;
 		
-		int a = x2 - x1;
-		int b = y2 - y1;
+		//calculate offsets
+		double deltaX = width / 2 * Math.cos(alpha);
+		double deltaY = width / 2 * Math.sin(alpha);
 		
-		boolean isNegative = false;
+		c.setStroke(Color.GREY);
+		c.setLineWidth(width);
+		c.strokeLine(startPos.x + deltaX,
+				startPos.y + deltaY,
+				endPos.x - deltaX,
+				endPos.y - deltaY);
+//		c.setFill(Color.BLUE);
+//		c.fillOval(startPos.x, startPos.y, 2, 2);
+//		c.fillOval(endPos.x, endPos.y, 2, 2);
 		
-		if (b<0){
-			b*=-1;
-			isNegative = true;
-		}
+		//calculate angle
+		alpha = Math.atan2((double)(otherEnd.y - startPos.y), (double)(otherEnd.x - startPos.x));
+		//define drawing width
+		width = 15;
 		
-		int d = (int)Math.sqrt(a*a+b*b);
-
-		double sina = (double) b / (double)d;
-		double alpha;
-		if (isNegative){
-			alpha = Math.asin(sina) * -57;
-		}
-		else{
-			alpha = Math.asin(sina) * 57;
-		}
+		//calculate offsets
+		deltaX = width / 2 * Math.cos(alpha);
+		deltaY = width / 2 * Math.sin(alpha);
 		
-		if(isActive){
-			c.setFill(Color.DARKGOLDENROD);
-		}
-		else{
-		    c.setFill(Color.GRAY);
-		}
-		
-		c.save();
-		c.transform(new Affine(new Rotate(alpha, x1, y1+5)));	    
-	    c.fillRect(x1, y1, d, 10);
-	    c.restore();
-	    
-	    if (endPos.x-startPos.x<0){
-			 x1 = this.otherEnd.x;
-			 y1 = this.otherEnd.y;
-			 x2 = this.startPos.x;
-			 y2 = this.startPos.y;
-		}
-	    
-	    else{
-	    	x2 = this.otherEnd.x;
-			y2 = this.otherEnd.y;
-	    }
-
-		a = x2 - x1;
-		b = y2 - y1;
-		
-		isNegative = false;
-		
-		if (b<0){
-			b*=-1;
-			isNegative = true;
-		}
-		
-		d = (int)Math.sqrt(a*a+b*b);
-		sina = (double) b / (double)d;
-		if (isNegative){
-			alpha = Math.asin(sina) * -57;
-		}
-		else{
-			alpha = Math.asin(sina) * 57;
-		}
-		
-		if(isActive){
-		    c.setFill(Color.GOLD);
-		}
-		else{
-		    c.setFill(Color.GRAY);
-		}
-				
-		c.save();
-		c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
-	    c.fillRect(x1, y1, d, 10);
-	    c.restore();
+		c.setStroke(Color.GREY);
+		c.setLineWidth(width);
+		c.strokeLine(startPos.x + deltaX,
+				startPos.y + deltaY,
+				otherEnd.x - deltaX,
+				otherEnd.y - deltaY);
+//		c.setFill(Color.BLUE);
+//		c.fillOval(startPos.x, startPos.y, 2, 2);
+//		c.fillOval(endPos.x, endPos.y, 2, 2);
 	}
 }

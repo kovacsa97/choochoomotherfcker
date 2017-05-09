@@ -32,7 +32,9 @@ public class Main extends Application {
 	private View w;
 	
 	public void test() {
-		
+		c.setBoard(new ChooChooParser().parse("maps/map2.xml"));
+		c.displayBoard("maps/map2_visual.xml");
+		c.displayChange(new ArrayList<>());
 	}
 	
 	
@@ -53,6 +55,7 @@ public class Main extends Application {
 		w.setControlType(ControlType.None);
 		primaryStage.show();
 
+//		test();
 	}
 	
 	public static void main(String[] args) {

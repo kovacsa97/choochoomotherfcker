@@ -18,7 +18,7 @@ import trainelements.Train;
 public class TunnelVisual extends DynamicVisual {
 
 	/**
-	 * a tunnelbol igy a visualjabol is egy lehet, ezert nem toroljuk, csak nem rjzoljuk ki
+	 * a tunnelbol igy a visualjabol is egy lehet, ezert nem toroljuk, csak nem rajzoljuk ki
 	 */
 	private boolean visible;
 	
@@ -44,44 +44,9 @@ public class TunnelVisual extends DynamicVisual {
 	public void draw(GraphicsContext c) {
 		if(!visible)
 			return;
-		int x1 = this.startPos.x;
-		int y1 = this.startPos.y;
-		int x2 = this.endPos.x;
-		int y2 = this.endPos.y;
-		
-		if (endPos.x-startPos.x<0){
-			 x1 = this.endPos.x;
-			 y1 = this.endPos.y;
-			 x2 = this.startPos.x;
-			 y2 = this.startPos.y;
-		}
-		
-		int a = x2 - x1;
-		int b = y2 - y1;
-		
-		boolean isNegative = false;
-		
-		if (b<0){
-			b*=-1;
-			isNegative = true;
-		}
-		
-		int d = (int)Math.sqrt(a*a+b*b);
-
-		double sina = (double) b / (double)d;
-		double alpha;
-		if (isNegative){
-			alpha = Math.asin(sina) * -57;
-		}
-		else{
-			alpha = Math.asin(sina) * 57;
-		}
-		
-		c.save();
-	    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
-	    c.setFill(Color.BROWN);
-	    c.fillRect(x1, y1, d, 20);
-	    c.restore();
+		c.setStroke(Color.BROWN);
+		c.setLineWidth(25);
+		c.strokeLine(startPos.x, startPos.y, endPos.x, endPos.y);
 	}
 	
 	public void setVisible(boolean b){

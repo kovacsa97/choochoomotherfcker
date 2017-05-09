@@ -18,37 +18,23 @@ public class EntryPointVisual extends StaticVisual{
 	/* (non-Javadoc)
 	 * @see visuals.StaticVisual#draw(javafx.scene.canvas.GraphicsContext)
 	 */
-	public void draw(GraphicsContext c) {	
+	public void draw(GraphicsContext c) {
+		//calculate angle
+		double alpha = Math.atan2((double)(endPos.y - startPos.y), (double)(endPos.x - startPos.x));
 		
-		int a = this.endPos.x - this.startPos.x;
-		int b = this.endPos.y - this.startPos.y;
+		//define drawing width
+		double width = 40;
 		
-		int d = (int)Math.sqrt(a*a+b*b);
+		//calculate offsets
+		double deltaX = width / 2 * Math.cos(alpha);
+		double deltaY = width / 2 * Math.sin(alpha);
 		
-		boolean isNegative = false;
+		c.setStroke(Color.CYAN);
+		c.setLineWidth(width);
+		c.strokeLine(startPos.x + deltaX,
+				startPos.y + deltaY,
+				endPos.x - deltaX,
+				endPos.y - deltaY);
 		
-		if (a<0){
-			a*=-1;
-			isNegative = true;
-		}
-		if (b<0){
-			b*=-1;
-			isNegative = true;
-		}
-		
-		double sina = (double) b / (double)d;
-		double alpha;
-		if (isNegative){
-			alpha = Math.asin(sina) * -57;
-		}
-		else{
-			alpha = Math.asin(sina) * 57;
-		}
-				
-		c.save();
-	    c.transform(new Affine(new Rotate(alpha, this.startPos.x, this.startPos.y+ d/2)));
-	    c.setFill(Color.CYAN);
-		c.fillRect(this.startPos.x, this.startPos.y-d/2, d, d);
-	    c.restore();
 	}
 }

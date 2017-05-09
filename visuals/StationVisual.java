@@ -2,8 +2,6 @@ package visuals;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.transform.Affine;
-import javafx.scene.transform.Rotate;
 
 /**
  * a Station (vasutallomas) kirajzolasaert felelos osztaly
@@ -26,63 +24,72 @@ public class StationVisual extends StaticVisual{
 	 */
 	public void draw(GraphicsContext c) {
 		
-		boolean otherSide = false;
-		boolean isNegative = false;
-
-		int x1 = this.startPos.x;
-		int y1 = this.startPos.y;
-		int x2 = this.endPos.x;
-		int y2 = this.endPos.y;
+		//calculate angle
+		double alpha = Math.atan2((double)(endPos.y - startPos.y), (double)(endPos.x - startPos.x));
 		
-		if (endPos.x-startPos.x<0){
-			 x1 = this.endPos.x;
-			 y1 = this.endPos.y;
-			 x2 = this.startPos.x;
-			 y2 = this.startPos.y;
-			 otherSide = true;
-		}
+		//define drawing widths
+		double railwidth = 15;
+		double buildingwidth = 40;
 		
-		int a = x2 - x1;
-		int b = y2 - y1;
+		double railDeltaX = railwidth / 2 * Math.cos(alpha);
+		double railDeltaY = railwidth / 2 * Math.sin(alpha);
 		
-		if (b<0){
-			b*=-1;
-			isNegative = true;
-		}
+		//draw rail
+		c.setLineWidth(railwidth);
+		c.setStroke(Color.GREY);
+		c.strokeLine(startPos.x + railDeltaX,
+				startPos.y + railDeltaY,
+				endPos.x - railDeltaX,
+				endPos.y - railDeltaY);
 		
-		int d = (int)Math.sqrt(a*a+b*b);
-
-		double sina = (double) b / (double)d;
-		double alpha;
-		if (isNegative){
-			alpha = Math.asin(sina) * -57;
-		}
-		else{
-			alpha = Math.asin(sina) * 57;
-		}
+		double buildingDeltaX1 = buildingwidth / 2 * Math.cos(alpha);
+		double buildingDeltaY1 = buildingwidth / 2 * Math.sin(alpha);
 		
-		c.save();
-	    c.transform(new Affine(new Rotate(alpha, x1, y1+5)));
-	    c.setFill(Color.GRAY);
-	    c.fillRect(x1, y1, d, 10);
+		double buildingDeltaX2 = (buildingwidth + railwidth) / 2 * Math.cos(alpha - Math.PI / 2);
+		double buildingDeltaY2 = (buildingwidth + railwidth) / 2 * Math.sin(alpha - Math.PI / 2);
+		
+		//draw building
+		c.setLineWidth(buildingwidth);
 	    switch (myColor){
-
-		case RED: c.setFill(Color.RED);
-					break;
-		case BLUE: c.setFill(Color.BLUE);
-					break;
-		case PINK: c.setFill(Color.PINK);
-					break;
-		case YELLOW: c.setFill(Color.YELLOW);
-					break;
-		case GREEN: c.setFill(Color.GREEN);
-					break;
+	    case RED:
+	    	c.setStroke(Color.RED);
+			break;
+			
+		case BLUE:
+			c.setStroke(Color.BLUE);
+			break;
+			
+		case PINK:
+			c.setStroke(Color.PINK);
+			break;
+			
+		case YELLOW:
+			c.setStroke(Color.YELLOW);
+			break;
+			
+		case GREEN:
+			c.setStroke(Color.GREEN);
+			break;
+					
+		default:
+			System.out.println("invalod station color: " + id);
+			c.setStroke(Color.DARKMAGENTA);
 		}
+//	    
+//	    System.out.println("data for " + id);
+//	    System.out.println("raildeltax: " + railDeltaX);
+//	    System.out.println("raildeltay: " + railDeltaY);
+//	    System.out.println("buildingdeltax1: " + buildingDeltaX1);
+//	    System.out.println("buildingdeltax2: " + buildingDeltaX2);
+//	    System.out.println("buildingdeltay1: " + buildingDeltaY1);
+//	    System.out.println("buildingdeltay2: " + buildingDeltaY2);
+		c.strokeLine(startPos.x + buildingDeltaX1 + buildingDeltaX2,
+				startPos.y + buildingDeltaY1 + buildingDeltaY2,
+				endPos.x - buildingDeltaX1 + buildingDeltaX2,
+				endPos.y - buildingDeltaY1 + buildingDeltaY2);
+//		c.setFill(Color.BLUE);
+//		c.fillOval(startPos.x, startPos.y, 2, 2);
+//		c.fillOval(endPos.x, endPos.y, 2, 2);
 	    
-	    if (!otherSide)
-	    	c.fillRect(x1, y1-30, d, 30);
-	    else
-	    	c.fillRect(x1, y1+10, d, 30);
-	    c.restore();
 	}
 }
