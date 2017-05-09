@@ -118,22 +118,6 @@ public class TrainVisual extends DynamicVisual {
 	 */
 	@Override
 	public void draw(GraphicsContext c) {
-		
-		if(myPoints.size() < 2)
-			return;
-		
-		if(colors.size() < myPoints.size() - 2){
-			System.out.println("not enough colours");
-			return;
-		}
-		
-		if(colors.size() == 0){
-			System.out.println("fuck you");
-		}
-		
-		System.out.println(colors.size());
-		System.out.println(myPoints.size());
-		System.out.println(currenttrain.getMyWagons().size());
 		c.setLineWidth(10);
 		for (int j =  myPoints.size() - 1; j > 1 ; j--) {
 			switch (colors.get(j - 1)){
