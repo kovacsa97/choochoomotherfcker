@@ -18,17 +18,17 @@
 	<station id="st11" spx="62" spy="123" epx="62" epy="163"/>
 	<rail id="r13" spx="62" spy="161" epx="90" epy="189"/>	
 	<rail id="r14" spx="87" spy="189" epx="126" epy="189"/>
-	<switch id="s11" spx="126" spy="189" epx="154" epy="161" oex="154" oey="217"/>   
+	<switch id="s11" spx="126" spy="189" epx="154" epy="161" oex="154" oey="217"/>
 	<rail id="r15" spx="126" spy="189" epx="154" epy="161"/>
-	<rail id="r16" spx="126" spy="189" epx="154" epy="217"/>
-	<rail id="r18" spx="151" spy="161" epx="191" epy="161"/>
-	<rail id="r17" spx="151" spy="217" epx="191" epy="217"/>
-	<rail id="r19" spx="188" spy="158" epx="208" epy="192"/>
-	<crossingrail id="cr11" spx="189" spy="217" epx="223" epy="197"/>
-	<crossingrail id="cr12" spx="206" spy="190" epx="226" epy="224"/>
-	<tunnelopp id="to12" spx="225" spy="194" epx="225" epy="194" /> 
+	<rail id="r16" spx="151" spy="161" epx="191" epy="161"/>
+	<rail id="r17" spx="188" spy="158" epx="208" epy="192"/>
+	<crossingrail id="cr11" spx="206" spy="190" epx="226" epy="224"/>
 	<station id="st12" spx="224" spy="223" epx="224" epy="263"/>
 	<tunnelopp id="to13" spx="221" spy="267" epx="221" epy="267" /> 
+	<rail id="r18" spx="126" spy="189" epx="154" epy="217"/>
+	<rail id="r19" spx="151" spy="217" epx="191" epy="217"/>
+	<crossingrail id="cr12" spx="189" spy="217" epx="223" epy="197"/>
+	<tunnelopp id="to12" spx="225" spy="194" epx="225" epy="194" /> 
 	
 	<tunnelopp id="to21" spx="40" spy="300" epx="40" epy="300" /> 
 	<rail id="r21" spx="43" spy="300" epx="71" epy="272"/>

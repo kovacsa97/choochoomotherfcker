@@ -15,9 +15,9 @@ public class EndPos extends Position {
 
 	/**
 	 * letrehozza a vonat vegenek poziciojat
-	 * @param cbe: (current board element) a letrehozas helye
-	 * @param sp: (start position) a vonat kezdopozicioja 
-	 * @param pos: a board element-en beluli pozicio
+	 * @param cbe (current board element) a letrehozas helye
+	 * @param sp (start position) a vonat kezdopozicioja 
+	 * @param pos a board element-en beluli pozicio
 	 */
 	public EndPos(BoardElement cbe, StartPos sp, int pos) {
 		super(cbe);

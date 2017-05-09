@@ -14,7 +14,7 @@ public class CrossingRail extends Rail{
 
 	/**
 	 * Rail konstruktorat meghivja length hosszal
-	 * @param length: a palyaelem hossza
+	 * @param length a palyaelem hossza
 	 */
 	public CrossingRail(int length) {
 		super(length);
@@ -22,7 +22,7 @@ public class CrossingRail extends Rail{
 	
 	/**
 	 * Beallitja az ot keresztezo sint.
-	 * @param r: a keresztezo sin
+	 * @param r a keresztezo sin
 	 */
 	public void setOtherRail(Rail r){
 		otherRail = r;

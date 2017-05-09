@@ -77,8 +77,8 @@ public class EntryPoint extends BoardElement implements Updateable{
 	/**
 	 * Beallitja a default varakozasi idot, es kap egy referenciat a Timer-hez, 
 	 * hogy beregisztralhassa az ujonnan letrejovo vonatokat.
-	 * @param defWaitTime: default varakozasi ido
-	 * @param length: palyaelem hossza
+	 * @param defWaitTime default varakozasi ido
+	 * @param length palyaelem hossza
 	 */
 	public EntryPoint(int defWaitTime, int length){
 		super(length);
@@ -112,7 +112,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/**
 	 * Vonat modell hozzaadasa trainModel listahoz
-	 * @param tm: a vonat modellje
+	 * @param tm a vonat modellje
 	 */
 	public void addTrain(TrainModel tm){
 		trainModelList.add(tm);
@@ -237,7 +237,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/**
 	 * Beallitja a random generator erteket
-	 * @param randomGeneration: randomgeneracio erteke
+	 * @param randomGeneration randomgeneracio erteke
 	 */
 	public void setRandomGeneration(boolean randomGeneration) {
 		this.randomGeneration = randomGeneration;
@@ -257,7 +257,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	
 	/**
 	 * Megkapja a timer-t es beallitja az entripointnak, majd beregisztralja
-	 * @param Timer: beallitando Timer
+	 * @param Timer beallitando Timer
 	 */
 	public void setTimer(Timer t){
 		timer = t;

@@ -18,17 +18,17 @@
 	<station id="st11" prevId="r12" nextId="r13" color="3" newPassengerCount="12" newPassengerProbability="0.2"/>
 	<rail id="r13" prevId="st11" nextId="r14"/>
 	<rail id="r14" prevId="r13" nextId="s11"/>
-	<switch id="s11" inId="r14" currentOutId="r15" otherOutId="r16" /> 
-	<rail id="r15" prevId="s11" nextId="r18"/>
-	<rail id="r16" prevId="s11" nextId="r17"/>
+	<switch id="s11" inId="r14" currentOutId="r15" otherOutId="r18" /> 
+	<rail id="r15" prevId="s11" nextId="r16"/>
+	<rail id="r16" prevId="r15" nextId="r17"/>
 	<rail id="r17" prevId="r16" nextId="cr11"/>
-	<rail id="r18" prevId="r15" nextId="r19"/>
-	<rail id="r19" prevId="r18" nextId="cr12"/>
-	<crossingrail id="cr11" prevId="r17" nextId="to12" otherRailId="cr12" /> 
-	<crossingrail id="cr12" prevId="r19" nextId="st15" otherRailId="cr11" /> 
-	<tunnelopp id="to12" inId="cr11" outId="null"/>
-	<station id="st12" prevId="r12" nextId="to13" color="4" newPassengerCount="3" newPassengerProbability="0.8"/>
+	<crossingrail id="cr11" prevId="r17" nextId="st12" otherRailId="cr12" /> 
+	<station id="st12" prevId="cr11" nextId="to13" color="4" newPassengerCount="3" newPassengerProbability="0.8"/>
 	<tunnelopp id="to13" inId="st12" outId="null"/>
+	<rail id="r18" prevId="s11" nextId="r19"/>
+	<rail id="r19" prevId="r18" nextId="cr12"/>
+	<crossingrail id="cr12" prevId="r19" nextId="to12" otherRailId="cr11" /> 
+	<tunnelopp id="to12" inId="cr12" outId="null"/>
 	
 	<tunnelopp id="to21" inId="null" outId="r21"/>
 	<rail id="r21" prevId="to21" nextId="r22"/>

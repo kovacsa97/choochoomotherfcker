@@ -34,7 +34,7 @@ public class Switch extends BoardElement{
 	
 	/**
 	 * Valtohoz az eredeti utvonalhoz kepest masik kijaratot ado metodus
-	 * @param b: masik kijarat
+	 * @param b masik kijarat
 	 */
 	public void addExit(BoardElement b){
 		nextSecond = b  ;

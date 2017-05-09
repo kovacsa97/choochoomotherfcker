@@ -8,7 +8,7 @@ public class Tunnel extends BoardElement {
 
 	/**
 	 * Length hosszal mehivja a BoardElement konstruktorat
-	 * @param length: palyaelem hossza
+	 * @param length palyaelem hossza
 	 */
 	public Tunnel(int length) {
 		super(length);

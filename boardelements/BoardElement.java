@@ -31,7 +31,7 @@ public class BoardElement {
 	
 	/**
 	 * Konstruktor, mely letrehozza a palyaelemet length hosszal
-	 * @param length: palyaelem hossza
+	 * @param length palyaelem hossza
 	 */
 	public BoardElement(int length){
 		this.length = length;
@@ -57,7 +57,7 @@ public class BoardElement {
 	
 	/**
 	 * Lekezeli a vonat erkezeset az adott palyaelemre
-	 * @param t: az erkezo vonat
+	 * @param t az erkezo vonat
 	 * @throws EndGameException
 	 */
 	public void enter(Train t) throws EndGameException {
@@ -102,16 +102,16 @@ public class BoardElement {
 	}
 	
 	/**
-	 * Getter a következõ pályaelem lekéréséhez
-	 * @return next: következõ pályaelem
+	 * Getter a kovetkezo palyaelem lekerdezesehez
+	 * @return next: kovetkezo palyaelem
 	 */
 	public BoardElement getNextElement(){
 		return next;
 	}
 	
 	/**
-	 * Getter az elõzõ pályaelem lekéréséhez
-	 * @return prev: elõzõ pályaelem
+	 * Getter az elozo palyaelem lekeresehez
+	 * @return prev: elozo palyaelem
 	 */
 	public BoardElement getPrevElement() {
 		return prev;
@@ -119,8 +119,8 @@ public class BoardElement {
 
 	/**
 	 * Beallitja az ot koveto es megelozo palyaelemet
-	 * @param p: elozo palyaelem
-	 * @param n: kovetkezo palyaelem
+	 * @param p elozo palyaelem
+	 * @param n kovetkezo palyaelem
 	 */
 	public void setEnds(BoardElement p, BoardElement n){
 		next = n;
@@ -153,7 +153,7 @@ public class BoardElement {
 
 	/**
 	 * Beallitja az id-t
-	 * @param id: a palyaelem azonositoja
+	 * @param id a palyaelem azonositoja
 	 */
 	public void setId(String id) {
 		this.id = id;

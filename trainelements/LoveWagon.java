@@ -9,9 +9,9 @@ public class LoveWagon extends Wagon{
 
 	/**
 	 * konstruktor, mely letrehoz egy LoveWagont adott parameterekkel
-	 * @param weight: wagon tomege
-	 * @param color: wagon szine
-	 * @param numPass: utasok szama
+	 * @param weight wagon tomege
+	 * @param color wagon szine
+	 * @param numPass utasok szama
 	 */
 	public LoveWagon(int weight, Color color, int numPass) {
 		super(weight, color, numPass);

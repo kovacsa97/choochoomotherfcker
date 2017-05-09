@@ -39,9 +39,9 @@ public class Train implements Updateable {
 	
 	/**
 	 * Konstruktor mely letrehoz egy vonatot adott parameterekkel
-	 * @param wagons: vonathoz tartozo wagonok
-	 * @param loc: vonathoz tartozo mozdony
-	 * @param ep: a vonat kezdo palyaeleme (belepesi pont)
+	 * @param wagons vonathoz tartozo wagonok
+	 * @param loc vonathoz tartozo mozdony
+	 * @param ep a vonat kezdo palyaeleme (belepesi pont)
 	 * @throws EndGameException
 	 */
 	public Train(List<Wagon> wagons, Locomotive loc, EntryPoint ep) throws EndGameException{
@@ -58,8 +58,8 @@ public class Train implements Updateable {
 	
 	/**
 	 * Utasokat leszallito fuggveny 
-	 * @param c: allomas szine ahova avonat erkezett
-	 * @return int: wagonokon utazo utasok 
+	 * @param c allomas szine ahova avonat erkezett
+	 * @return int wagonokon utazo utasok 
 	 */
 	public int getPassengers(Color c){
 		int i = 0;
@@ -77,8 +77,8 @@ public class Train implements Updateable {
 	
 	/**
 	 * Utasokat felszallito fuggveny
-	 * @param c: az allomas szine ahova a vonat erkezett
-	 * @param n: felszallo utasok szama
+	 * @param c az allomas szine ahova a vonat erkezett
+	 * @param n felszallo utasok szama
 	 */
 	public void passengerGetOn(Color c, int n){
 		//System.out.println("getPassengers was called inside class Train with parameters of type Color");
@@ -110,7 +110,7 @@ public class Train implements Updateable {
 	
 	/**
 	 * Id visszaado fuggveny
-	 * @return id: a vonat azonositoja
+	 * @return id a vonat azonositoja
 	 */
 	public String getId() {
 		return id;
@@ -118,7 +118,7 @@ public class Train implements Updateable {
 
 	/**
 	 * Vonat azonositojat beallitja
-	 * @param id: vonat azonositoja
+	 * @param id vonat azonositoja
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -145,7 +145,7 @@ public class Train implements Updateable {
 	
 	/**
 	 * Huzoerot beallito fuggveny
-	 *@param drivingForce: huzoero nagysaga
+	 *@param drivingForce huzoero nagysaga
 	 */
 	public void setDrivingForce(int drivingForce){
 		this.myLocomotive.setEnginePower(drivingForce);
@@ -153,8 +153,8 @@ public class Train implements Updateable {
 	
 	
 	/**
-	 * Getter a vagonok visszaadásához
-	 * @return myWagons: vagonok listája
+	 * Getter a vagonok visszaadasahoz
+	 * @return myWagons vagonok listaja
 	 */
 	public List<Wagon> getMyWagons() {
 		return myWagons;
@@ -162,8 +162,8 @@ public class Train implements Updateable {
 	
 	
 	/**
-	 * Getter a mozdony visszaadásához
-	 * @return myLocomotive: a vonat mozdonya
+	 * Getter a mozdony visszaadasahoz
+	 * @return myLocomotive a vonat mozdonya
 	 */
 	public Locomotive getMyLocomotive() {
 		return myLocomotive;

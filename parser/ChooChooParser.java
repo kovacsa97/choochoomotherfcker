@@ -38,7 +38,7 @@ public class ChooChooParser {
 	Tunnel tunnel;
 	
 	/**
-	 * A bemeneti fajl alapjan felepiti a palyat és visszater vele.
+	 * A bemeneti fajl alapjan felepiti a palyat es visszater vele.
 	 * @param filename A beolvasando fajl eleresi utvonala
 	 * @return A bemenet alapjan felepitett palya a vonatokkal.
 	 */

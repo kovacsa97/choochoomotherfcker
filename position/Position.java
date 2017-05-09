@@ -36,8 +36,8 @@ public abstract class Position {
 	
 	/**
 	 * Vonat mozgasat koordinalo fuggveny
-	 * @param dist: ezt a tavolsagot teszi meg a vonat
-	 * @throws EndGameException: ha ket vonat utkozik vagy a vonat kisiklik ez a kivetel keletkezik
+	 * @param dist ezt a tavolsagot teszi meg a vonat
+	 * @throws EndGameException ha ket vonat utkozik vagy a vonat kisiklik ez a kivetel keletkezik
 	 */
 	public abstract void move(int dist) throws EndGameException;
 

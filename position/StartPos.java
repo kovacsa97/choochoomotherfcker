@@ -24,9 +24,9 @@ public class StartPos extends Position {
 
 	/**
 	 * letrehozza a kapott vonat kezdopoziciojat a kapott palyaelemen
-	 * @param cbe: (current board element) a letrehozas helye
-	 * @param t: a vonat referenciaja amihez tartozik
-	 * @throws EndGameException: ha ket vonat utkozik vagy a vonat kisiklik ez a kivetel keletkezik
+	 * @param cbe (current board element) a letrehozas helye
+	 * @param t a vonat referenciaja amihez tartozik
+	 * @throws EndGameException ha ket vonat utkozik vagy a vonat kisiklik ez a kivetel keletkezik
 	 */
 	public StartPos(BoardElement cbe, Train t) throws EndGameException {
 		super(cbe);

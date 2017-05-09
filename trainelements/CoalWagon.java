@@ -8,8 +8,8 @@ import color.Color;
 public class CoalWagon extends Wagon{
 
 	/**
-	 * konstruktor, weight-el és szurke szinnel meghivja a Wagon konstruktorat
-	 * @param weight: wagon tomege
+	 * konstruktor, weight-el es szurke szinnel meghivja a Wagon konstruktorat
+	 * @param weight wagon tomege
 	 */
 	public CoalWagon(int weight) {
 		super(weight, Color.GRAY, 0);
