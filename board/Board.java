@@ -130,6 +130,9 @@ public class Board {
 	 * Megszunteti az alagutat
 	 */
 	public void destroyTunnel() {
+		if (tunnel == null){
+			return;
+		}
 		tunnel.destroy();
 	}
 	
