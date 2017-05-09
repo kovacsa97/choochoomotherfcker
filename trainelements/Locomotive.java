@@ -53,7 +53,7 @@ public class Locomotive {
 	 * @return megtett tavolsag adott ido alatt
 	 */
 	public int getExcursion(){
-		return 5;
+		return this.enginePower;
 	}
 	
 	/**

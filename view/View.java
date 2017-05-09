@@ -66,7 +66,10 @@ public class View {
 	public void increaseDrivingForce() {
 		
 		Integer df = Integer.parseInt(lDrivingForceValue.getText());
-		df+=100;
+		df+=1;
+		if (df>5){
+			df--;
+		}
 		lDrivingForceValue.setText(df.toString());
 		myController.executeSetDrivingForce(df);
 	}
@@ -76,7 +79,10 @@ public class View {
 	 */
 	public void decreaseDrivingForce() {
 		Integer df = Integer.parseInt(lDrivingForceValue.getText());
-		df-=100;
+		df-=1;
+		if(df<=0){
+			df++;
+		}
 		lDrivingForceValue.setText(df.toString());
 		myController.executeSetDrivingForce(df);
 	}
@@ -215,6 +221,7 @@ public class View {
 	}
 	
 	public void setEnginePowerValue(int v) {
+		
 		lDrivingForceValue.setText(Integer.toString(v));
 	}
 	

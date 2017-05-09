@@ -56,7 +56,7 @@ public class EntryPoint extends BoardElement implements Updateable{
 	/**
 	 * Mozdony ero
 	 */
-	private final int LOCOMOTIVEPOWER = 0;
+	private final int LOCOMOTIVEPOWER = 3;
 	/**
 	 * Utas szam
 	 */
