@@ -34,8 +34,9 @@ public class CrossingRail extends Rail{
 	 */
 	@Override
 	public void lock(){
-		this.lock();
-		otherRail.lock();
+		this.locked = true;
+		if (!otherRail.isOccupied())
+			otherRail.lock();
 	}
 	
 	/* (non-Javadoc)
@@ -44,8 +45,9 @@ public class CrossingRail extends Rail{
 	 */
 	@Override
 	public void unlock(){
-		this.unlock();
-		otherRail.unlock();
+		this.locked = true;
+		if (!otherRail.isOccupied())
+			otherRail.unlock();
 	}
 
 
