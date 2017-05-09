@@ -44,11 +44,23 @@ public class TunnelVisual extends DynamicVisual {
 	public void draw(GraphicsContext c) {
 		if(!visible)
 			return;
-		c.setStroke(Color.BROWN);
-		c.setLineWidth(25);
-		c.strokeLine(startPos.x, startPos.y, endPos.x, endPos.y);
+		//calculate angle
+		double alpha = Math.atan2((double)(endPos.y - startPos.y), (double)(endPos.x - startPos.x));
+				
+			//define drawing width
+			double width = 15;
+			
+			//calculate offsets
+			double deltaX = width / 2 * Math.cos(alpha);
+			double deltaY = width / 2 * Math.sin(alpha);
+			
+			c.setStroke(Color.BROWN);
+			c.setLineWidth(width);
+			c.strokeLine(startPos.x + deltaX,
+					startPos.y + deltaY,
+					endPos.x - deltaX,
+					endPos.y - deltaY);
 	}
-	
 	public void setVisible(boolean b){
 		visible = b;
 	}
