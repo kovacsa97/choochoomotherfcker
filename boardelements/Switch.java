@@ -44,6 +44,8 @@ public class Switch extends BoardElement{
 	 * Valto iranyat valtoztatja
 	 */
 	public void changeDir(){
+		if (this.locked == false)
+			return;
 		if (nextActive == true)
 			nextActive = false;
 		else
