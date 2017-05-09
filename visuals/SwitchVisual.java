@@ -73,7 +73,11 @@ public class SwitchVisual extends DynamicVisual {
 		double deltaX = width / 2 * Math.cos(alpha);
 		double deltaY = width / 2 * Math.sin(alpha);
 		
-		c.setStroke(Color.GREY);
+		if(isActive){
+			c.setStroke(Color.GOLDENROD);
+		}else{
+			c.setStroke(Color.GREY);
+		}
 		c.setLineWidth(width);
 		c.strokeLine(startPos.x + deltaX,
 				startPos.y + deltaY,
@@ -92,7 +96,11 @@ public class SwitchVisual extends DynamicVisual {
 		deltaX = width / 2 * Math.cos(alpha);
 		deltaY = width / 2 * Math.sin(alpha);
 		
-		c.setStroke(Color.GREY);
+		if(isActive){
+			c.setStroke(Color.GOLD);
+		}else{
+			c.setStroke(Color.GREY);
+		}
 		c.setLineWidth(width);
 		c.strokeLine(startPos.x + deltaX,
 				startPos.y + deltaY,

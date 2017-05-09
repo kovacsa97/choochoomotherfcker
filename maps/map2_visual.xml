@@ -12,9 +12,9 @@
 	<station id="st02" spx="228" spy="62" epx="228" epy="102" /> 
 	<tunnelopp id="to02" spx="228" spy="102" epx="228" epy="102" /> 
 	
-	<tunnelopp id="to11" spx="130" spy="100" epx="130" epy="100" /> 
-	<rail id="r11" spx="130" spy="100" epx="90" epy="100" /> 
-	<rail id="r12" spx="90" spy="100" epx="72" epy="118"/>	
+	<tunnelopp id="to11" spx="140" spy="100" epx="140" epy="100" /> 
+	<rail id="r11" spx="140" spy="100" epx="100" epy="100" /> 
+	<rail id="r12" spx="100" spy="100" epx="72" epy="118"/>	
 	<station id="st11" spx="72" spy="118" epx="72" epy="158"/>
 	<rail id="r13" spx="72" spy="158" epx="90" epy="186"/>	
 	<rail id="r14" spx="90" spy="186" epx="130" epy="186"/>
